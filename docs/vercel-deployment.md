@@ -41,3 +41,7 @@ CLI 上传会根据 `.vercelignore` 排除本地构建、npm tarball、调试文
 带 hash 的 `/assets/` 文件使用长期缓存；沙盒运行时文件重新验证缓存，避免更新后继续使用旧版本。
 
 配置依据：[Vercel 的 Vite 部署说明](https://vercel.com/docs/frameworks/frontend/vite)、[vercel.json 官方文档](https://vercel.com/docs/project-configuration/vercel-json)。
+
+## CDN
+
+`/cdn` 提供直接引用说明，`/cdn/expressive-ui.js` 和 `/cdn/expressive-ui.css` 是无需构建即可使用的浏览器入口。构建自动生成全量资源并复制到输出目录，`/cdn/*` 支持跨域引用。详见 [CDN 用法](./cdn.md)。

@@ -1,0 +1,307 @@
+{
+  "components/advanced-slider": {
+    "html": "<div data-eui=\"range-slider\">\n<input type=\"range\" min=\"0\" max=\"100\" value=\"20\" aria-label=\"Minimum\">\n<input type=\"range\" min=\"0\" max=\"100\" value=\"75\" aria-label=\"Maximum\">\n</div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/app-bar": {
+    "html": "<header data-eui=\"app-bar\" data-variant=\"small\"><span data-title>Your workspace</span></header>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/banner": {
+    "html": "<div data-eui=\"banner\" data-eui-options='{\"message\":\"You are working offline.\"}'></div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/button": {
+    "html": "<button data-eui=\"button\">Save changes</button>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/button-group": {
+    "html": "<div data-eui=\"button-group\"><button data-value=\"archive\">Archive</button><button data-value=\"share\">Share</button><button data-value=\"delete\">Delete</button></div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/carousel": {
+    "html": "<div data-eui=\"carousel\" data-label=\"Creative possibilities\">\n<article data-carousel-item>Make something.</article><article data-carousel-item>Try a new angle.</article><article data-carousel-item>Keep it close.</article>\n</div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n[data-carousel-item] { min-height: 200px; padding: 24px; background: var(--md-sys-color-primary-container); }",
+    "script": ""
+  },
+  "components/checkbox": {
+    "html": "<label><span><input data-eui=\"checkbox\" type=\"checkbox\"></span> I agree to the terms</label>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/chip": {
+    "html": "<button data-eui=\"chip\" data-variant=\"filter\">Design</button>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/data-table": {
+    "html": "<div id=\"example\"><div id=\"table\"></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceDataTable } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceDataTable($('table'),{label:'Projects',rows:[{id:1,name:'Shape studio',tasks:12},{id:2,name:'Motion library',tasks:8},{id:3,name:'Color tools',tasks:24}],rowKey:row=>row.id,columns:[{key:'name',label:'Project',value:row=>row.name,sortable:true},{key:'tasks',label:'Tasks',value:row=>row.tasks,sortable:true,numeric:true}],selection:'multiple',pageSize:2,pageSizeOptions:[2,5]}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "components/date-picker": {
+    "html": "<span><input data-eui=\"date-picker\" type=\"date\" aria-label=\"Date\"></span>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/dialog": {
+    "html": "<button data-eui=\"button\" data-eui-open=\"details\">Open dialog</button>\n<dialog id=\"details\" data-eui=\"dialog\" aria-labelledby=\"title\">\n<h2 id=\"title\">Keep this idea?</h2><p>You can return whenever inspiration strikes.</p>\n<button data-eui=\"button\" data-variant=\"text\" data-eui-close>Close</button>\n</dialog>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/fab": {
+    "html": "<button data-eui=\"fab\" aria-label=\"Create\">＋</button>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/fab-menu": {
+    "html": "<div id=\"example\"><button type=\"button\" id=\"create\" aria-label=\"Create\"><span data-icon aria-hidden=\"true\">＋</span></button><div id=\"menu\"><button type=\"button\">New document</button><button type=\"button\">New folder</button></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceFabMenu } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceFabMenu($('menu'),{anchor:$('create'),label:'Create something'}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "components/icon-button": {
+    "html": "<button data-eui=\"icon-button\" aria-label=\"Favorite\">☆</button>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/loading-indicator": {
+    "html": "<div data-eui=\"loading-indicator\" data-label=\"Loading your workspace\"></div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/menu": {
+    "html": "<button id=\"sort\" data-eui=\"button\">Sort options</button>\n<div data-eui=\"menu\" data-anchor=\"#sort\" aria-label=\"Sort\">\n<button data-menu-item data-value=\"recent\">Recent first</button>\n<button data-menu-item data-value=\"name\">Name</button>\n</div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/navigation": {
+    "html": "<nav data-eui=\"navigation-bar\" data-label=\"Main navigation\">\n<button data-nav-item=\"home\"><span data-icon>⌂</span><span data-label>Home</span></button>\n<button data-nav-item=\"saved\"><span data-icon>☆</span><span data-label>Saved</span></button>\n</nav>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/progress": {
+    "html": "<div data-eui=\"progress\" data-label=\"Upload progress\" data-eui-options='{\"value\":0.6}'></div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/radio": {
+    "html": "<fieldset><legend>Plan</legend>\n<label><span><input data-eui=\"radio\" type=\"radio\" name=\"plan\" checked></span> Free</label>\n<label><span><input data-eui=\"radio\" type=\"radio\" name=\"plan\"></span> Pro</label>\n</fieldset>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/search": {
+    "html": "<div data-eui=\"search\" data-label=\"Search projects\"><input type=\"search\" placeholder=\"Search projects\"></div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/segmented-button": {
+    "html": "<div data-eui=\"segmented-buttons\" data-label=\"Calendar view\">\n<button data-value=\"day\">Day</button><button data-value=\"week\">Week</button>\n</div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/select": {
+    "html": "<span><select data-eui=\"select\" data-label=\"Plan\"><option>Free</option><option>Pro</option></select></span>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/sheet": {
+    "html": "<button data-eui=\"button\" data-eui-open=\"details\">Open sheet</button>\n<dialog id=\"details\" data-eui=\"sheet\" data-label=\"More details\">\n<h2>A little more detail</h2><button data-eui=\"button\" data-variant=\"text\" data-eui-close>Done</button>\n</dialog>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/slider": {
+    "html": "<label for=\"volume\">Volume</label>\n<span><input data-eui=\"slider\" id=\"volume\" type=\"range\" min=\"0\" max=\"100\" step=\"10\" value=\"40\"></span>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/snackbar": {
+    "html": "<div id=\"example\"><button id=\"save\" type=\"button\">Save idea</button><div id=\"snackbar\"></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceSnackbar,enhanceButton } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst snackbar=own(enhanceSnackbar($('snackbar')));own(enhanceButton($('save')));scope.listen($('save'),'click',()=>{void snackbar.show({message:'Your idea was saved.',action:'Undo',dismissLabel:'Dismiss notification'});});\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "components/surfaces": {
+    "html": "<article data-eui=\"card\" data-variant=\"outlined\">\n<h2>Related ideas <span data-eui=\"badge\" data-eui-options='{\"value\":12,\"label\":\"12 unread messages\"}'></span></h2>\n<hr data-eui=\"divider\"><ul data-eui=\"list\"><li data-list-item>Expressive shapes</li><li data-list-item>Natural motion</li></ul>\n</article>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/switch": {
+    "html": "<label><span><input data-eui=\"switch\" type=\"checkbox\" checked></span> Notifications</label>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/tabs": {
+    "html": "<div data-eui=\"tabs\" data-label=\"Your library\">\n<button data-tab=\"ideas\">Ideas</button><button data-tab=\"saved\">Saved</button>\n</div>\n<section id=\"ideas\">Space for ideas.</section>\n<section id=\"saved\">Your favorites.</section>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/text-field": {
+    "html": "<span><input data-eui=\"text-field\" data-label=\"Your name\" placeholder=\"Alex\"></span>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/time-picker": {
+    "html": "<span><input data-eui=\"time-picker\" type=\"time\" aria-label=\"Time\"></span>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "components/tooltip": {
+    "html": "<button id=\"hint\" data-eui=\"button\">Hover or focus me</button>\n<div data-eui=\"tooltip\" data-anchor=\"#hint\">Your work is saved automatically.</div>",
+    "css": "body { margin: 24px; font: 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }",
+    "script": ""
+  },
+  "adapter-react/index:Button": {
+    "html": "<div id=\"example\"><button id=\"save\" type=\"button\">Save changes</button></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceButton } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceButton($('save'), {variant:'filled',size:'md'}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:Checkbox": {
+    "html": "<div id=\"example\"><label class=\"row\"><span><input id=\"accept\" type=\"checkbox\"></span>I agree to the terms</label></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceCheckbox } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceCheckbox($('accept')));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:Fab": {
+    "html": "<div id=\"example\"><button id=\"create\" type=\"button\" aria-label=\"Create document\"><span data-icon aria-hidden=\"true\">＋</span>Create</button></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceFab } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceFab($('create'), {extended:true,size:'regular'}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:IconButton": {
+    "html": "<div id=\"example\"><button id=\"favorite\" type=\"button\" aria-label=\"Favorite\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><path fill=\"currentColor\" d=\"m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z\"/></svg></button></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceIconButton } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceIconButton($('favorite'),{variant:'tonal',toggle:true}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:LoadingIndicator": {
+    "html": "<div id=\"example\"><div id=\"loading\"></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceLoadingIndicator } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceLoadingIndicator($('loading'),{label:'Loading your workspace',contained:true}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:Radio": {
+    "html": "<div id=\"example\"><fieldset><legend>Preferred plan</legend><label class=\"row\"><span><input type=\"radio\" name=\"plan\" value=\"free\" checked></span>Free</label><label class=\"row\"><span><input type=\"radio\" name=\"plan\" value=\"pro\"></span>Pro</label></fieldset></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceRadio } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\ntry {\nfor(const input of root.querySelectorAll('input')) own(enhanceRadio(input));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:Slider": {
+    "html": "<div id=\"example\"><label for=\"volume\">Volume</label><span><input id=\"volume\" type=\"range\" min=\"0\" max=\"100\" step=\"10\" value=\"40\"></span></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceSlider } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceSlider($('volume'),{showTicks:true}));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "adapter-react/index:Switch": {
+    "html": "<div id=\"example\"><label class=\"row\"><span><input id=\"notifications\" type=\"checkbox\" checked></span>Notifications</label></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceSwitch } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceSwitch($('notifications')));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "core/index": {
+    "html": "<div id=\"example\"><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createStore,detectCapabilities,observeViewport} = ExpressiveUI.core;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst store=createStore(0);const off=store.subscribe(value=>{$('output').textContent=JSON.stringify({value,capabilities:detectCapabilities()},null,2);});scope.add(off);store.set(1);const view=observeViewport(root,visible=>console.log({visible}));scope.add(()=>view.destroy());\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "core/viewport": {
+    "html": "<div id=\"example\"><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createStore,detectCapabilities,observeViewport} = ExpressiveUI.core;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst store=createStore(0);const off=store.subscribe(value=>{$('output').textContent=JSON.stringify({value,capabilities:detectCapabilities()},null,2);});scope.add(off);store.set(1);const view=observeViewport(root,visible=>console.log({visible}));scope.add(()=>view.destroy());\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "tokens/catalog": {
+    "html": "<div id=\"example\"><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {motionTokens,buttonTokens} = ExpressiveUI.tokens;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\n$('output').textContent=JSON.stringify({motion:motionTokens.expressive,button:buttonTokens.md},null,2);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "tokens/controls": {
+    "html": "<div id=\"example\"><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {motionTokens,buttonTokens} = ExpressiveUI.tokens;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\n$('output').textContent=JSON.stringify({motion:motionTokens.expressive,button:buttonTokens.md},null,2);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "tokens/index": {
+    "html": "<div id=\"example\"><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {motionTokens,buttonTokens} = ExpressiveUI.tokens;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\n$('output').textContent=JSON.stringify({motion:motionTokens.expressive,button:buttonTokens.md},null,2);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "shape/cubic": {
+    "html": "<div id=\"example\"><div id=\"shape\" class=\"shape\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createMorph,createShapeRenderer,cubicPathDiscontinuity} = ExpressiveUI.shape;\nconst {createSpring,motionPreset} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value);renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "shape/diagnostics": {
+    "html": "<div id=\"example\"><div id=\"shape\" class=\"shape\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createMorph,createShapeRenderer,cubicPathDiscontinuity} = ExpressiveUI.shape;\nconst {createSpring,motionPreset} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value);renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "shape/geometry": {
+    "html": "<div id=\"example\"><div id=\"shape\" class=\"shape\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createMorph,createShapeRenderer,cubicPathDiscontinuity} = ExpressiveUI.shape;\nconst {createSpring,motionPreset} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value);renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "shape/library": {
+    "html": "<div id=\"example\"><div id=\"shape\" class=\"shape\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createMorph,createShapeRenderer,cubicPathDiscontinuity} = ExpressiveUI.shape;\nconst {createSpring,motionPreset} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value);renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "shape/official-morph": {
+    "html": "<div id=\"example\"><div id=\"shape\" class=\"shape\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createMorph,createShapeRenderer,cubicPathDiscontinuity} = ExpressiveUI.shape;\nconst {createSpring,motionPreset} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value);renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "shape/renderer": {
+    "html": "<div id=\"example\"><div id=\"shape\" class=\"shape\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createMorph,createShapeRenderer,cubicPathDiscontinuity} = ExpressiveUI.shape;\nconst {createSpring,motionPreset} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value);renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/color": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/index": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/preference": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/runtime": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/scheduler": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/spring": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "motion/vector": {
+    "html": "<div id=\"example\"><div id=\"ball\" style=\"width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)\"></div><pre id=\"output\"></pre></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {createSpring,motionPreset,solveSpring} = ExpressiveUI.motion;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "theme/index": {
+    "html": "<div id=\"example\"><div id=\"palette\" class=\"row\"></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {generateTheme,createThemeController} = ExpressiveUI.theme;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst light=generateTheme({seed:'#157A6E',variant:'expressive'});const dark=generateTheme({seed:'#157A6E',variant:'expressive',dark:true});const theme=createThemeController(root,{light,dark},'light');scope.add(()=>theme.destroy());for(const role of ['primary','secondary','tertiary'] ){const swatch=document.createElement('div');swatch.textContent=role;swatch.style.cssText='padding:24px;border-radius:20px;background:'+light.colors[role]+';color:'+light.colors[('on'+role.charAt(0).toUpperCase()+role.slice(1)) ];$('palette').append(swatch);}\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "theme/presets": {
+    "html": "<div id=\"example\"><div id=\"palette\" class=\"row\"></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {generateTheme,createThemeController} = ExpressiveUI.theme;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst light=generateTheme({seed:'#157A6E',variant:'expressive'});const dark=generateTheme({seed:'#157A6E',variant:'expressive',dark:true});const theme=createThemeController(root,{light,dark},'light');scope.add(()=>theme.destroy());for(const role of ['primary','secondary','tertiary'] ){const swatch=document.createElement('div');swatch.textContent=role;swatch.style.cssText='padding:24px;border-radius:20px;background:'+light.colors[role]+';color:'+light.colors[('on'+role.charAt(0).toUpperCase()+role.slice(1)) ];$('palette').append(swatch);}\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "theme/runtime": {
+    "html": "<div id=\"example\"><div id=\"palette\" class=\"row\"></div></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst {generateTheme,createThemeController} = ExpressiveUI.theme;\n\nasync function mount(root){\nconst scope=new Scope();\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nconst light=generateTheme({seed:'#157A6E',variant:'expressive'});const dark=generateTheme({seed:'#157A6E',variant:'expressive',dark:true});const theme=createThemeController(root,{light,dark},'light');scope.add(()=>theme.destroy());for(const role of ['primary','secondary','tertiary'] ){const swatch=document.createElement('div');swatch.textContent=role;swatch.style.cssText='padding:24px;border-radius:20px;background:'+light.colors[role]+';color:'+light.colors[('on'+role.charAt(0).toUpperCase()+role.slice(1)) ];$('palette').append(swatch);}\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  },
+  "styles/variables": {
+    "html": "<div id=\"example\"><button type=\"button\" id=\"custom\">Your own expression</button></div>",
+    "css": "body { margin: 0; padding: 28px; font: 400 16px/1.5 var(--eui-font-family, sans-serif); background: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }\n.row { display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin:16px 0; }\n.stack { display:grid; gap:20px; max-width:460px; }\n.shape { position:relative; width:160px; height:160px; color:var(--md-sys-color-primary); }\npre { white-space:pre-wrap; overflow-wrap:anywhere; }\nbutton, input, textarea, select { font:inherit; }\n#custom { --eui-button-container:var(--md-sys-color-tertiary-container);--eui-button-color:var(--md-sys-color-on-tertiary-container);--eui-button-height:56px;--eui-button-radius:16px; }",
+    "script": "const {Scope} = ExpressiveUI.core;\nconst { enhanceButton } = ExpressiveUI.components;\n\nasync function mount(root){\nconst scope=new Scope();\nconst own=(controller)=>{scope.add(()=>controller.destroy());return controller;};\nconst $=(id)=>root.querySelector('#'+id);\ntry {\nown(enhanceButton($('custom')));\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}\nmount(document.getElementById(\"example\")).then(cleanup => {\n  addEventListener(\"pagehide\", cleanup, {once: true});\n}).catch(console.error);"
+  }
+}

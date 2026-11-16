@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Expressive UI CDN：引入 CSS 和 JS，原生 HTML 自动变成 Material 3 Expressive 组件。"
+    />
+    <title>Expressive UI · CDN</title>
+    <link rel="stylesheet" href="/cdn/expressive-ui.css" />
+    <script defer src="/cdn/expressive-ui.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="brand">✳ expressive <b>ui</b></a>
+      <nav aria-label="站点导航">
+        <a href="/api.html">API Studio ↗</a
+        ><a href="https://github.com/littlefish1145/ExpressiveUI">GitHub ↗</a>
+      </nav>
+    </header>
+    <main>
+      <p class="eyebrow">EXPRESSIVE UI / CDN</p>
+      <h1>加两行引用。<br />组件就能用了。</h1>
+      <p class="lead">
+        无需安装、构建或编写初始化代码。保留原生 HTML，添加 <code>data-eui</code> 即可。
+      </p>
+      <section aria-labelledby="quick-heading">
+        <div class="section-heading">
+          <h2 id="quick-heading">从一个按钮开始</h2>
+          <button data-eui="button" data-variant="tonal" id="copy-quick">复制代码</button>
+        </div>
+        <pre><code id="quick-code"></code></pre>
+        <div class="demo" aria-label="CDN 组件演示">
+          <button data-eui="button">Hello, Expressive UI</button>
+          <button data-eui="button" data-variant="tonal" data-eui-open="cdn-dialog">
+            打开弹窗
+          </button>
+          <label
+            ><span><input data-eui="switch" type="checkbox" checked /></span> 通知</label
+          >
+          <dialog data-eui="dialog" id="cdn-dialog" aria-labelledby="dialog-title">
+            <h2 id="dialog-title">就是这么简单。</h2>
+            <p>这个弹窗也通过 data-eui 自动初始化。</p>
+            <button data-eui="button" data-variant="text" data-eui-close>关闭</button>
+          </dialog>
+        </div>
+        <p id="copy-status" role="status"></p>
+      </section>
+      <section aria-labelledby="options-heading">
+        <p class="eyebrow">NATIVE HTML, SAME API</p>
+        <h2 id="options-heading">简单属性，熟悉的选项</h2>
+        <pre><code>&lt;button data-eui="button" data-variant="tonal" data-size="md"&gt;保存&lt;/button&gt;
+
+&lt;span&gt;&lt;input data-eui="text-field" data-label="你的名字"&gt;&lt;/span&gt;
+
+&lt;div data-eui="progress" data-label="上传进度"
+     data-eui-options='{"value":0.6,"wavy":true}'&gt;&lt;/div&gt;</code></pre>
+        <p>
+          <code>data-variant</code>、<code>data-size</code>、<code>data-label</code>
+          等常用属性可直接写。更多选项放入 <code>data-eui-options</code> JSON，名称与 npm API
+          一致。输入控件保留专用的 <code>&lt;span&gt;</code> 包装，文字放在包装之外。
+        </p>
+        <p>
+          自动初始化支持动态插入的元素，移除元素时会释放控制器。普通 HTML
+          事件和表单行为照常使用。每个元素只采用一种初始化方式。
+        </p>
+        <a class="studio-link" href="/api.html#/components/button?mode=cdn"
+          >在 API Studio 切换到「CDN HTML」，复制每个组件的完整示例 →</a
+        >
+      </section>
+      <section aria-labelledby="manual-heading">
+        <h2 id="manual-heading">需要更多控制时，直接调用 JS</h2>
+        <pre><code>&lt;button id="save"&gt;保存&lt;/button&gt;
+&lt;script&gt;
+  document.addEventListener('DOMContentLoaded', () =&gt; {
+    const button = ExpressiveUI.enhanceButton(document.querySelector('#save'), {
+      variant: 'filled', size: 'md'
+    });
+    // 卸载时调用 button.destroy()
+  });
+&lt;/script&gt;</code></pre>
+        <p>
+          所有原生组件均可通过 <code>ExpressiveUI.enhance…()</code> 使用。引擎分别位于
+          <code>ExpressiveUI.core</code
+          >、<code>.shape</code>、<code>.motion</code>、<code>.tokens</code>、<code>.theme</code>。对声明式组件，可用
+          <code>ExpressiveUI.getController(element)</code> 取得控制器。
+        </p>
+      </section>
+      <section aria-labelledby="files-heading">
+        <h2 id="files-heading">直接引用的文件</h2>
+        <div class="files">
+          <a href="/cdn/expressive-ui.js"
+            >expressive-ui.js <span>普通 script · 全部原生 API + 自动初始化</span></a
+          ><a href="/cdn/expressive-ui.css"
+            >expressive-ui.css <span>全部样式 · 内置主题与字体</span></a
+          ><a href="/cdn/expressive-ui.module.js"
+            >expressive-ui.module.js <span>ES Module · 相同导出</span></a
+          ><a href="/cdn/import-map.json"
+            >import-map.json <span>七个包与 React 的浏览器模块映射</span></a
+          >
+        </div>
+        <p>
+          也可从 <code>/cdn/components.js</code>、<code>/cdn/core.js</code>
+          等模块按包导入，函数名、参数和返回控制器与 npm 一致。React 适配器位于
+          <code>/cdn/adapter-react.js</code>；使用 import map 中配套的 React 模块，TSX 仍需转译。
+        </p>
+        <pre><code id="module-code"></code></pre>
+        <p>
+          这些地址随本站部署更新。JS、CSS、字体和按需加载的形状数据均托管在本站
+          Vercel，支持跨域引用。生产项目需固定内容时，可下载文件及其依赖自行托管。
+        </p>
+      </section>
+    </main>
+    <footer>
+      Expressive UI · Apache 2.0 <a href="/cdn/LICENSE">License</a> <a href="/cdn/NOTICE">Notice</a>
+    </footer>
+    <script type="module" src="/src/cdn/main.ts"></script>
+  </body>
+</html>

@@ -18,3 +18,4 @@ coverage
 .npmrc
 playground/public/api-runtime.js
 playground/public/api-runtime.css
+playground/public/cdn

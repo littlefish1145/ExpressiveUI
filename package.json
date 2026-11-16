@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "predev": "npm run prepare:playground",
-    "prepare:playground": "node scripts/generate-api.mjs && node scripts/build-preview.mjs",
+    "prepare:playground": "node scripts/generate-api.mjs && npm run build:cdn && node scripts/build-preview.mjs",
+    "build:cdn": "node scripts/build-cdn.mjs",
     "tokens": "node scripts/generate-tokens.mjs && node scripts/generate-control-tokens.mjs && node scripts/generate-catalog-tokens.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

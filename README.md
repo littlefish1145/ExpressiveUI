@@ -5,6 +5,8 @@
 
 ## 运行
 
+[CDN 直接引用](https://expressive-ui-green.vercel.app/cdn)：两行 CSS / JS 引用，添加 `data-eui="button"` 等属性即可使用，无需安装或初始化代码。API Studio 同步提供可编辑、下载的「CDN HTML」示例。更多选项、JS API、ESM 和 React 引用见 [CDN 文档](docs/cdn.md)。
+
 新增独立分页的[API Studio](http://127.0.0.1:4173/api.html#/components/button)：完整API、HTML/TS与React代码、在线编辑预览。使用说明和生成/构建命令见[API Studio文档](docs/api-studio.md)。
 
 Node.js 22.12+（本次使用24），npm11。首次运行：
@@ -14,7 +16,7 @@ npm ci
 npm run dev
 ```
 
-打开终端打印的本地地址（默认 [http://127.0.0.1:5173](http://127.0.0.1:5173)）。无需启动浏览器自动化。Playground 的八类组件全部使用本库。
+打开终端打印的本地地址（默认 [http://127.0.0.1:5173](http://127.0.0.1:5173)）。Playground 的基础演示和完整组件目录全部使用本库。
 
 ```sh
 npm run typecheck    # TypeScript strict
@@ -90,7 +92,7 @@ toggle.destroy();
 loading.destroy();
 ```
 
-语义元素由应用创建；不会扫描整页、自动注册 Custom Elements 或修改原生表单激活机制。图标按钮需要 `aria-label`，装饰图标应 `aria-hidden="true"`。Switch wrapper 只包裹 input；文字 label 放在 wrapper 外，防止扩大的透明 hit area 遮住其他内容。
+语义元素由应用创建；npm 包保留显式初始化，CDN 全局入口可自动扫描 `data-eui`。图标按钮需要 `aria-label`，装饰图标应 `aria-hidden="true"`。Switch wrapper 只包裹 input；文字 label 放在 wrapper 外，防止扩大的透明 hit area 遮住其他内容。
 
 ## 结构
 

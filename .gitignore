@@ -14,6 +14,7 @@ coverage/
 sites/
 playground/public/api-runtime.js
 playground/public/api-runtime.css
+playground/public/cdn/
 
 # Local configuration and logs
 .env

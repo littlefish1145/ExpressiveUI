@@ -48,8 +48,10 @@ export default defineConfig({
         main: fileURLToPath(new URL('./playground/index.html', import.meta.url)),
         stress: fileURLToPath(new URL('./playground/stress.html', import.meta.url)),
         api: fileURLToPath(new URL('./playground/api.html', import.meta.url)),
+        cdn: fileURLToPath(new URL('./playground/cdn.html', import.meta.url)),
       },
     },
   },
-  server: { fs: { allow: ['..'] } },
+  server: { fs: { allow: ['..'] }, headers: { 'Access-Control-Allow-Origin': '*' } },
+  preview: { headers: { 'Access-Control-Allow-Origin': '*' } },
 });

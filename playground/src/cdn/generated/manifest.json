@@ -1,0 +1,20 @@
+{
+  "imports": {
+    "@amiracle1024/core": "/cdn/core.js",
+    "@amiracle1024/tokens": "/cdn/tokens.js",
+    "@amiracle1024/shape": "/cdn/shape.js",
+    "@amiracle1024/shape/geometry": "/cdn/shape/geometry.js",
+    "@amiracle1024/shape/renderer": "/cdn/shape/renderer.js",
+    "@amiracle1024/shape/library": "/cdn/shape/library.js",
+    "@amiracle1024/motion": "/cdn/motion.js",
+    "@amiracle1024/theme": "/cdn/theme.js",
+    "@amiracle1024/theme/runtime": "/cdn/theme/runtime.js",
+    "@amiracle1024/components": "/cdn/components.js",
+    "@amiracle1024/adapter-react": "/cdn/adapter-react.js",
+    "react": "/cdn/react.js",
+    "react-dom/client": "/cdn/react-dom-client.js",
+    "react/jsx-runtime": "/cdn/react-jsx-runtime.js"
+  },
+  "stylesheet": "/cdn/expressive-ui.css",
+  "script": "/cdn/expressive-ui.js"
+}

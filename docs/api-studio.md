@@ -27,3 +27,7 @@ npm run preview            # 生产预览，默认4173
 修改库API后重新运行prepare或build，保证生成声明与预览运行时同步。常规构建在缺少`docs/references/sources.json`时使用现有Token快照并明确输出未重校验；`npm run tokens`仍是要求官方资料缓存的显式刷新命令。未把缓存缺失伪装成官方来源验证通过。
 
 本轮完成TypeScript strict、122份示例转译/类型编译、七包与Vite生产构建，以及HTTP资源可达性检查。遵守用户要求，没有运行浏览器自动化，也没有声称已实际验收所有浏览器中的在线编辑行为。
+
+## CDN HTML
+
+示例框架可切换为「CDN HTML」。该模式提供可独立保存为 `.html` 的完整页面，直接加载本站 CDN。简单组件使用 `data-eui` 自动初始化，复杂逻辑保留同名 JS API。编辑、复制、下载、运行和按页草稿均支持；CDN 预览实际加载发布的静态资源。完整说明见 [CDN](./cdn.md)。

@@ -3,12 +3,7 @@ import './studio.css';
 import index from './generated/index.json';
 import { Scope } from '@amiracle1024/core';
 import { createThemeController, generateTheme } from '@amiracle1024/theme';
-import {
-  enhanceButton,
-  enhanceSelect,
-  enhanceSwitch,
-  enhanceTabs,
-} from '@amiracle1024/components';
+import { enhanceButton, enhanceSelect, enhanceSwitch, enhanceTabs } from '@amiracle1024/components';
 import { EditorView, keymap } from '@codemirror/view';
 import { Compartment, EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
@@ -27,6 +22,7 @@ import { exampleFor } from './examples.js';
 import type { Example } from './examples.js';
 import type { ApiPage, ApiSymbol, Member } from './models.js';
 import { createPreview } from './preview.js';
+import { studioCdnExample } from '../cdn/studio.js';
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const scope = new Scope(),
   preview = createPreview(
@@ -107,8 +103,8 @@ function renderNav() {
 }
 let page: ApiPage | undefined,
   selected: ApiSymbol | undefined,
-  mode: 'html' | 'react' = 'html',
-  file: 'html' | 'ts' | 'react' | 'css' = 'ts';
+  mode: 'html' | 'react' | 'cdn' = 'html',
+  file: 'html' | 'ts' | 'react' | 'css' | 'cdn' = 'ts';
 let draft: Example | undefined,
   loadRequest = 0,
   runTimer: ReturnType<typeof setTimeout> | undefined,
@@ -152,12 +148,14 @@ const fileLanguages = {
   ts: () => javascript({ typescript: true }),
   react: () => javascript({ jsx: true, typescript: true }),
   css: () => cssLanguage(),
+  cdn: () => htmlLanguage(),
 } as const;
 const fileLabels = {
   html: 'HTML · 语义结构',
   ts: 'TypeScript · export mount(root)',
   react: 'React TSX · export default App',
   css: 'CSS · 只影响预览',
+  cdn: 'HTML · 直接引用 CDN · 保存为 .html 即可使用',
 } as const;
 function autoRunMaybe() {
   if ($<HTMLInputElement>('auto-run').checked) {
@@ -245,7 +243,7 @@ const editor = new EditorView({
 scope.add(() => editor.destroy());
 function loadEditor(fileKey: typeof file) {
   editor.dispatch({
-    changes: { from: 0, to: editor.state.doc.length, insert: draft![fileKey] },
+    changes: { from: 0, to: editor.state.doc.length, insert: draft![fileKey] ?? '' },
     effects: language.reconfigure(fileLanguages[fileKey]()),
   });
 }
@@ -254,20 +252,29 @@ function loadEditor(fileKey: typeof file) {
 /* File tabs rendered with enhanceTabs (spring indicator + ripple)      */
 /* ------------------------------------------------------------------ */
 let codeTabs: ReturnType<typeof enhanceTabs> | undefined,
-  codeTabsMode: 'html' | 'react' | '' = '';
+  codeTabsMode: 'html' | 'react' | 'cdn' | '' = '';
+const modeFile = () => (mode === 'cdn' ? 'cdn' : mode === 'react' ? 'react' : 'ts');
 function buildCodeTabs() {
   codeTabs?.destroy();
   const tabs = $('code-tabs');
   tabs.replaceChildren();
   for (const name of mode === 'html'
     ? (['html', 'ts', 'css'] as const)
-    : (['react', 'css'] as const)) {
+    : mode === 'cdn'
+      ? (['cdn'] as const)
+      : (['react', 'css'] as const)) {
     const button = document.createElement('button');
     button.type = 'button';
     button.dataset.tab = name;
     const label = document.createElement('span');
     label.dataset.label = '';
-    label.textContent = { html: 'HTML', ts: 'TypeScript', react: 'React TSX', css: 'CSS' }[name];
+    label.textContent = {
+      html: 'HTML',
+      ts: 'TypeScript',
+      react: 'React TSX',
+      css: 'CSS',
+      cdn: 'index.html',
+    }[name];
     button.append(label);
     if (name === file) button.setAttribute('aria-selected', 'true');
     tabs.append(button);
@@ -278,17 +285,27 @@ function buildCodeTabs() {
 function showFile(next: typeof file) {
   if (!draft) return;
   file = next;
+  if (mode === 'cdn') draft.cdn ??= studioCdnExample(page!.id, selected?.name);
   if (codeTabsMode !== mode) buildCodeTabs();
   codeTabs?.select(next);
   loadEditor(next);
   $('code-label').textContent = fileLabels[next];
   modeTabs.select(mode);
+  $<HTMLInputElement>('preview-seed').disabled = mode === 'cdn';
   $('api-example-note').textContent =
-    (mode === 'react' ? draft.reactKind + '。' : 'HTML + TypeScript 原生初始化。') + draft.notes;
+    mode === 'cdn'
+      ? '直接加载本站 CDN 的完整 HTML；可编辑、预览、复制或下载。简单组件使用 data-eui 自动初始化，复杂逻辑调用同名 JS API。'
+      : (mode === 'react' ? draft.reactKind + '。' : 'HTML + TypeScript 原生初始化。') +
+        draft.notes;
 }
 function run() {
   clearTimeout(runTimer);
   if (!draft) return;
+  if (mode === 'cdn') {
+    void preview.runDocument(draft.cdn ?? '');
+    $('code-state').textContent = '已提交 CDN HTML · Ctrl / ⌘ + Enter 重跑';
+    return;
+  }
   void preview.run({
     mode,
     source: mode === 'react' ? draft.react : draft.ts,
@@ -307,10 +324,10 @@ scope.listen($('code-tabs'), 'eui-change', (event) => {
   $('code-label').textContent = fileLabels[value];
 });
 scope.listen($('mode-tabs'), 'eui-change', (event) => {
-  const value = (event as CustomEvent<{ value: 'html' | 'react' }>).detail.value;
+  const value = (event as CustomEvent<{ value: 'html' | 'react' | 'cdn' }>).detail.value;
   if (!draft || !value) return;
   mode = value;
-  showFile(mode === 'react' ? 'react' : 'ts');
+  showFile(modeFile());
   run();
 });
 scope.listen($('api-search'), 'input', () => renderNav());
@@ -336,19 +353,26 @@ scope.listen($('reset-example'), 'click', () => {
   if (!page) return;
   draft = exampleFor(page.id, selected?.name);
   save();
-  showFile(mode === 'react' ? 'react' : 'ts');
+  showFile(modeFile());
   run();
 });
 scope.listen($('download-example'), 'click', () => {
   if (!draft || !page) return;
   const url = URL.createObjectURL(
-    new Blob([JSON.stringify({ page: page.id, mode, ...draft }, null, 2)], {
-      type: 'application/json',
-    }),
+    new Blob(
+      [
+        mode === 'cdn'
+          ? (draft.cdn ?? '')
+          : JSON.stringify({ page: page.id, mode, ...draft }, null, 2),
+      ],
+      {
+        type: mode === 'cdn' ? 'text/html' : 'application/json',
+      },
+    ),
   );
   const link = document.createElement('a');
   link.href = url;
-  link.download = page.id.replace('/', '-') + '-example.json';
+  link.download = page.id.replace('/', '-') + (mode === 'cdn' ? '-cdn.html' : '-example.json');
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 0);
 });
@@ -475,8 +499,8 @@ function renderReference(symbol: ApiSymbol, changeExample = false) {
       if (saved && ['html', 'ts', 'react', 'css'].every((key) => typeof saved[key] === 'string'))
         draft = { ...draft, ...saved };
     } catch {}
-    mode = 'react';
-    showFile('react');
+    if (mode !== 'cdn') mode = 'react';
+    showFile(modeFile());
     run();
   }
 }
@@ -554,7 +578,7 @@ async function navigate() {
       page.symbols.find((symbol) => symbol.kind === 'function') ??
       page.symbols[0];
     if (selected) symbols.value = selected.name;
-    if (page.package === 'adapter-react') mode = 'react';
+    if (page.package === 'adapter-react' && mode !== 'cdn') mode = 'react';
     draft = exampleFor(page.id, selected?.name);
     try {
       const saved = JSON.parse(localStorage.getItem(storageKey()) ?? 'null');
@@ -574,7 +598,7 @@ async function navigate() {
     $('api-declaration').textContent = page.declaration;
     renderNav();
     if (selected) renderReference(selected);
-    showFile(mode === 'react' ? 'react' : 'ts');
+    showFile(modeFile());
     $('api-main').scrollIntoView({ block: 'start', behavior: 'instant' });
     $('api-main').focus({ preventScroll: true });
     replaySections();

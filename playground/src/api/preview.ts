@@ -83,7 +83,11 @@ export function createPreview(
       post('run', payload);
       status.textContent = '正在挂载示例…';
     }
-    if (type === 'ready') status.textContent = '预览已运行 · 沙盒 iframe · 可直接交互';
+    if (type === 'ready')
+      status.textContent =
+        iframe?.title === 'CDN HTML 在线预览'
+          ? 'CDN 已加载 · 沙盒 iframe · 可直接交互'
+          : '预览已运行 · 沙盒 iframe · 可直接交互';
     if (type === 'resize' && iframe && typeof data === 'number' && Number.isFinite(data)) {
       iframe.style.height = `${Math.max(360, Math.min(800, data))}px`;
     }
@@ -124,6 +128,36 @@ export function createPreview(
     payload = undefined;
   }
   return {
+    async runDocument(html: string) {
+      ++active;
+      clear();
+      error.hidden = true;
+      error.textContent = '';
+      token = crypto.randomUUID();
+      iframe = document.createElement('iframe');
+      iframe.title = 'CDN HTML 在线预览';
+      iframe.sandbox.add('allow-scripts');
+      const host = location.origin;
+      const csp = `default-src 'none'; script-src 'unsafe-inline' ${host}; style-src 'unsafe-inline' ${host}; font-src ${host} data:; img-src data: blob: ${host}; connect-src ${host}; base-uri 'none'`;
+      const bridge = `<meta http-equiv="Content-Security-Policy" content="${csp}"><script>
+const send=(type,data)=>parent.postMessage({channel:'eui-preview',token:${literal(token)},type,data},${literal(host)});
+let failed=false;
+addEventListener('error',event=>{failed=true;send('error',event.message||'CDN 资源加载失败');},true);
+addEventListener('unhandledrejection',event=>{failed=true;send('error',String(event.reason));});
+addEventListener('eui-error',event=>{failed=true;send('error',String(event.detail.error));});
+for(const level of ['log','info','warn','error']){const original=console[level];console[level]=(...args)=>{original.apply(console,args);send('console',{level,text:args.map(String).join(' ')});};}
+addEventListener('load',()=>{
+ if(!failed)send('ready');
+ const observer=new ResizeObserver(()=>send('resize',document.body.getBoundingClientRect().height+56));
+ observer.observe(document.body);
+});
+</script>`;
+      iframe.srcdoc = /<head(?:\s[^>]*)?>/i.test(html)
+        ? html.replace(/<head(?:\s[^>]*)?>/i, (head) => head + bridge)
+        : bridge + html;
+      stage.append(iframe);
+      status.textContent = '正在加载 CDN JS 与 CSS…';
+    },
     async run(input: Omit<PreviewPayload, 'code'> & { source: string }) {
       const id = ++active;
       error.hidden = true;

@@ -1,4 +1,5 @@
 export interface Example {
+  cdn?: string;
   html: string;
   ts: string;
   react: string;
