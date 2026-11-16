@@ -322,17 +322,6 @@ export async function mountCatalog(parent: Scope) {
         }),
       ),
     );
-  const count = document.querySelector('.nav-count');
-  if (count) count.textContent = '37';
-  const link = document.createElement('a');
-  link.className = 'nav-item';
-  link.href = '#component-catalog';
-  link.textContent = '▦ Full catalog';
-  document.querySelector('.sidebar nav')?.append(link);
-  scope.add(() => {
-    link.remove();
-    if (count) count.textContent = '08';
-  });
   return {
     refreshSelects() {
       for (const select of selects) select.refresh();

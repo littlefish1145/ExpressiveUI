@@ -1,13 +1,15 @@
 import { defineConfig } from 'vite';
 import { fileURLToPath } from 'node:url';
 import { readFileSync } from 'node:fs';
+import { renderPlaygroundCatalog } from './scripts/playground-template.ts';
 const names = ['core', 'tokens', 'shape', 'motion', 'theme', 'components', 'adapter-react'];
 export default defineConfig({
   root: 'playground',
   plugins: [
     {
       name: 'static-component-catalog',
-      transformIndexHtml(html) {
+      transformIndexHtml(html, context) {
+        if (!/[\\/]playground[\\/]index\.html$/.test(context.filename)) return html;
         const catalog = readFileSync(
           new URL('./playground/src/catalog.html', import.meta.url),
           'utf8',
@@ -16,11 +18,7 @@ export default defineConfig({
           new URL('./playground/src/extensions.html', import.meta.url),
           'utf8',
         );
-        const content = catalog.replace(/<\/div>\s*$/, extensions + '</div>');
-        return html.replace(
-          '<!-- component-catalog -->',
-          `<section id="component-catalog" class="catalog-section">${content}</section>`,
-        );
+        return renderPlaygroundCatalog(html, catalog, extensions);
       },
     },
   ],

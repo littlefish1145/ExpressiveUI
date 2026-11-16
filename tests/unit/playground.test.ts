@@ -1,7 +1,12 @@
 import { it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
+import { renderPlaygroundCatalog } from '../../scripts/playground-template';
 it('mounts the real playground and supports seed, theme, backend and motion controls in DOM emulation', async () => {
-  const html = readFileSync('playground/index.html', 'utf8');
+  const html = renderPlaygroundCatalog(
+    readFileSync('playground/index.html', 'utf8'),
+    readFileSync('playground/src/catalog.html', 'utf8'),
+    readFileSync('playground/src/extensions.html', 'utf8'),
+  );
   const parsed = new DOMParser().parseFromString(html, 'text/html');
   for (const script of parsed.querySelectorAll('script')) script.remove();
   document.body.innerHTML = parsed.body.innerHTML;
