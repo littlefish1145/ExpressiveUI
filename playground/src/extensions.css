@@ -1,0 +1,134 @@
+@layer playground {
+  .catalog-table-filters {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+  }
+  .catalog-table-filters > .field {
+    min-width: 180px;
+  }
+  .extension-status-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 16px;
+    background: var(--md-sys-color-secondary-container);
+    color: var(--md-sys-color-on-secondary-container);
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .extension-status-pill[data-status='complete'] {
+    background: var(--md-sys-color-tertiary-container);
+    color: var(--md-sys-color-on-tertiary-container);
+  }
+  .extension-status-pill[data-status='review'] {
+    background: var(--md-sys-color-primary-container);
+    color: var(--md-sys-color-on-primary-container);
+  }
+  .extension-assist-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 8px 0;
+  }
+  .extension-assist-stack > div {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .extension-case-label {
+    font-size: 9px;
+    line-height: 16px;
+    letter-spacing: 1px;
+    font-weight: 500;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  .extension-banner-stage {
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 16px;
+    overflow: hidden;
+    background: var(--md-sys-color-surface);
+  }
+  .extension-banner-content {
+    padding: 24px;
+  }
+  .extension-banner-content > span {
+    font-size: 56px;
+    line-height: 1.2;
+    color: var(--md-sys-color-primary);
+  }
+  .extension-banner-content h4 {
+    font:
+      500 18px/26px 'Expressive Roboto',
+      sans-serif;
+    margin: 12px 0 8px;
+  }
+  .extension-banner-content p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 0;
+  }
+  .extension-banner-stage .eui-banner-content {
+    flex-wrap: wrap;
+    gap: 8px 12px;
+  }
+  .extension-banner-stage .eui-banner-message {
+    flex-basis: 180px;
+  }
+  .extension-banner-stage .eui-banner-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .extension-bar-controls {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .extension-bar-controls .field {
+    min-width: 170px;
+  }
+  .extension-bar-scroll {
+    height: 360px;
+    overflow: auto;
+    position: relative;
+    border: 1px solid var(--md-sys-color-outline-variant);
+    border-radius: 20px;
+    background: var(--md-sys-color-surface);
+    overscroll-behavior: contain;
+  }
+  .extension-bar-copy {
+    padding: 32px;
+    min-height: 640px;
+    background: var(--md-sys-color-surface-container-low);
+  }
+  .extension-bar-copy h4 {
+    font:
+      400 32px/40px 'Expressive Roboto',
+      sans-serif;
+    letter-spacing: -0.5px;
+    margin: 12px 0 16px;
+  }
+  .extension-bar-copy p {
+    max-width: 420px;
+    font-size: 13px;
+    line-height: 1.9;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  .extension-bar-art {
+    display: block;
+    font-size: 180px;
+    line-height: 1.5;
+    color: var(--md-sys-color-tertiary);
+    text-align: center;
+    margin: 12px 0 24px;
+  }
+  .field > .eui-select-trigger {
+    width: 100%;
+  }
+}

@@ -1,0 +1,733 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#f8f5ff" />
+    <meta
+      name="description"
+      content="Expressive UI — 原生 Web Material 3 Expressive 组件与形状、物理动效实验室。"
+    />
+    <title>Expressive UI · Design in motion</title>
+    <link
+      rel="preload"
+      href="../packages/components/src/fonts/Roboto-latin.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳至内容</a>
+    <aside class="sidebar">
+      <a href="#overview" class="brand" aria-label="Expressive UI 首页"
+        ><span class="brand-mark" aria-hidden="true">e<span>✳</span></span
+        ><span>expressive<span class="brand-ui">ui</span></span></a
+      >
+      <div class="nav-label">THE WORKSHOP</div>
+      <nav aria-label="主导航">
+        <a href="/api.html#/components/button" class="nav-item"
+          ><span aria-hidden="true">{ }</span> API Studio ↗</a
+        >
+        <a href="#overview" class="nav-item current"
+          ><span aria-hidden="true">◈</span> Overview <span class="nav-dot"></span
+        ></a>
+        <a href="#components" class="nav-item"
+          ><span aria-hidden="true">▦</span> Components <span class="nav-count">08</span></a
+        >
+        <a href="#shape-lab" class="nav-item"><span aria-hidden="true">✳</span> Shape lab</a>
+        <a href="#motion-lab" class="nav-item"><span aria-hidden="true">↝</span> Motion studio</a>
+        <a href="#foundations" class="nav-item"><span aria-hidden="true">◐</span> Foundations</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="tiny-orbit" aria-hidden="true">✳</span>
+        <p>Native to the web.<br />Made to feel alive.</p>
+        <span class="version">v0.1.0 · PREVIEW</span>
+      </div>
+      <a
+        class="source-link"
+        href="https://github.com/material-components/material-components-android"
+        target="_blank"
+        rel="noopener"
+        >Material source <span aria-hidden="true">↗</span></a
+      >
+    </aside>
+    <div class="app">
+      <header class="topbar">
+        <div class="breadcrumb">Library <span>/</span> <strong>Overview</strong></div>
+        <div class="topbar-right">
+          <span class="native-badge"><span></span> Framework free</span
+          ><label class="theme-toggle"
+            ><span id="mode-label">Light</span
+            ><span><input id="dark-mode" type="checkbox" aria-label="切换深色主题" /></span
+          ></label>
+        </div>
+      </header>
+      <main id="main">
+        <section class="motion-status" aria-label="动效运行状态">
+          <div>
+            <strong id="motion-status-title">Motion is ready</strong>
+            <p id="motion-status-detail">跟随系统的动态效果偏好。</p>
+          </div>
+          <label class="field"
+            >Animation preference<select id="motion-preference">
+              <option value="system">跟随系统偏好</option>
+              <option value="full">完整动效 · 演示预览</option>
+              <option value="reduced">减少动态效果</option>
+            </select></label
+          ><button type="button" id="enable-motion" data-demo-button data-variant="tonal">
+            完整动效预览 ↝
+          </button>
+        </section>
+        <section id="overview" class="hero">
+          <div class="hero-copy">
+            <span class="eyebrow"
+              ><span class="status-dot"></span> MATERIAL 3 EXPRESSIVE · FOR THE WEB</span
+            >
+            <h1>Good interfaces.<br /><span>Great feelings.</span></h1>
+            <p>有表现力的形状，自然的物理动效。<br />以原生 Web 构建，让每一次交互都有回应。</p>
+            <div class="hero-actions">
+              <button id="explore" type="button" data-demo-button data-size="md">
+                <span data-icon aria-hidden="true">↗</span> Explore the components</button
+              ><a href="#shape-lab" class="quiet-link"
+                >Play with shapes <span aria-hidden="true">→</span></a
+              >
+            </div>
+            <div class="hero-meta">
+              <span>Semantic HTML</span><span>Real springs</span><span>Official HCT color</span>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="art-grid"></div>
+            <span class="art-label">A LITTLE MORE<br />EXPRESSION.</span>
+            <div class="hero-shape" id="hero-shape"></div>
+            <span class="art-center">e<span>✳</span></span>
+            <div class="art-orbit"><span>01 / 35</span><span>SHAPES IN MOTION ↗</span></div>
+            <div class="art-chip">Built to move. <span>↝</span></div>
+            <div class="art-dot"></div>
+          </div>
+        </section>
+        <div class="section-heading" id="components">
+          <div>
+            <span class="eyebrow section-index">01 / THE COMPONENTS</span>
+            <h2>Small details. Big personality.</h2>
+          </div>
+          <span class="subtle">Eight essentials. One shared foundation.</span>
+        </div>
+        <section class="component-grid" aria-label="组件预览">
+          <article class="demo-card button-card">
+            <div class="card-heading">
+              <h3>Buttons</h3>
+              <span class="tag">EXPRESSIVE</span>
+            </div>
+            <p class="card-description">An invitation to do something.</p>
+            <div class="button-demo">
+              <button type="button" data-demo-button>
+                Let's go <span data-icon aria-hidden="true">↗</span></button
+              ><button type="button" data-demo-button data-variant="tonal">Make it yours</button
+              ><button type="button" data-demo-button data-variant="outlined">Take a look</button
+              ><button type="button" data-demo-button data-variant="text">Learn more →</button
+              ><button type="button" data-demo-button data-variant="elevated">A little lift</button
+              ><button type="button" data-demo-button disabled>Unavailable</button>
+            </div>
+            <div class="card-footer">
+              <span>5 variants · 5 sizes</span
+              ><button
+                type="button"
+                data-demo-button
+                data-variant="text"
+                class="details-button"
+                data-focus="button-sizes"
+                aria-label="查看按钮尺寸"
+              >
+                ↗
+              </button>
+            </div>
+          </article>
+          <article class="demo-card fab-card">
+            <div class="card-heading">
+              <h3>Floating action</h3>
+              <span class="tag">BASELINE + EXPRESSIVE</span>
+            </div>
+            <p class="card-description">Give your primary action a place.</p>
+            <div class="fab-demo">
+              <button type="button" data-demo-fab data-size="small" aria-label="添加">
+                <span data-icon aria-hidden="true">＋</span></button
+              ><button type="button" data-demo-fab aria-label="创建">
+                <span data-icon aria-hidden="true">＋</span></button
+              ><button type="button" data-demo-fab data-size="large" aria-label="新建项目">
+                <span data-icon aria-hidden="true">＋</span>
+              </button>
+            </div>
+            <div class="fab-extended">
+              <button type="button" data-demo-fab data-extended="true">
+                <span data-icon aria-hidden="true">✎</span> Create something
+              </button>
+            </div>
+            <div class="card-footer">
+              <span>Small to large. Always within reach.</span><span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="demo-card switch-card">
+            <div class="card-heading">
+              <h3>Switches</h3>
+              <span class="tag muted-tag">BASELINE</span>
+            </div>
+            <p class="card-description">A considered change of state.</p>
+            <div class="switch-demo">
+              <label class="switch-row" for="switch-demo"
+                ><span
+                  ><strong>A little expression</strong
+                  ><small>Let your interface come alive</small></span
+                ><span
+                  ><input
+                    id="switch-demo"
+                    type="checkbox"
+                    checked
+                    aria-label="启用表现力动效" /></span></label
+              ><label class="switch-row" for="switch-notification"
+                ><span
+                  ><strong>Stay in the loop</strong
+                  ><small>Updates, only when you want them</small></span
+                ><span
+                  ><input
+                    id="switch-notification"
+                    type="checkbox"
+                    aria-label="接收更新" /></span></label
+              ><label class="switch-row" for="switch-disabled"
+                ><span><strong>Taking a break</strong><small>Disabled state</small></span
+                ><span
+                  ><input
+                    id="switch-disabled"
+                    type="checkbox"
+                    disabled
+                    aria-label="禁用的开关" /></span
+              ></label>
+            </div>
+            <div class="card-footer">
+              <span>Native form. Spring-driven thumb.</span><span aria-hidden="true">↗</span>
+            </div>
+          </article>
+          <article class="demo-card loading-card">
+            <div class="card-heading">
+              <h3>Loading indicators</h3>
+              <span class="tag">EXPRESSIVE</span>
+            </div>
+            <p class="card-description">Even waiting can have character.</p>
+            <div class="loading-demo">
+              <div class="loading-cell">
+                <div id="loading-bare" data-loading></div>
+                <span>Uncontained</span>
+              </div>
+              <div class="loading-cell">
+                <div id="loading-contained" data-loading data-contained="true"></div>
+                <span>Contained</span>
+              </div>
+              <div class="loading-cell big-loader">
+                <div id="loading-large" data-loading data-contained="true"></div>
+                <span>A little louder</span>
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>7 official shapes · 1 continuous loop</span
+              ><span class="live-indicator"><span></span> LIVE</span>
+            </div>
+          </article>
+        </section>
+        <section class="component-grid extended-grid" aria-label="更多组件">
+          <article class="demo-card icon-button-card">
+            <div class="card-heading">
+              <h3>Icon buttons</h3>
+              <span class="tag">EXPRESSIVE</span>
+            </div>
+            <p class="card-description">Small actions. A shape that responds.</p>
+            <div class="icon-variant-row">
+              <div>
+                <button
+                  type="button"
+                  data-icon-button
+                  data-variant="standard"
+                  data-toggle="true"
+                  aria-label="收藏"
+                >
+                  <span data-icon aria-hidden="true"
+                    ><svg viewBox="0 0 24 24">
+                      <path
+                        d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"
+                      /></svg
+                  ></span></button
+                ><small>Standard</small>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  data-icon-button
+                  data-variant="filled"
+                  data-toggle="true"
+                  data-selected="true"
+                  aria-label="喜欢"
+                >
+                  <span data-icon aria-hidden="true"
+                    ><svg viewBox="0 0 24 24">
+                      <path d="M12 21 3.3 12.4A5.8 5.8 0 0 1 12 4.7a5.8 5.8 0 0 1 8.7 7.7Z" /></svg
+                  ></span></button
+                ><small>Filled</small>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  data-icon-button
+                  data-variant="tonal"
+                  data-toggle="true"
+                  aria-label="加入书签"
+                >
+                  <span data-icon aria-hidden="true"
+                    ><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4Z" /></svg
+                  ></span></button
+                ><small>Tonal</small>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  data-icon-button
+                  data-variant="outlined"
+                  data-toggle="true"
+                  data-shape="square"
+                  aria-label="播放"
+                >
+                  <span data-icon aria-hidden="true"
+                    ><svg viewBox="0 0 24 24"><path d="M8 4v16l13-8Z" /></svg
+                  ></span></button
+                ><small>Outlined</small>
+              </div>
+              <div>
+                <button type="button" data-icon-button disabled aria-label="不可用">
+                  <span data-icon aria-hidden="true">＋</span></button
+                ><small>Disabled</small>
+              </div>
+            </div>
+            <div class="icon-size-row">
+              <button
+                type="button"
+                data-icon-button
+                data-variant="tonal"
+                data-size="xs"
+                aria-label="超小尺寸"
+              >
+                <span data-icon aria-hidden="true">＋</span></button
+              ><button
+                type="button"
+                data-icon-button
+                data-variant="tonal"
+                data-size="md"
+                data-width="wide"
+                aria-label="中号宽形"
+              >
+                <span data-icon aria-hidden="true">＋</span></button
+              ><button
+                type="button"
+                data-icon-button
+                data-variant="filled"
+                data-size="lg"
+                data-shape="square"
+                aria-label="大号方形"
+              >
+                <span data-icon aria-hidden="true">＋</span>
+              </button>
+            </div>
+            <div class="card-footer">
+              <span>Toggle the action. Watch the corners.</span><span>32–136 px</span>
+            </div>
+          </article>
+          <article class="demo-card checkbox-card">
+            <div class="card-heading">
+              <h3>Checkboxes</h3>
+              <span class="tag muted-tag">BASELINE</span>
+            </div>
+            <p class="card-description">One choice. Several choices. Somewhere in between.</p>
+            <fieldset id="checkbox-group" class="choice-group">
+              <legend class="sr-only">选择要同步的内容</legend>
+              <label class="choice-row"
+                ><span
+                  ><input type="checkbox" data-checkbox data-mixed="true" id="checkbox-all" /></span
+                ><span
+                  ><strong>Sync everything</strong
+                  ><small>Mixed state reflects the choices below</small></span
+                ></label
+              >
+              <label class="choice-row"
+                ><span
+                  ><input
+                    type="checkbox"
+                    data-checkbox
+                    id="checkbox-design"
+                    name="sync"
+                    value="design"
+                    checked /></span
+                ><span>Design preferences</span></label
+              >
+              <label class="choice-row"
+                ><span
+                  ><input
+                    type="checkbox"
+                    data-checkbox
+                    id="checkbox-motion"
+                    name="sync"
+                    value="motion" /></span
+                ><span>Motion settings</span></label
+              >
+              <label class="choice-row"
+                ><span
+                  ><input
+                    type="checkbox"
+                    data-checkbox
+                    disabled
+                    checked
+                    aria-label="禁用的已选选项" /></span
+                ><span>Managed by your workspace</span></label
+              >
+            </fieldset>
+            <div class="card-footer">
+              <span>Native mixed state · real form values</span><span aria-hidden="true">✓</span>
+            </div>
+          </article>
+          <article class="demo-card radio-card">
+            <div class="card-heading">
+              <h3>Radio buttons</h3>
+              <span class="tag muted-tag">BASELINE</span>
+            </div>
+            <p class="card-description">The right amount of expression.</p>
+            <fieldset class="choice-group">
+              <legend class="sr-only">选择表现力偏好</legend>
+              <label class="choice-row"
+                ><span><input type="radio" data-radio name="expression-demo" value="subtle" /></span
+                ><span
+                  ><strong>Keep it subtle</strong
+                  ><small>A little movement goes a long way</small></span
+                ></label
+              >
+              <label class="choice-row"
+                ><span
+                  ><input
+                    type="radio"
+                    data-radio
+                    name="expression-demo"
+                    value="balanced"
+                    checked /></span
+                ><span
+                  ><strong>Find the balance</strong
+                  ><small>Expressive, thoughtfully applied</small></span
+                ></label
+              >
+              <label class="choice-row"
+                ><span><input type="radio" data-radio name="expression-demo" value="bold" /></span
+                ><span
+                  ><strong>Go a little bolder</strong
+                  ><small>Let the important moments stand out</small></span
+                ></label
+              >
+              <label class="choice-row"
+                ><span
+                  ><input
+                    type="radio"
+                    data-radio
+                    name="expression-demo"
+                    value="managed"
+                    disabled /></span
+                ><span>Managed preference</span></label
+              >
+            </fieldset>
+            <div class="card-footer">
+              <span>One group · keyboard arrows · native semantics</span
+              ><span aria-hidden="true">◉</span>
+            </div>
+          </article>
+          <article class="demo-card slider-card">
+            <div class="card-heading">
+              <h3>Sliders</h3>
+              <span class="tag">UPDATED M3</span>
+            </div>
+            <p class="card-description">Find your own sweet spot.</p>
+            <div class="slider-demo">
+              <label for="slider-volume" class="slider-label"
+                >A little louder <output id="volume-value">60%</output></label
+              >
+              <div>
+                <input
+                  type="range"
+                  data-slider
+                  id="slider-volume"
+                  min="0"
+                  max="100"
+                  value="60"
+                  step="any"
+                />
+              </div>
+              <label for="slider-steps" class="slider-label"
+                >Take it step by step <output id="steps-value">40</output></label
+              >
+              <div>
+                <input
+                  type="range"
+                  data-slider
+                  id="slider-steps"
+                  min="0"
+                  max="100"
+                  value="40"
+                  step="20"
+                />
+              </div>
+              <label for="slider-disabled" class="slider-label"
+                >On pause <span>Disabled</span></label
+              >
+              <div>
+                <input
+                  type="range"
+                  data-slider
+                  id="slider-disabled"
+                  min="0"
+                  max="100"
+                  value="30"
+                  step="any"
+                  disabled
+                />
+              </div>
+            </div>
+            <div class="card-footer">
+              <span>Continuous + discrete · 44 px handle</span><span aria-hidden="true">↔</span>
+            </div>
+          </article>
+        </section>
+        <section id="button-sizes" class="size-strip" aria-label="按钮尺寸">
+          <div>
+            <span class="eyebrow">FIND YOUR SCALE</span>
+            <h3>A size for every moment.</h3>
+          </div>
+          <div class="size-buttons">
+            <button type="button" data-demo-button data-size="xs">XS</button
+            ><button type="button" data-demo-button data-size="sm">Small</button
+            ><button type="button" data-demo-button data-size="md">Medium</button
+            ><button type="button" data-demo-button data-size="lg" data-shape="square">Large</button
+            ><button type="button" data-demo-button data-size="xl">XL</button>
+          </div>
+        </section>
+        <div id="component-catalog" hidden></div>
+        <div class="section-heading" id="shape-lab">
+          <div>
+            <span class="eyebrow section-index">02 / THE SHAPE LAB</span>
+            <h2>There’s more than one way to be.</h2>
+          </div>
+          <span class="subtle">Same geometry. Every backend.</span>
+        </div>
+        <section class="lab-grid">
+          <div class="morph-preview">
+            <div class="preview-top">
+              <span class="pill-label">INTERACTIVE CANVAS · DOM + SVG</span
+              ><span id="backend-status">SVG PATH</span>
+            </div>
+            <div id="morph-stage"><div id="morph-shape"></div></div>
+            <div class="preview-bottom">
+              <span id="shape-caption">circle → softBurst</span
+              ><span id="progress-label">0.000</span>
+            </div>
+          </div>
+          <div class="lab-controls">
+            <div class="card-heading">
+              <h3>Make a change.</h3>
+              <span aria-hidden="true">↝</span>
+            </div>
+            <p class="card-description">35 official outlines. Endless combinations.</p>
+            <div class="field-pair">
+              <label class="field"
+                >From<select id="shape-from" aria-label="起始形状"></select></label
+              ><label class="field">To<select id="shape-to" aria-label="目标形状"></select></label>
+            </div>
+            <label class="field"
+              >Rendering backend<select id="backend">
+                <option value="svg">SVG path · recommended</option>
+                <option value="clip-path">CSS clip-path polygon</option>
+                <option value="css-shape">CSS shape()</option>
+                <option value="svg-clip">SVG clipPath</option>
+                <option value="svg-mask">SVG mask</option>
+              </select></label
+            ><label class="field range-label"
+              >Morph progress <output id="scrub-output">0%</output
+              ><input id="scrub" type="range" min="0" max="1" value="0" step=".001" /></label
+            ><label class="field range-label"
+              >Aspect ratio <output id="ratio-output">1 : 1</output
+              ><input id="aspect" type="range" min=".6" max="2" value="1" step=".1"
+            /></label>
+            <div class="control-actions">
+              <button id="morph-action" type="button" data-demo-button>
+                Morph it <span data-icon aria-hidden="true">↝</span></button
+              ><button id="swap-shapes" type="button" data-demo-button data-variant="tonal">
+                Swap ↔
+              </button>
+            </div>
+            <p class="lab-note">
+              对齐轮廓起点和方向，再沿真实弹簧轨迹插值。非方形布局保留同一套归一化几何。
+            </p>
+          </div>
+        </section>
+        <div class="section-heading" id="motion-lab">
+          <div>
+            <span class="eyebrow section-index">03 / MOTION STUDIO</span>
+            <h2>Feel the physics.</h2>
+          </div>
+          <div class="control-actions">
+            <button id="pause-all" type="button" data-demo-button data-variant="outlined">
+              Pause</button
+            ><button id="replay-all" type="button" data-demo-button data-variant="tonal">
+              Replay ↻
+            </button>
+          </div>
+        </div>
+        <section class="motion-panel">
+          <div class="spring-viz">
+            <div class="plot-heading">
+              <span>DISPLACEMENT / TIME</span
+              ><span id="motion-description">EXPRESSIVE · FAST SPATIAL</span>
+            </div>
+            <svg
+              id="spring-plot"
+              viewBox="0 0 600 180"
+              role="img"
+              aria-label="当前弹簧的位移随时间曲线"
+            >
+              <path
+                class="plot-grid"
+                d="M0 30H600M0 90H600M0 150H600M100 0V180M200 0V180M300 0V180M400 0V180M500 0V180"
+              />
+              <path class="plot-target" d="M0 50H600" />
+              <path id="plot-line" />
+            </svg>
+            <div class="plot-axis">
+              <span>0 ms</span><span id="settle-time">settling time</span>
+            </div>
+          </div>
+          <div class="spring-controls">
+            <label class="field"
+              >Motion scheme<select id="motion-scheme">
+                <option value="expressive">Expressive</option>
+                <option value="standard">Standard</option>
+              </select></label
+            ><label class="field"
+              >Motion token<select id="motion-token">
+                <option value="fast.spatial">Fast · spatial</option>
+                <option value="default.spatial">Default · spatial</option>
+                <option value="slow.spatial">Slow · spatial</option>
+                <option value="fast.effects">Fast · effects</option>
+                <option value="default.effects">Default · effects</option>
+                <option value="slow.effects">Slow · effects</option>
+              </select></label
+            ><label class="field range-label"
+              >Stiffness <output id="stiffness-output">800</output
+              ><input
+                id="stiffness"
+                type="range"
+                min="50"
+                max="4000"
+                value="800"
+                step="10" /></label
+            ><label class="field range-label"
+              >Damping ratio <output id="damping-output">0.60</output
+              ><input id="damping" type="range" min=".1" max="2" value=".6" step=".01" /></label
+            ><label class="field range-label"
+              >Initial velocity <output id="velocity-output">0.0</output
+              ><input id="velocity" type="range" min="-10" max="10" value="0" step=".1"
+            /></label>
+          </div>
+        </section>
+        <div class="section-heading" id="foundations">
+          <div>
+            <span class="eyebrow section-index">04 / FOUNDATIONS</span>
+            <h2>Make it your own.</h2>
+          </div>
+          <span class="subtle">A seed. A whole world of color.</span>
+        </div>
+        <section class="theme-panel">
+          <div class="preset-heading">
+            <div>
+              <h3>Pick a different mood.</h3>
+              <p>八组种子配色，所有组件同步切换。明暗模式与对比度独立保留。</p>
+            </div>
+            <span class="tag">OFFICIAL HCT ALGORITHM</span>
+          </div>
+          <div id="theme-presets" class="theme-presets" role="group" aria-label="配色预设"></div>
+          <div class="theme-inputs">
+            <label class="seed-field"
+              >Seed color
+              <span
+                ><input type="color" id="seed" value="#6750a4" /><output id="seed-value"
+                  >#6750A4</output
+                ></span
+              ></label
+            ><label class="field"
+              >Color variant<select id="color-variant">
+                <option value="tonal-spot">Tonal spot</option>
+                <option value="expressive">Expressive</option>
+                <option value="vibrant">Vibrant</option>
+                <option value="neutral">Neutral</option>
+                <option value="monochrome">Monochrome</option>
+                <option value="fidelity">Fidelity</option>
+                <option value="content">Content</option>
+                <option value="rainbow">Rainbow</option>
+                <option value="fruit-salad">Fruit salad</option>
+              </select></label
+            ><label class="field"
+              >Contrast<select id="contrast">
+                <option value="0">Standard · 0</option>
+                <option value=".5">Medium · +0.5</option>
+                <option value="1">High · +1</option>
+                <option value="-1">Reduced · −1</option>
+              </select></label
+            >
+          </div>
+          <div id="swatches" class="swatches"></div>
+        </section>
+        <details class="capability-panel">
+          <summary>
+            <span>Under the surface</span
+            ><span class="subtle">Browser capabilities & implementation notes</span
+            ><span aria-hidden="true">＋</span>
+          </summary>
+          <div class="capability-body">
+            <div id="capabilities"></div>
+            <p>
+              功能检测仅代表语法或 API 存在，不能排除渲染问题。默认使用 SVG path。Switch 属于
+              Baseline；按钮、加载指示器和新增 FAB 尺寸使用 Expressive 来源。阴影与部分交互映射仍是
+              Web 暂定实现。
+            </p>
+            <p>低对比度模式不保证 WCAG AA。当前环境没有执行浏览器兼容性或视觉回归测试。</p>
+          </div>
+        </details>
+        <section class="capability-panel" aria-labelledby="quality-heading">
+          <div class="capability-body">
+            <h2 id="quality-heading">质量与可访问性</h2>
+            <p><a href="/stress.html">打开形变、跨引擎采样与 100 组件压力实验</a></p>
+            <button id="audit-accessibility" type="button" data-demo-button>
+              检查此页可访问性
+            </button>
+            <p id="audit-status" role="status">
+              按需加载 axe-core；检查结果不等同于完整 WCAG 验收。
+            </p>
+            <pre
+              id="audit-result"
+              hidden
+              tabindex="0"
+              aria-label="可访问性检查结果"
+              role="region"
+            ></pre>
+          </div>
+        </section>
+        <footer>
+          <span class="footer-brand">expressive ui <span>✳</span></span
+          ><span>Thoughtful by design. Expressive by nature.</span
+          ><span>Apache 2.0 · Built with itself</span>
+        </footer>
+      </main>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

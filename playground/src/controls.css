@@ -1,0 +1,204 @@
+@layer playground {
+  .motion-status {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    margin-bottom: 28px;
+    padding: 18px 22px;
+    background: var(--md-sys-color-surface-container);
+    border-radius: 20px;
+  }
+  .motion-status strong {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .motion-status p {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 6px 0 0;
+    max-width: 430px;
+  }
+  .motion-status .field {
+    min-width: 170px;
+  }
+  @media (max-width: 1000px) {
+    .motion-status {
+      flex-wrap: wrap;
+    }
+    .motion-status > div {
+      width: 100%;
+    }
+  }
+  .extended-grid {
+    margin-top: 18px;
+  }
+  .choice-group {
+    border: 0;
+    padding: 0;
+    margin: 0 0 12px;
+    min-width: 0;
+  }
+  .choice-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 48px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .choice-row strong {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+  }
+  .choice-row small {
+    display: block;
+    font-size: 10px;
+    margin-top: 4px;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+  }
+  .icon-variant-row {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 24px;
+  }
+  .icon-variant-row > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .icon-variant-row small {
+    font-size: 9px;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  .icon-size-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    margin: 4px 0 24px;
+  }
+  .slider-demo {
+    padding-block: 14px 10px;
+  }
+  .slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    align-items: center;
+    margin: 8px 0 2px;
+  }
+  .slider-label output,
+  .slider-label > span {
+    font-size: 10px;
+    font-family: ui-monospace, monospace;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  .slider-card,
+  .radio-card {
+    min-height: 330px;
+  }
+  .lab-range {
+    display: block;
+    width: 100%;
+  }
+  .range-label .lab-range {
+    margin-block: 2px 8px;
+  }
+  .preset-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .preset-heading p {
+    font-size: 11px;
+    line-height: 1.8;
+    color: var(--md-sys-color-on-surface-variant);
+    margin: 8px 0 0;
+  }
+  .theme-presets {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .preset-card {
+    --eui-button-height: 104px;
+    --eui-button-padding: 12px;
+    --eui-button-radius: 18px;
+    --eui-button-pressed-radius: 14px;
+    --eui-button-font-size: 10px;
+    min-width: 0;
+  }
+  .preset-card > .eui-content {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    width: 100%;
+  }
+  .preset-colors {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+  }
+  .preset-colors > span {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+  }
+  .preset-colors > span:first-child {
+    border-radius: 10px;
+    transform: rotate(-10deg);
+  }
+  .preset-colors > span:last-child {
+    border-radius: 8px 50% 50%;
+    transform: rotate(15deg);
+  }
+  .preset-name {
+    white-space: nowrap;
+    font-size: 10px;
+  }
+  @media (max-width: 1000px) {
+    .preset-colors > span {
+      width: 25px;
+      height: 25px;
+    }
+    .theme-presets {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .preset-heading > .tag {
+      display: none;
+    }
+  }
+  @media (max-width: 700px) {
+    .theme-presets {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .preset-colors > span {
+      width: 32px;
+      height: 32px;
+    }
+    .icon-size-row {
+      gap: 24px;
+    }
+  }
+}

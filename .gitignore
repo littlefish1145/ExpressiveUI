@@ -1,0 +1,23 @@
+node_modules/
+dist/
+packages/*/dist/
+test-results/
+playwright-report/
+.cache/
+coverage/
+*.tsbuildinfo
+
+# Local debugging and hosting state
+.debug-ui/
+.openai/
+sites/
+playground/public/api-runtime.js
+playground/public/api-runtime.css
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+Thumbs.db

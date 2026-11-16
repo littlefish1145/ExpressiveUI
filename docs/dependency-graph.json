@@ -1,0 +1,23 @@
+{
+  "core": [],
+  "tokens": [],
+  "shape": [
+    "core"
+  ],
+  "motion": [
+    "core",
+    "tokens"
+  ],
+  "theme": [
+    "core"
+  ],
+  "components": [
+    "core",
+    "tokens",
+    "shape",
+    "motion"
+  ],
+  "adapter-react": [
+    "components"
+  ]
+}

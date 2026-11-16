@@ -1,0 +1,113 @@
+<article data-extension-card class="demo-card catalog-wide">
+  <div class="card-heading">
+    <h3>Data table</h3>
+    <span class="tag">M3 THEMED · EXTENSION</span>
+  </div>
+  <p class="card-description">A clear view of the details. Sort, select and turn the page.</p>
+  <div class="catalog-table-filters">
+    <label class="field"
+      >Project status<select id="extension-table-filter">
+        <option value="all">All projects</option>
+        <option value="In progress">In progress</option>
+        <option value="Review">In review</option>
+        <option value="Complete">Complete</option>
+      </select></label
+    ><button type="button" id="extension-clear-selection">Clear selection</button>
+  </div>
+  <div id="extension-table"></div>
+  <p class="catalog-note" id="extension-table-status" role="status">
+    Click a column heading to sort. Selection persists across pages.
+  </p>
+</article>
+<article data-extension-card class="demo-card">
+  <div class="card-heading">
+    <h3>Assist chips</h3>
+    <span class="tag">BASELINE</span>
+  </div>
+  <p class="card-description">An action that helps you move forward.</p>
+  <div class="extension-assist-stack">
+    <div>
+      <span class="extension-case-label">FLAT · WITH ICON</span
+      ><button type="button" id="extension-assist-calendar">
+        <span data-icon aria-hidden="true">▦</span><span data-assist-label>Add to calendar</span>
+      </button>
+    </div>
+    <div>
+      <span class="extension-case-label">ELEVATED</span
+      ><button type="button" id="extension-assist-directions">
+        <span data-icon aria-hidden="true">↗</span>Get directions
+      </button>
+    </div>
+    <div>
+      <span class="extension-case-label">DISABLED</span
+      ><button type="button" id="extension-assist-disabled" disabled>
+        <span data-icon aria-hidden="true">✦</span>Unavailable action
+      </button>
+    </div>
+  </div>
+  <p class="catalog-note" id="extension-assist-status" role="status">
+    Assist chips trigger actions; they do not toggle a filter.
+  </p>
+</article>
+<article data-extension-card class="demo-card">
+  <div class="card-heading">
+    <h3>Banner</h3>
+    <span class="tag">M3 THEMED · EXTENSION</span>
+  </div>
+  <p class="card-description">Persistent context, with a clear next step.</p>
+  <div class="extension-banner-stage">
+    <div id="extension-banner"></div>
+    <div class="extension-banner-content">
+      <span aria-hidden="true">↻</span>
+      <h4>Keep your flow.</h4>
+      <p>A banner stays in the page until you act or dismiss it.</p>
+    </div>
+  </div>
+  <div class="catalog-row">
+    <button type="button" id="extension-show-banner">Show banner</button>
+  </div>
+</article>
+<article data-extension-card class="demo-card catalog-wide">
+  <div class="card-heading">
+    <h3>Flexible top app bars</h3>
+    <span class="tag">BASELINE + EXPRESSIVE</span>
+  </div>
+  <p class="card-description">Centered when it matters. Flexible when you need more room.</p>
+  <div class="extension-bar-controls">
+    <label class="field"
+      >Variant<select id="extension-bar-variant">
+        <option value="small">Small</option>
+        <option value="center-aligned">Center-aligned</option>
+        <option value="medium">Medium</option>
+        <option value="medium-flex" selected>Medium flexible</option>
+        <option value="large">Large</option>
+        <option value="large-flex">Large flexible</option>
+      </select></label
+    ><label class="field"
+      >Title alignment<select id="extension-bar-align">
+        <option value="start">Start</option>
+        <option value="center">Center</option>
+      </select></label
+    >
+  </div>
+  <div class="extension-bar-scroll" id="extension-bar-scroll">
+    <header id="extension-bar">
+      <button type="button" data-navigation aria-label="返回">←</button
+      ><span data-title>Your next chapter.</span
+      ><span data-actions
+        ><button type="button" aria-label="收藏">♡</button
+        ><button type="button" aria-label="更多">⋮</button></span
+      >
+    </header>
+    <div class="extension-bar-copy">
+      <span class="extension-case-label">A LITTLE SPACE FOR POSSIBILITY</span>
+      <h4>Let the content<br />take the lead.</h4>
+      <p>
+        Scroll this panel. The title, subtitle and height move together; navigation and actions stay
+        within reach.
+      </p>
+      <span class="extension-bar-art" aria-hidden="true">✳</span>
+      <p>Small · Center-aligned · Medium · Medium flexible · Large · Large flexible</p>
+    </div>
+  </div>
+</article>

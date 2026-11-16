@@ -1,0 +1,20 @@
+import {readFile,writeFile,mkdir,cp,rm,realpath} from 'node:fs/promises';
+import {resolve,dirname,sep} from 'node:path';
+const workspace=await realpath(process.cwd());
+const site=resolve(workspace,'sites/expressive-ui-studio');
+const destination=resolve(site,'dist');
+const source=resolve(workspace,'dist/playground');
+if(!site.startsWith(workspace+sep)||dirname(destination)!==site)throw Error('Invalid deployment destination');
+const hosting=JSON.parse(await readFile(resolve(workspace,'.openai/hosting.json'),'utf8'));
+if(!hosting.project_id)throw Error('Missing persisted Sites identity');
+for(const file of ['index.html','api.html','stress.html','api-runtime.js','api-runtime.css'])await readFile(resolve(source,file));
+await mkdir(resolve(site,'.openai'),{recursive:true});
+await writeFile(resolve(site,'.openai/hosting.json'),JSON.stringify({...hosting,static:{directory:'dist'}},null,2)+'\n');
+// Only the verified generated output directory is replaced; source and Git metadata stay intact.
+await rm(destination,{recursive:true,force:true});
+await cp(source,destination,{recursive:true});
+await cp(resolve(workspace,'LICENSE'),resolve(destination,'LICENSE'));
+await cp(resolve(workspace,'NOTICE'),resolve(destination,'NOTICE'));
+await cp(resolve(workspace,'packages/components/src/fonts/OFL.txt'),resolve(destination,'OFL.txt'));
+await writeFile(resolve(site,'README.md'),'# Expressive UI hosting snapshot\n\nStatic production output of the local expressive-ui monorepo. Includes the component showcase, API Studio and stress experiments.\n\nRegenerate locally with npm run build:code, then node scripts/stage-site.mjs. This checkout is used only for Sites source synchronization and packaging; edit the monorepo source, not generated assets.\n');
+console.log(JSON.stringify({site,staticDirectory:destination,project_id:hosting.project_id}));

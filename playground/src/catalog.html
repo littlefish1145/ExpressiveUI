@@ -1,0 +1,380 @@
+<div class="section-heading">
+  <div>
+    <span class="eyebrow section-index">THE COMPLETE WORKBENCH</span>
+    <h2>Build the whole experience.</h2>
+  </div>
+  <span class="subtle">Inputs, navigation, feedback &amp; everything in between.</span>
+</div>
+<div class="catalog-grid">
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Text fields</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">A little guidance for every word.</p>
+    <div class="catalog-stack">
+      <span
+        ><input
+          id="catalog-name"
+          aria-label="Your name"
+          name="name"
+          autocomplete="name"
+          value="Alex Morgan"
+          maxlength="40" /></span
+      ><span
+        ><input
+          id="catalog-email"
+          aria-label="Email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="alex@example.com" /></span
+      ><span>
+        <textarea
+          id="catalog-notes"
+          name="notes"
+          rows="2"
+          aria-label="An idea worth keeping"
+        ></textarea></span
+      ><button type="button" data-catalog-button id="catalog-field-error">
+        Toggle error state
+      </button>
+    </div>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Chips</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">Small choices, useful context.</p>
+    <div id="catalog-chips" class="catalog-wrap">
+      <button type="button" id="catalog-assist">✦ Add to calendar</button
+      ><button type="button" data-filter-chip>Design</button
+      ><button type="button" data-filter-chip>Motion</button
+      ><button type="button" id="catalog-input-chip" aria-label="Alex，按Delete移除">Alex ×</button
+      ><button type="button" id="catalog-suggestion">Try something new</button>
+    </div>
+    <p class="catalog-note" id="catalog-chip-status" role="status">
+      选择筛选条件，或用 Delete 移除 Input Chip。
+    </p>
+    <h4>Segmented buttons</h4>
+    <div id="catalog-segments">
+      <button type="button" data-value="day">Day</button
+      ><button type="button" data-value="week">Week</button
+      ><button type="button" data-value="month">Month</button>
+    </div>
+    <p class="catalog-note" id="catalog-segment-status" role="status">View: day</p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Tabs</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">One place, a few different perspectives.</p>
+    <div id="catalog-tabs">
+      <button type="button" data-tab="catalog-tab-create"><span data-label>Create</span></button
+      ><button type="button" data-tab="catalog-tab-discover">
+        <span data-label>Discover</span></button
+      ><button type="button" data-tab="catalog-tab-saved"><span data-label>Saved</span></button>
+    </div>
+    <div class="catalog-tab-content">
+      <section id="catalog-tab-create">
+        <span class="catalog-art" aria-hidden="true">✳</span>
+        <h4>Make room for an idea.</h4>
+        <p>Arrow keys move and activate a tab. Every panel stays connected to its label.</p>
+      </section>
+      <section id="catalog-tab-discover">
+        <span class="catalog-art" aria-hidden="true">◈</span>
+        <h4>Find your next favorite.</h4>
+        <p>Selected indicator and content follow the same navigation state.</p>
+      </section>
+      <section id="catalog-tab-saved">
+        <span class="catalog-art" aria-hidden="true">♡</span>
+        <h4>The good stuff, kept close.</h4>
+        <p>Native focus and accessible tab relationships.</p>
+      </section>
+    </div>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Navigation</h3>
+      <span class="tag">BASELINE + EXPRESSIVE</span>
+    </div>
+    <p class="card-description">A familiar path to somewhere new.</p>
+    <nav id="catalog-nav-bar" aria-label="演示导航">
+      <button type="button" data-nav-item="home">
+        <span data-icon aria-hidden="true">⌂</span><span data-label>Home</span></button
+      ><button type="button" data-nav-item="explore">
+        <span data-icon aria-hidden="true">◈</span><span data-label>Explore</span></button
+      ><button type="button" data-nav-item="saved">
+        <span data-icon aria-hidden="true">♡</span><span data-label>Saved</span>
+      </button>
+    </nav>
+    <div class="catalog-row">
+      <button type="button" data-catalog-button id="catalog-drawer-open">Open drawer</button
+      ><button type="button" data-catalog-button id="catalog-rail-expand">Expand rail</button>
+    </div>
+    <div class="catalog-rail-demo">
+      <nav id="catalog-nav-rail" aria-label="演示侧栏">
+        <button type="button" data-nav-item="inbox">
+          <span data-icon aria-hidden="true">✉</span><span data-label>Inbox</span></button
+        ><button type="button" data-nav-item="library">
+          <span data-icon aria-hidden="true">▤</span><span data-label>Library</span>
+        </button>
+      </nav>
+      <p class="catalog-note">Rail adapts between collapsed and expanded states.</p>
+    </div>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Dialogs &amp; sheets</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">The right space for a focused decision.</p>
+    <div class="catalog-overlay-art" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="catalog-wrap">
+      <button type="button" data-catalog-button id="catalog-dialog-open">Open dialog</button
+      ><button type="button" data-catalog-button id="catalog-bottom-open">Bottom sheet</button
+      ><button type="button" data-catalog-button id="catalog-side-open">Side sheet</button>
+    </div>
+    <p class="catalog-note">
+      Escape to dismiss. Focus returns to the action that brought you here.
+    </p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Menus &amp; tooltips</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">Useful actions, right where you need them.</p>
+    <div class="catalog-wrap">
+      <button type="button" data-catalog-button id="catalog-menu-anchor">Sort options</button
+      ><button type="button" data-catalog-button id="catalog-tooltip-anchor">
+        Hover or focus me
+      </button>
+    </div>
+    <h4>Split button</h4>
+    <div id="catalog-split">
+      <button type="button">Send message</button
+      ><button type="button" aria-label="更多发送方式">⌄</button>
+    </div>
+    <p class="catalog-note" id="catalog-menu-status" role="status">
+      Use arrows and typeahead to find an action.
+    </p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Progress</h3>
+      <span class="tag">BASELINE + EXPRESSIVE</span>
+    </div>
+    <p class="card-description">Let the wait tell its story.</p>
+    <div class="catalog-progress-row">
+      <div id="catalog-progress-circular"></div>
+      <div id="catalog-progress-wave"></div>
+      <div id="catalog-progress-indeterminate"></div>
+    </div>
+    <div class="catalog-stack">
+      <div id="catalog-progress-linear"></div>
+      <div id="catalog-progress-linear-wave"></div>
+    </div>
+    <div class="catalog-row">
+      <button type="button" data-catalog-button id="catalog-progress-step">Advance +20%</button
+      ><button type="button" data-catalog-button id="catalog-progress-pause">Pause / resume</button>
+    </div>
+    <p class="catalog-note" id="catalog-progress-status" role="status">Upload: 40%</p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Snackbar &amp; badges</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">A short update, without losing your place.</p>
+    <div class="catalog-badges">
+      <span>Inbox <span id="catalog-badge-count"></span></span
+      ><span>Updates <span id="catalog-badge-dot" role="img" aria-label="有新更新"></span></span>
+    </div>
+    <div class="catalog-wrap">
+      <button type="button" data-catalog-button id="catalog-snack-open">Save &amp; undo</button
+      ><button type="button" data-catalog-button id="catalog-snack-queue">Queue messages</button>
+    </div>
+    <p class="catalog-note" id="catalog-snack-status" role="status">
+      Messages queue in order; hover or focus pauses the timeout.
+    </p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Date &amp; time</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">Pick a moment worth making.</p>
+    <div class="catalog-picker-fields">
+      <label for="catalog-date">A day for your idea</label>
+      <div><input id="catalog-date" type="date" value="2026-11-14" /></div>
+      <label for="catalog-time">Set a time</label>
+      <div><input id="catalog-time" type="time" value="14:30" /></div>
+      <label for="catalog-date-start">A little more time</label>
+      <div>
+        <input id="catalog-date-start" type="date" value="2026-11-14" aria-label="开始日期" /><span
+          aria-hidden="true"
+          >—</span
+        ><input id="catalog-date-end" type="date" value="2026-11-18" aria-label="结束日期" />
+      </div>
+    </div>
+    <p class="catalog-note">
+      Calendar keyboard navigation, date ranges, 12/24-hour dial and keyboard entry.
+    </p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Cards, lists &amp; dividers</h3>
+      <span class="tag">BASELINE + EXPRESSIVE</span>
+    </div>
+    <p class="card-description">Give related things a little room.</p>
+    <article id="catalog-card">
+      <h4>Design with a little feeling.</h4>
+      <p>Cards keep the context together.</p>
+      <span id="catalog-divider"></span>
+      <ul id="catalog-list">
+        <li data-list-item>
+          <span aria-hidden="true">✳</span
+          ><span>Expressive shapes<span data-supporting>35 shapes, one shared engine</span></span>
+        </li>
+        <li data-list-item>
+          <span aria-hidden="true">↝</span
+          ><span>Natural motion<span data-supporting>Interruptible physical springs</span></span>
+        </li>
+      </ul>
+    </article>
+  </article>
+  <article class="demo-card catalog-wide">
+    <div class="card-heading">
+      <h3>Carousel</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">A collection that invites you to explore.</p>
+    <div id="catalog-carousel">
+      <article data-carousel-item class="catalog-slide">
+        <span aria-hidden="true">✳</span>
+        <h4>Make something.</h4>
+      </article>
+      <article data-carousel-item class="catalog-slide">
+        <span aria-hidden="true">◈</span>
+        <h4>Try a new angle.</h4>
+      </article>
+      <article data-carousel-item class="catalog-slide">
+        <span aria-hidden="true">♡</span>
+        <h4>Keep it close.</h4>
+      </article>
+      <article data-carousel-item class="catalog-slide">
+        <span aria-hidden="true">✦</span>
+        <h4>Go a little further.</h4>
+      </article>
+    </div>
+    <div class="catalog-row">
+      <button type="button" data-catalog-button id="catalog-carousel-prev">← Previous</button
+      ><button type="button" data-catalog-button id="catalog-carousel-next">Next →</button>
+    </div>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Search</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">Find the next thing that matters.</p>
+    <form id="catalog-search" role="search">
+      <span aria-hidden="true">⌕</span
+      ><input
+        type="search"
+        aria-label="Search components"
+        name="q"
+        placeholder="Try shapes, motion, color…"
+        autocomplete="off"
+      />
+    </form>
+    <p class="catalog-note" id="catalog-search-status" role="status">
+      Supports IME, async cancellation and keyboard suggestions.
+    </p>
+    <div class="catalog-search-art" aria-hidden="true">
+      ⌕<span>There’s something<br />good to discover.</span>
+    </div>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Button groups &amp; toolbars</h3>
+      <span class="tag">EXPRESSIVE</span>
+    </div>
+    <p class="card-description">Better together.</p>
+    <div id="catalog-button-group">
+      <button type="button" data-value="play">Play</button
+      ><button type="button" data-value="shuffle">Shuffle</button
+      ><button type="button" data-value="repeat">Repeat</button>
+    </div>
+    <h4>A floating toolkit</h4>
+    <div id="catalog-toolbar">
+      <button type="button" data-catalog-icon aria-label="画笔">✎</button
+      ><button type="button" data-catalog-icon aria-label="颜色">◐</button
+      ><button type="button" data-catalog-icon aria-label="撤销">↶</button>
+    </div>
+    <p class="catalog-note">
+      Connected corners respond to press and selection. Arrow keys move through tools.
+    </p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>FAB menu</h3>
+      <span class="tag">EXPRESSIVE</span>
+    </div>
+    <p class="card-description">One action opens up possibilities.</p>
+    <div class="catalog-fab-stage">
+      <span aria-hidden="true">Make your next move.</span
+      ><button type="button" id="catalog-fab-anchor" aria-label="打开创建菜单">
+        <span data-icon aria-hidden="true">＋</span>
+      </button>
+    </div>
+    <p class="catalog-note" id="catalog-fab-status" role="status">
+      Open the FAB to choose a creation action.
+    </p>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>Range &amp; vertical sliders</h3>
+      <span class="tag">UPDATED TRACK</span>
+    </div>
+    <p class="card-description">Choose a range. Find your level.</p>
+    <label id="catalog-range-label">Your ideal range</label
+    ><span id="catalog-range"
+      ><input type="range" min="0" max="100" value="20" aria-label="最小值" /><input
+        type="range"
+        min="0"
+        max="100"
+        value="75"
+        aria-label="最大值"
+    /></span>
+    <div class="catalog-vertical-row">
+      <span id="catalog-vertical"
+        ><input type="range" min="0" max="100" step="any" value="60" aria-label="垂直音量"
+      /></span>
+      <p class="catalog-note">
+        Independent native form values, keyboard control and direct manipulation.
+      </p>
+    </div>
+  </article>
+  <article class="demo-card">
+    <div class="card-heading">
+      <h3>App bars</h3>
+      <span class="tag">BASELINE</span>
+    </div>
+    <p class="card-description">Context that stays within reach.</p>
+    <div class="catalog-app-scroller" id="catalog-app-scroll">
+      <header id="catalog-app-bar"><span data-title>A little perspective.</span></header>
+      <div class="catalog-app-copy">
+        <h4>Scroll to make room.</h4>
+        <p>The large title collapses as content moves, keeping the page’s identity close.</p>
+        <span aria-hidden="true">✳</span>
+        <p>More space for what matters.</p>
+      </div>
+    </div>
+  </article>
+</div>

@@ -1,0 +1,42 @@
+/* Generated; dp mapped to CSS px. */
+:root {
+  --md-ref-button-xs-height: 32px;
+  --md-ref-button-xs-padding: 16px;
+  --md-ref-button-xs-icon: 20px;
+  --md-ref-button-xs-gap: 8px;
+  --md-ref-button-xs-outline: 1px;
+  --md-ref-button-xs-square: 12px;
+  --md-ref-button-xs-pressed: 8px;
+  --md-ref-button-sm-height: 40px;
+  --md-ref-button-sm-padding: 16px;
+  --md-ref-button-sm-icon: 20px;
+  --md-ref-button-sm-gap: 8px;
+  --md-ref-button-sm-outline: 1px;
+  --md-ref-button-sm-square: 12px;
+  --md-ref-button-sm-pressed: 8px;
+  --md-ref-button-md-height: 56px;
+  --md-ref-button-md-padding: 24px;
+  --md-ref-button-md-icon: 24px;
+  --md-ref-button-md-gap: 8px;
+  --md-ref-button-md-outline: 1px;
+  --md-ref-button-md-square: 16px;
+  --md-ref-button-md-pressed: 12px;
+  --md-ref-button-lg-height: 96px;
+  --md-ref-button-lg-padding: 48px;
+  --md-ref-button-lg-icon: 32px;
+  --md-ref-button-lg-gap: 12px;
+  --md-ref-button-lg-outline: 2px;
+  --md-ref-button-lg-square: 28px;
+  --md-ref-button-lg-pressed: 16px;
+  --md-ref-button-xl-height: 136px;
+  --md-ref-button-xl-padding: 64px;
+  --md-ref-button-xl-icon: 40px;
+  --md-ref-button-xl-gap: 16px;
+  --md-ref-button-xl-outline: 3px;
+  --md-ref-button-xl-square: 28px;
+  --md-ref-button-xl-pressed: 16px;
+  --md-sys-shape-corner-small: 8px;
+  --md-sys-shape-corner-medium: 12px;
+  --md-sys-shape-corner-large: 16px;
+  --md-sys-shape-corner-extra-large: 28px;
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Expressive UI · 稳定性实验</title>
+  </head>
+  <body>
+    <main class="stress-main">
+      <a href="/">← 返回组件演示</a>
+      <h1>形变与运动实验</h1>
+      <p>
+        所有检查由你点击启动。本页使用实际 Shape / Motion / Loading
+        引擎；不会自动操作浏览器或调整窗口。
+      </p>
+      <div class="stress-controls">
+        <label for="browser-label">本次引擎标签</label
+        ><select id="browser-label">
+          <option>Chrome / Blink</option>
+          <option>Firefox / Gecko</option>
+          <option>Safari / WebKit</option></select
+        ><label for="duration">压力运行时长</label
+        ><select id="duration">
+          <option value="60">1 分钟</option>
+          <option value="300" selected>5 分钟</option>
+          <option value="600">10 分钟</option>
+        </select>
+      </div>
+      <div class="stress-controls">
+        <button id="reverse" type="button">快速反向 100 次</button
+        ><button id="redirect" type="button">30% 重定向并改变容器尺寸</button
+        ><button id="load" type="button">启动 100 个 Loading</button
+        ><button id="trace" type="button">采样 JS / WAAPI 轨迹</button
+        ><button id="stop" type="button">停止并释放</button
+        ><button id="export" type="button">导出本次 JSON</button>
+      </div>
+      <p id="status" role="status">未运行。Reduced Motion 将照常生效，报告会记录该状态。</p>
+      <div id="shape-stage"><div id="shape"></div></div>
+      <div id="load-stage" aria-label="100 个加载动画压力区"></div>
+      <pre id="result" tabindex="0" aria-label="实验报告"></pre>
+      <h2>比较不同浏览器</h2>
+      <p>
+        分别导出轨迹 JSON，在这里选择至少两个文件。固定时间点的 JS 求解和 WAAPI
+        计算样式分别记录；时钟与采样方式不同，不将主线程测量伪装成合成线程性能。
+      </p>
+      <label for="compare">选择轨迹报告</label
+      ><input id="compare" type="file" accept="application/json,.json" multiple />
+      <pre id="comparison" tabindex="0" aria-label="轨迹比较结果"></pre>
+    </main>
+    <script type="module" src="/src/stress.ts"></script>
+  </body>
+</html>

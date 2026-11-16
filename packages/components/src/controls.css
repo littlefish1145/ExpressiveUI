@@ -1,0 +1,357 @@
+@layer expressive-ui.controls {
+  .eui-icon-button {
+    height: var(--eui-icon-button-height, var(--_icon-height, 40px));
+    width: calc(var(--_icon-size, 24px) + var(--_icon-padding, 8px) * 2);
+    min-width: 0;
+    padding: 0;
+    --eui-button-icon-size: var(--_icon-size, 24px);
+    --eui-button-outline-width: var(--_icon-outline, 1px);
+  }
+  .eui-icon-button::before {
+    width: max(100%, 48px);
+    height: max(100%, 48px);
+    min-height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .eui-icon-button[data-shape='square'] {
+    border-radius: var(--_icon-square, 12px);
+  }
+  .eui-icon-button[data-variant='standard'] {
+    --_bg: transparent;
+    --_fg: var(--md-sys-color-on-surface-variant);
+  }
+  .eui-icon-button[data-selected='false'][data-variant='filled'] {
+    --_bg: var(--md-sys-color-surface-container);
+    --_fg: var(--md-sys-color-on-surface-variant);
+  }
+  .eui-icon-button[data-selected='true'][data-variant='standard'] {
+    --_bg: transparent;
+    --_fg: var(--md-sys-color-primary);
+  }
+  .eui-icon-button[data-selected='true'][data-variant='tonal'] {
+    --_bg: var(--md-sys-color-secondary);
+    --_fg: var(--md-sys-color-on-secondary);
+  }
+  .eui-icon-button:disabled,
+  .eui-icon-button[data-selected]:disabled {
+    --_fg: var(--md-sys-color-on-surface);
+    --_bg: var(--md-sys-color-on-surface);
+  }
+  .eui-icon-button[data-variant='standard']:disabled > .eui-surface {
+    opacity: 0;
+  }
+  .eui-icon-button[data-variant='tonal']:disabled > .eui-surface {
+    opacity: 0.1;
+  }
+  .eui-icon-button[data-selected='true'][data-variant='outlined']:disabled > .eui-surface {
+    opacity: 0.1;
+  }
+  .eui-icon-button[data-selected='true'][data-variant='outlined'] > .eui-surface path {
+    fill: currentColor;
+  }
+  .eui-choice {
+    position: relative;
+    display: inline-flex;
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    flex: none;
+    touch-action: manipulation;
+  }
+  .eui-checkbox-input,
+  .eui-radio-input {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    width: 48px;
+    height: 48px;
+    opacity: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .eui-checkbox-input:disabled,
+  .eui-radio-input:disabled {
+    cursor: default;
+  }
+  .eui-choice-visual {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    pointer-events: none;
+    border-radius: 50%;
+    color: var(--md-sys-color-on-surface-variant);
+  }
+  .eui-choice-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: currentColor;
+    opacity: 0;
+  }
+  .eui-checkbox-visual > svg {
+    width: 18px;
+    height: 18px;
+    overflow: visible;
+  }
+  .eui-radio-visual > svg {
+    width: 20px;
+    height: 20px;
+    overflow: visible;
+  }
+  .eui-checkbox-fill {
+    fill: var(--eui-checkbox-color, var(--md-sys-color-primary));
+  }
+  .eui-checkbox-outline {
+    stroke: var(--eui-checkbox-outline, var(--md-sys-color-on-surface-variant));
+  }
+  .eui-checkbox-mark {
+    stroke: var(--md-sys-color-on-primary);
+  }
+  .eui-checkbox-input:is(:checked, :indeterminate) + .eui-choice-visual,
+  .eui-radio-input:checked + .eui-choice-visual {
+    color: var(--md-sys-color-primary);
+  }
+  .eui-radio-ring {
+    stroke: currentColor;
+  }
+  .eui-radio-dot {
+    fill: currentColor;
+  }
+  .eui-checkbox-input:focus-visible + .eui-choice-visual,
+  .eui-radio-input:focus-visible + .eui-choice-visual {
+    outline: 3px solid var(--eui-focus-color, var(--md-sys-color-secondary));
+    outline-offset: 1px;
+  }
+  .eui-checkbox-input:not(:disabled):focus-visible + .eui-choice-visual::before,
+  .eui-radio-input:not(:disabled):focus-visible + .eui-choice-visual::before {
+    opacity: 0.1;
+  }
+  .eui-checkbox-input:not(:disabled):active + .eui-choice-visual::before,
+  .eui-radio-input:not(:disabled):active + .eui-choice-visual::before {
+    opacity: 0.1;
+  }
+  .eui-checkbox-input:not(:disabled):is(:active, :focus-visible) + .eui-choice-visual {
+    --eui-checkbox-outline: var(--md-sys-color-on-surface);
+  }
+  .eui-radio-input:not(:disabled):not(:checked):is(:active, :focus-visible) + .eui-choice-visual {
+    color: var(--md-sys-color-on-surface);
+  }
+  @media (hover: hover) {
+    .eui-checkbox-input:not(:disabled):hover + .eui-choice-visual::before,
+    .eui-radio-input:not(:disabled):hover + .eui-choice-visual::before {
+      opacity: 0.08;
+    }
+    .eui-checkbox-input:not(:disabled):hover + .eui-choice-visual {
+      --eui-checkbox-outline: var(--md-sys-color-on-surface);
+    }
+    .eui-radio-input:not(:disabled):not(:checked):hover + .eui-choice-visual {
+      color: var(--md-sys-color-on-surface);
+    }
+  }
+  .eui-checkbox-input[aria-invalid='true'] + .eui-choice-visual {
+    color: var(--md-sys-color-error);
+    --eui-checkbox-color: var(--md-sys-color-error);
+    --eui-checkbox-outline: var(--md-sys-color-error);
+  }
+  .eui-checkbox-input[aria-invalid='true'] + .eui-choice-visual .eui-checkbox-mark {
+    stroke: var(--md-sys-color-on-error);
+  }
+  .eui-checkbox-input:disabled + .eui-choice-visual {
+    --eui-checkbox-color: var(--md-sys-color-on-surface);
+    --eui-checkbox-outline: var(--md-sys-color-on-surface);
+  }
+  .eui-checkbox-input:disabled + .eui-choice-visual .eui-checkbox-mark {
+    stroke: var(--md-sys-color-surface);
+  }
+  .eui-radio-input:disabled + .eui-choice-visual {
+    color: var(--md-sys-color-on-surface);
+  }
+  .eui-radio-input:disabled + .eui-choice-visual > svg {
+    opacity: 0.38;
+  }
+  .eui-slider {
+    position: relative;
+    display: block;
+    min-width: 48px;
+    width: 100%;
+    height: 48px;
+    touch-action: pan-y;
+  }
+  .eui-slider-input {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    background: transparent;
+    color: transparent;
+    opacity: 0;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 48px;
+    cursor: pointer;
+    direction: inherit;
+    touch-action: pan-y;
+  }
+  .eui-slider-input::-webkit-slider-runnable-track {
+    height: 16px;
+    background: transparent;
+    border: 0;
+  }
+  .eui-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 4px;
+    height: 44px;
+    margin-top: -14px;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .eui-slider-input::-moz-range-track {
+    height: 16px;
+    background: transparent;
+    border: 0;
+  }
+  .eui-slider-input::-moz-range-progress {
+    background: transparent;
+  }
+  .eui-slider-input::-moz-range-thumb {
+    width: 4px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: transparent;
+    box-shadow: none;
+  }
+  .eui-slider-input:disabled {
+    cursor: default;
+  }
+  .eui-slider-visual {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+  .eui-slider-visual > svg {
+    display: block;
+    width: 100%;
+    height: 48px;
+    overflow: visible;
+  }
+  .eui-slider-active {
+    fill: var(--eui-slider-active-track, var(--md-sys-color-primary));
+  }
+  .eui-slider-inactive {
+    fill: var(--eui-slider-inactive-track, var(--md-sys-color-secondary-container));
+  }
+  .eui-slider-active-tick {
+    fill: var(--md-sys-color-secondary-container);
+  }
+  .eui-slider-inactive-tick,
+  .eui-slider-stop {
+    fill: var(--md-sys-color-primary);
+  }
+  .eui-slider-handle {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 4px;
+    height: 44px;
+    background: var(--eui-slider-handle, var(--md-sys-color-primary));
+    border-radius: 999px;
+    transform-origin: center;
+  }
+  .eui-slider-value {
+    position: absolute;
+    bottom: calc(100% + 12px);
+    transform: translateX(-50%);
+    padding: 10px 14px;
+    border-radius: 24px;
+    background: var(--md-sys-color-inverse-surface);
+    color: var(--md-sys-color-inverse-on-surface);
+    font-family: var(--eui-font-family, Roboto, Arial, sans-serif);
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.1px;
+    white-space: nowrap;
+    visibility: hidden;
+  }
+  .eui-slider-value[data-visible='true'] {
+    visibility: visible;
+  }
+  .eui-slider-input:focus-visible + .eui-slider-visual > .eui-slider-handle {
+    outline: 3px solid var(--eui-focus-color, var(--md-sys-color-secondary));
+    outline-offset: 4px;
+  }
+  .eui-slider-input:disabled + .eui-slider-visual .eui-slider-active {
+    fill: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+  }
+  .eui-slider-input:disabled + .eui-slider-visual .eui-slider-inactive {
+    fill: var(--md-sys-color-on-surface);
+    opacity: 0.12;
+  }
+  .eui-slider-input:disabled + .eui-slider-visual .eui-slider-active-tick {
+    fill: var(--md-sys-color-on-surface);
+    opacity: 0.12;
+  }
+  .eui-slider-input:disabled + .eui-slider-visual .eui-slider-inactive-tick,
+  .eui-slider-input:disabled + .eui-slider-visual .eui-slider-stop {
+    fill: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+  }
+  .eui-slider-input:disabled + .eui-slider-visual > .eui-slider-handle {
+    background: var(--md-sys-color-surface);
+  }
+  .eui-slider-input:disabled + .eui-slider-visual > .eui-slider-handle::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--md-sys-color-on-surface);
+    opacity: 0.38;
+  }
+  @media (forced-colors: active) {
+    .eui-choice-visual {
+      forced-color-adjust: none;
+      color: CanvasText;
+    }
+    .eui-checkbox-fill {
+      fill: Highlight;
+    }
+    .eui-checkbox-outline {
+      stroke: CanvasText;
+    }
+    .eui-checkbox-mark {
+      stroke: HighlightText;
+    }
+    .eui-radio-input:checked + .eui-choice-visual {
+      color: Highlight;
+    }
+    .eui-slider-visual {
+      forced-color-adjust: none;
+    }
+    .eui-slider-active {
+      fill: Highlight;
+    }
+    .eui-slider-inactive {
+      fill: GrayText;
+    }
+    .eui-slider-handle {
+      background: Highlight;
+    }
+  }
+}

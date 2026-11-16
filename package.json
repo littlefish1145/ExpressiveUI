@@ -1,0 +1,61 @@
+{
+  "name": "expressive-ui-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "predev": "npm run prepare:playground",
+    "prepare:playground": "node scripts/generate-api.mjs && node scripts/build-preview.mjs",
+    "tokens": "node scripts/generate-tokens.mjs && node scripts/generate-control-tokens.mjs && node scripts/generate-catalog-tokens.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:browser": "playwright test",
+    "test:visual:update": "playwright test tests/visual --update-snapshots",
+    "test:performance": "playwright test tests/performance",
+    "build:packages": "node scripts/build.mjs",
+    "build:code": "node scripts/prepare-tokens.mjs && node scripts/generate-theme.mjs && npm run prepare:playground && npm run typecheck && npm run build:packages && vite build --logLevel warn",
+    "build": "node scripts/prepare-tokens.mjs && node scripts/generate-theme.mjs && npm run prepare:playground && npm run typecheck && npm run test && npm run build:packages && vite build --logLevel warn && npm run size",
+    "preview": "vite preview --host 127.0.0.1",
+    "size": "node scripts/size.mjs",
+    "size:playground": "node scripts/playground-size.mjs",
+    "check:stability": "node scripts/check-stability.mjs",
+    "check:api": "node scripts/check-api-examples.mjs",
+    "check:tokens": "node scripts/generate-tokens.mjs --check && node scripts/generate-control-tokens.mjs --check && node scripts/generate-catalog-tokens.mjs --check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test:report": "vitest run --reporter=default --reporter=json --outputFile=docs/test-results.json && node scripts/report-tests.mjs"
+  },
+  "devDependencies": {
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-css": "^6.3.1",
+    "@codemirror/lang-html": "^6.4.12",
+    "@codemirror/lang-javascript": "^6.2.5",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.15",
+    "@lezer/highlight": "^1.2.5",
+    "@material/material-color-utilities": "0.3.0",
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.3.0",
+    "axe-core": "^4.14.0",
+    "esbuild": "^0.28.2",
+    "happy-dom": "^21.0.4",
+    "prettier": "^3.10.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "sucrase": "^3.35.1",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.8",
+    "vitest": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=22.12"
+  }
+}

@@ -1,0 +1,57 @@
+import { defineConfig } from 'vite';
+import { fileURLToPath } from 'node:url';
+import { readFileSync } from 'node:fs';
+const names = ['core', 'tokens', 'shape', 'motion', 'theme', 'components', 'adapter-react'];
+export default defineConfig({
+  root: 'playground',
+  plugins: [
+    {
+      name: 'static-component-catalog',
+      transformIndexHtml(html) {
+        const catalog = readFileSync(
+          new URL('./playground/src/catalog.html', import.meta.url),
+          'utf8',
+        );
+        const extensions = readFileSync(
+          new URL('./playground/src/extensions.html', import.meta.url),
+          'utf8',
+        );
+        const content = catalog.replace(/<\/div>\s*$/, extensions + '</div>');
+        return html.replace(
+          '<!-- component-catalog -->',
+          `<section id="component-catalog" class="catalog-section">${content}</section>`,
+        );
+      },
+    },
+  ],
+  resolve: {
+    alias: [
+      {
+        find: '@expressive-ui/theme/runtime',
+        replacement: fileURLToPath(new URL('./packages/theme/src/runtime.ts', import.meta.url)),
+      },
+      ...names.map((name) => ({
+        find: `@expressive-ui/${name}`,
+        replacement: fileURLToPath(
+          new URL(
+            `./packages/${name}/src/index.${name === 'adapter-react' ? 'tsx' : 'ts'}`,
+            import.meta.url,
+          ),
+        ),
+      })),
+    ],
+  },
+  build: {
+    outDir: '../dist/playground',
+    emptyOutDir: true,
+    manifest: true,
+    rollupOptions: {
+      input: {
+        main: fileURLToPath(new URL('./playground/index.html', import.meta.url)),
+        stress: fileURLToPath(new URL('./playground/stress.html', import.meta.url)),
+        api: fileURLToPath(new URL('./playground/api.html', import.meta.url)),
+      },
+    },
+  },
+  server: { fs: { allow: ['..'] } },
+});

@@ -1,0 +1,35 @@
+{
+  "name": "@expressive-ui/components",
+  "version": "0.1.0",
+  "description": "Material 3 Expressive components for the Web",
+  "type": "module",
+  "license": "Apache-2.0",
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/styles.css",
+    "./fonts.css": "./dist/fonts.css"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "@expressive-ui/core": "^0.1.0",
+    "@expressive-ui/tokens": "^0.1.0",
+    "@expressive-ui/shape": "^0.1.0",
+    "@expressive-ui/motion": "^0.1.0"
+  }
+}

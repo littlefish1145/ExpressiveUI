@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Expressive UI 完整 API、TypeScript 与 React 示例、隔离在线编辑预览"
+    />
+    <title>Expressive UI · API Studio</title>
+  </head>
+  <body>
+    <a href="#api-main" class="api-skip">跳至 API 内容</a>
+    <header class="api-header">
+      <a href="/" class="api-brand"
+        ><span aria-hidden="true">✳</span> expressive <b>ui</b
+        ><span class="api-brand-tag">API STUDIO</span></a
+      >
+      <div class="api-head-actions">
+        <a href="/stress.html">压力实验 ↗</a
+        ><label class="api-theme-label"
+          ><span><input id="docs-dark" type="checkbox" /></span><span>深色模式</span></label
+        >
+      </div>
+    </header>
+    <div class="api-shell">
+      <aside class="api-sidebar">
+        <label for="api-search">查找组件、类型或函数</label
+        ><input
+          id="api-search"
+          type="search"
+          placeholder="Button、Spring、Theme…"
+          autocomplete="off"
+        />
+        <p id="api-count" class="api-muted"></p>
+        <nav id="api-nav" aria-label="API 分页导航"></nav>
+      </aside>
+      <main id="api-main" tabindex="-1">
+        <div class="api-page-top">
+          <p id="api-crumb" class="api-eyebrow"></p>
+          <div class="api-pager"><a id="api-prev">← 上一页</a><a id="api-next">下一页 →</a></div>
+        </div>
+        <h1 id="api-title">API Studio</h1>
+        <p id="api-intro" class="api-lead">正在加载当前页 API…</p>
+        <div id="api-summary" class="api-summary"></div>
+        <section aria-labelledby="example-heading" class="api-section">
+          <div class="api-section-heading">
+            <div>
+              <span class="api-eyebrow">LEARN BY CHANGING</span>
+              <h2 id="example-heading">示例与在线编辑</h2>
+            </div>
+            <div id="mode-tabs" class="api-modes" role="group" aria-label="示例框架">
+              <button id="mode-html" type="button" data-tab="html" aria-selected="true">
+                <span data-label>HTML + TS</span></button
+              ><button id="mode-react" type="button" data-tab="react" aria-selected="false">
+                <span data-label>React TSX</span>
+              </button>
+            </div>
+          </div>
+          <p id="api-example-note" class="api-muted"></p>
+          <div class="api-workbench">
+            <div class="api-editor">
+              <div id="code-tabs" class="api-code-tabs" role="group" aria-label="代码文件"></div>
+              <span id="code-label" class="api-code-label">TypeScript</span>
+              <div
+                id="api-editor-host"
+                class="api-editor-host"
+                role="group"
+                aria-label="代码编辑器，Ctrl / ⌘ + Enter 运行"
+              ></div>
+              <div class="api-editor-footer">
+                <span id="code-state">Ctrl / ⌘ + Enter 运行</span
+                ><button id="copy-code" type="button">复制当前代码</button>
+              </div>
+            </div>
+            <div class="api-preview">
+              <div class="api-preview-toolbar">
+                <span class="api-eyebrow">LIVE PREVIEW</span><label for="preview-seed">Seed</label
+                ><input id="preview-seed" type="color" value="#6750a4" /><button
+                  id="run-example"
+                  type="button"
+                >
+                  运行 ↗
+                </button>
+              </div>
+              <div id="preview-stage"></div>
+              <p id="preview-status" role="status">预览正在准备…</p>
+              <pre id="preview-error" hidden tabindex="0" aria-label="编译或运行错误"></pre>
+              <details class="api-console">
+                <summary>预览 Console</summary>
+                <pre id="preview-console" aria-label="预览控制台输出"></pre>
+              </details>
+            </div>
+          </div>
+          <div class="api-example-actions">
+            <button id="reset-example" type="button">恢复此页示例</button
+            ><button id="download-example" type="button">下载当前示例</button
+            ><label class="api-auto-run"
+              ><span><input id="auto-run" type="checkbox" /></span
+              ><span>停止输入后自动运行</span></label
+            ><span class="api-muted">代码保存在此浏览器；每页独立草稿。</span>
+          </div>
+        </section>
+        <section class="api-section" aria-labelledby="reference-heading">
+          <div class="api-section-heading">
+            <div>
+              <span class="api-eyebrow">GENERATED FROM TYPESCRIPT</span>
+              <h2 id="reference-heading">完整 API 参考</h2>
+            </div>
+            <label for="api-symbol">导出符号<select id="api-symbol"></select></label>
+          </div>
+          <div id="api-reference"></div>
+          <details class="api-declaration">
+            <summary>本模块完整 .d.ts 声明</summary>
+            <pre><code id="api-declaration"></code></pre>
+          </details>
+        </section>
+        <section class="api-section" aria-labelledby="integration-heading">
+          <h2 id="integration-heading">集成约定</h2>
+          <p>
+            原生组件保留 HTML 语义与表单行为。使用后保存控制器，并在卸载时调用
+            <code>destroy()</code>；复杂集合的结构与 data 属性见可运行 HTML。React
+            专用适配范围明确标注，其余示例用 effect 管理独立 DOM。
+          </p>
+          <p>
+            预览内置 React、本库七个包及浏览器原生 API；不解析任意 npm 包、相对文件导入或访问文档页
+            DOM。TypeScript/TSX 在运行时转译，完整类型验证仍应在项目内执行。编辑预览支持 HTML
+            内容、TS 逻辑和 CSS，React 模式需要 default 导出 App。
+          </p>
+        </section>
+        <footer class="api-footer">
+          <span>Expressive UI · Apache 2.0</span><a href="#api-main">返回本页顶部 ↑</a>
+        </footer>
+      </main>
+    </div>
+    <script type="module" src="/src/api/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+@layer expressive-ui.controls {
+  .eui-elevation,
+  .eui-elevation-key,
+  .eui-elevation-ambient {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+  }
+  .eui-elevation-key {
+    opacity: 0.3;
+  }
+  .eui-elevation-ambient {
+    opacity: 0.15;
+  }
+  .eui-button[data-variant='elevated'] > .eui-surface,
+  .eui-fab > .eui-surface {
+    filter: none;
+  }
+  .eui-fab-label {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    vertical-align: middle;
+  }
+  .eui-fab[data-size='small'][data-extended='true'] {
+    --_fab-radius: 16px;
+  }
+  .eui-slider-input[data-discrete='true'] {
+    padding-inline: 8px;
+  }
+  .eui-ripple {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    isolation: isolate;
+  }
+  .eui-switch-thumb > .eui-ripple {
+    transform: scale(var(--_state-scale, 1));
+    transform-origin: center;
+  }
+  .eui-choice-visual::before {
+    content: none;
+  }
+  .eui-choice-state {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .eui-choice-visual > svg:not(.eui-ripple) {
+    position: relative;
+  }
+  .eui-choice-visual > .eui-ripple {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+}
