@@ -532,6 +532,7 @@ async function navigate() {
     id = decodeURIComponent(route ?? '') || id;
   } catch {}
   const wantedSymbol = new URLSearchParams(query).get('symbol');
+  if (new URLSearchParams(query).get('mode') === 'cdn') mode = 'cdn';
   const entry = index.find((item) => item.id === id);
   if (!entry) {
     location.hash = '#/components/button';

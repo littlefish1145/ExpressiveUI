@@ -7,6 +7,23 @@ export default defineConfig({
   root: 'playground',
   plugins: [
     {
+      name: 'cdn-document-route',
+      configureServer(server) {
+        server.middlewares.use((request, _response, next) => {
+          if (request.url?.split('?')[0] === '/cdn')
+            request.url = request.url.replace('/cdn', '/cdn.html');
+          next();
+        });
+      },
+      configurePreviewServer(server) {
+        server.middlewares.use((request, _response, next) => {
+          if (request.url?.split('?')[0] === '/cdn')
+            request.url = request.url.replace('/cdn', '/cdn.html');
+          next();
+        });
+      },
+    },
+    {
       name: 'static-component-catalog',
       transformIndexHtml(html, context) {
         if (!/[\\/]playground[\\/]index\.html$/.test(context.filename)) return html;
