@@ -68,7 +68,7 @@ export function init(root: ParentNode = document) {
 /** Release observers, animations and event listeners for a subtree. */
 export function destroy(root: ParentNode = document) {
   for (const [element, controller] of controllers) {
-    if (root === element || root.contains(element)) {
+    if (root === document || root === element || root.contains(element)) {
       controller.destroy();
       controllers.delete(element);
     }

@@ -84,6 +84,16 @@ describe('CDN declarative components', () => {
     expect(getController(document.querySelectorAll('button')[1]!)).toBeDefined();
     expect(log).toHaveBeenCalledOnce();
   });
+
+  it('disposes detached controls when stopped before the mutation observer runs', () => {
+    document.body.innerHTML = '<button data-eui="button">Save</button>';
+    startAutoInit();
+    const button = document.querySelector('button')!;
+    button.remove();
+    stopAutoInit();
+    expect(getController(button)).toBeUndefined();
+    expect(button.className).toBe('');
+  });
 });
 
 describe('CDN documents', () => {
