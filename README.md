@@ -52,6 +52,8 @@ npm audit
 
 ## 部署到 Vercel
 
+在线体验：[Playground](https://expressive-ui-green.vercel.app/) · [API Studio](https://expressive-ui-green.vercel.app/api.html#/components/button) · [压力实验](https://expressive-ui-green.vercel.app/stress.html)。
+
 在 Vercel 导入此 GitHub 仓库，Root Directory 使用仓库根目录。`vercel.json` 已配置 Vite 构建和 `dist/playground` 输出，无需环境变量。页面包含 `/`、`/api.html`、`/stress.html`；完整步骤见 [Vercel 部署说明](docs/vercel-deployment.md)。
 
 ## 使用

@@ -1,5 +1,7 @@
 # Vercel 部署 Playground
 
+生产地址：[expressive-ui-green.vercel.app](https://expressive-ui-green.vercel.app/)。项目 `expressive-ui` 已关联 `littlefish1145/ExpressiveUI` 的 `main` 分支。
+
 根目录的 `vercel.json` 已配置本仓库的 Vite 多页构建：
 
 | 设置             | 值                   |
