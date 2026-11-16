@@ -46,9 +46,9 @@ npm audit
 - **共享效果**：官方Ripple阶段、hover/focus状态层、双层elevation、Outlined内侧描边；随库附带OFL1.1 Roboto可变字体。
 - **Playground**：主题种子、八套配色、明暗模式、配色Variant、对比度、Motion Scheme、运动偏好与系统Reduced Motion提示、五种渲染后端、形变进度、宽高比、弹簧曲线、实时参数、暂停与重播、Capability面板。
 
-## npm 发布准备
+## npm 包
 
-七个包使用 `@amiracle1024/*`，首个版本为 `0.1.0`。运行 `npm run release:prepare` 完成构建、测试、打包与独立安装验证；产物在 `dist/npm/`。发布顺序与登录步骤见 [npm 发布说明](docs/npm-publishing.md)。
+七个包已发布为 `@amiracle1024/*@0.1.0`，可运行 `npm install @amiracle1024/components @amiracle1024/theme` 安装。运行 `npm run release:prepare` 完成构建、测试、打包与独立安装验证；产物在 `dist/npm/`。发布顺序与登录步骤见 [npm 发布说明](docs/npm-publishing.md)。
 
 ## 部署到 Vercel
 
@@ -58,7 +58,7 @@ npm audit
 
 ## 使用
 
-本地 workspace 已关联这些包；尚未发布到 npm，不假定同名包存在。`npm run build` 后可导入：
+七个包已发布到 npm，本地 workspace 也已关联这些包。安装 npm 包或运行 `npm run build` 后可导入：
 
 ```html
 <button id="save" type="submit">保存</button>

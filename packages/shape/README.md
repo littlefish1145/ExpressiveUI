@@ -4,7 +4,7 @@ Polygon、Rounded 几何、SVG 渲染和按需加载的形变数据。
 
 ## 安装
 
-首个版本计划为 `0.1.0`；以下命令在包发布后可用。
+首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
 npm install @amiracle1024/shape
