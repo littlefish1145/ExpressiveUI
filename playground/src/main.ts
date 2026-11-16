@@ -16,34 +16,34 @@ import {
   enhanceCheckbox,
   enhanceRadio,
   enhanceSlider,
-} from '@expressive-ui/components';
-import type { ButtonVariant, FabOptions } from '@expressive-ui/components';
-import type { ButtonSize } from '@expressive-ui/tokens';
-import { createThemeController } from '@expressive-ui/theme/runtime';
-import type { generateTheme } from '@expressive-ui/theme';
-import type { ThemeVariant, Theme } from '@expressive-ui/theme';
-import { createShapeRenderer, getShape, shapeNames, createMorph } from '@expressive-ui/shape';
-import type { ShapeToken, ShapeBackend } from '@expressive-ui/shape';
+} from '@amiracle1024/components';
+import type { ButtonVariant, FabOptions } from '@amiracle1024/components';
+import type { ButtonSize } from '@amiracle1024/tokens';
+import { createThemeController } from '@amiracle1024/theme/runtime';
+import type { generateTheme } from '@amiracle1024/theme';
+import type { ThemeVariant, Theme } from '@amiracle1024/theme';
+import { createShapeRenderer, getShape, shapeNames, createMorph } from '@amiracle1024/shape';
+import type { ShapeToken, ShapeBackend } from '@amiracle1024/shape';
 import {
   createSpring,
   createVectorSpring,
   motionPreset,
   sampleSpring,
-} from '@expressive-ui/motion';
+} from '@amiracle1024/motion';
 import {
   getMotionPreference,
   setMotionPreference,
   observeReducedMotion,
-} from '@expressive-ui/motion';
-import type { MotionPreference } from '@expressive-ui/motion';
-import type { MotionScheme, MotionToken, SpringParameters } from '@expressive-ui/motion';
+} from '@amiracle1024/motion';
+import type { MotionPreference } from '@amiracle1024/motion';
+import type { MotionScheme, MotionToken, SpringParameters } from '@amiracle1024/motion';
 import {
   Scope,
   detectCapabilities,
   observeSize,
   mediaPreference,
   observeViewport,
-} from '@expressive-ui/core';
+} from '@amiracle1024/core';
 const $ = <T extends HTMLElement>(id: string) => {
   const element = document.getElementById(id);
   if (!element) throw Error(`Missing #${id}`);
@@ -158,11 +158,11 @@ for (const [input, output] of [
 let seed = '#6750a4',
   variant: ThemeVariant = 'tonal-spot',
   contrast = 0;
-let colorModule: Promise<typeof import('@expressive-ui/theme')> | undefined;
+let colorModule: Promise<typeof import('@amiracle1024/theme')> | undefined;
 const computeTheme: typeof generateTheme extends (...args: infer A) => infer R
   ? (...args: A) => Promise<R>
   : never = async (...args) => {
-  colorModule ??= import('@expressive-ui/theme');
+  colorModule ??= import('@amiracle1024/theme');
   return (await colorModule).generateTheme(...args);
 };
 let themes: { light: Theme; dark: Theme } = {

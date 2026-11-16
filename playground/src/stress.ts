@@ -1,7 +1,7 @@
 import '../../packages/components/src/styles.css';
 import './stress.css';
-import { Scope } from '@expressive-ui/core';
-import { enhanceButton, enhanceLoadingIndicator, enhanceSelect } from '@expressive-ui/components';
+import { Scope } from '@amiracle1024/core';
+import { enhanceButton, enhanceLoadingIndicator, enhanceSelect } from '@amiracle1024/components';
 import {
   createMorph,
   createShapeRenderer,
@@ -13,7 +13,7 @@ import {
   recordContour,
   cubicPathDiscontinuity,
   cubicBoundaryDeviation,
-} from '@expressive-ui/shape';
+} from '@amiracle1024/shape';
 import {
   createSpring,
   createVectorState,
@@ -25,7 +25,7 @@ import {
   activeAnimationCount,
   getMotionPreference,
   observeReducedMotion,
-} from '@expressive-ui/motion';
+} from '@amiracle1024/motion';
 import { measureFrames } from './stress-metrics.js';
 const scope = new Scope(),
   $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;

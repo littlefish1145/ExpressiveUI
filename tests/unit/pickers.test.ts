@@ -1,6 +1,6 @@
 import {beforeEach,afterEach,it,expect,vi} from 'vitest';
-import {enhanceDatePicker,enhanceTimePicker,parseISODate,formatISODate,parseTime} from '@expressive-ui/components';
-import {setMotionPreference,activeAnimationCount} from '@expressive-ui/motion';
+import {enhanceDatePicker,enhanceTimePicker,parseISODate,formatISODate,parseTime} from '@amiracle1024/components';
+import {setMotionPreference,activeAnimationCount} from '@amiracle1024/motion';
 const owned:{destroy():void}[]=[];const own=<T extends {destroy():void}>(c:T)=>{owned.push(c);return c;};
 function input(type:string,value:string){const node=document.createElement('input');node.type=type;node.value=value;node.setAttribute('aria-label',type);document.body.append(node);return node;}
 function click(host:HTMLElement,selector:string){const button=host.querySelector<HTMLButtonElement>(selector);if(!button)throw Error(selector);button.click();}

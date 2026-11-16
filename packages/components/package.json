@@ -1,5 +1,5 @@
 {
-  "name": "@expressive-ui/components",
+  "name": "@amiracle1024/components",
   "version": "0.1.0",
   "description": "Material 3 Expressive components for the Web",
   "type": "module",
@@ -24,12 +24,32 @@
     "./fonts.css": "./dist/fonts.css"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@expressive-ui/core": "^0.1.0",
-    "@expressive-ui/tokens": "^0.1.0",
-    "@expressive-ui/shape": "^0.1.0",
-    "@expressive-ui/motion": "^0.1.0"
+    "@amiracle1024/core": "^0.1.0",
+    "@amiracle1024/tokens": "^0.1.0",
+    "@amiracle1024/shape": "^0.1.0",
+    "@amiracle1024/motion": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littlefish1145/ExpressiveUI.git",
+    "directory": "packages/components"
+  },
+  "homepage": "https://github.com/littlefish1145/ExpressiveUI/tree/main/packages/components#readme",
+  "bugs": {
+    "url": "https://github.com/littlefish1145/ExpressiveUI/issues"
+  },
+  "keywords": [
+    "material-design",
+    "material-3",
+    "expressive",
+    "typescript",
+    "components"
+  ],
+  "scripts": {
+    "prepack": "node ../../scripts/check-package.mjs"
   }
 }

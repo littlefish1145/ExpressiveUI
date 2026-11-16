@@ -1,5 +1,5 @@
 {
-  "name": "@expressive-ui/shape",
+  "name": "@amiracle1024/shape",
   "version": "0.1.0",
   "description": "Material 3 Expressive shape for the Web",
   "type": "module",
@@ -32,9 +32,29 @@
     }
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@expressive-ui/core": "^0.1.0"
+    "@amiracle1024/core": "^0.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littlefish1145/ExpressiveUI.git",
+    "directory": "packages/shape"
+  },
+  "homepage": "https://github.com/littlefish1145/ExpressiveUI/tree/main/packages/shape#readme",
+  "bugs": {
+    "url": "https://github.com/littlefish1145/ExpressiveUI/issues"
+  },
+  "keywords": [
+    "material-design",
+    "material-3",
+    "expressive",
+    "typescript",
+    "shape"
+  ],
+  "scripts": {
+    "prepack": "node ../../scripts/check-package.mjs"
   }
 }

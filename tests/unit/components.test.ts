@@ -4,10 +4,10 @@ import {
   enhanceFab,
   enhanceSwitch,
   enhanceLoadingIndicator,
-} from '@expressive-ui/components';
-import { Scope, detectCapabilities, bindPress, mediaPreference } from '@expressive-ui/core';
-import { activeAnimationCount } from '@expressive-ui/motion';
-import { createShapeRenderer, getShape } from '@expressive-ui/shape';
+} from '@amiracle1024/components';
+import { Scope, detectCapabilities, bindPress, mediaPreference } from '@amiracle1024/core';
+import { activeAnimationCount } from '@amiracle1024/motion';
+import { createShapeRenderer, getShape } from '@amiracle1024/shape';
 afterEach(() => {
   document.body.replaceChildren();
   vi.unstubAllGlobals();

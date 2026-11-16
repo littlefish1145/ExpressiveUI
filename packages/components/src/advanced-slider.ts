@@ -1,6 +1,6 @@
-import { observeSize } from '@expressive-ui/core';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { observeSize } from '@amiracle1024/core';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { mount, decoration } from './shared.js';
 import { preserveAttributes } from './collection.js';
 import { svgElement } from './svg.js';

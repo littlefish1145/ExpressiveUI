@@ -1,6 +1,6 @@
-import { Scope, observeSize } from '@expressive-ui/core';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { Scope, observeSize } from '@amiracle1024/core';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { focusableChildren, emit, preserveAttributes, uniqueId } from './collection.js';
 interface Entry {
   surface: HTMLElement;

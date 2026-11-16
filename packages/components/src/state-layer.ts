@@ -1,6 +1,6 @@
-import { Scope } from '@expressive-ui/core';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { Scope } from '@amiracle1024/core';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 export function animateStateLayer(
   host: HTMLElement,
   layer: HTMLElement,

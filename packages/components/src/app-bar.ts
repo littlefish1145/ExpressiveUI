@@ -1,8 +1,8 @@
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { mount } from './shared.js';
 import { rovingFocus, preserveAttributes } from './collection.js';
-import { observeSize } from '@expressive-ui/core';
+import { observeSize } from '@amiracle1024/core';
 import { animateColors } from './animated-styles.js';
 export interface AppBarOptions {
   variant?:

@@ -12,7 +12,7 @@ import {
   clearShapeCache,
   shapeCacheStats,
   flattenCubics,
-} from '@expressive-ui/shape';
+} from '@amiracle1024/shape';
 describe('official shape library', () => {
   it('contains all 35 exported official polygons, finite, closed and normalized', () => {
     expect(shapeNames).toHaveLength(35);

@@ -1,14 +1,14 @@
 import '../../../packages/components/src/styles.css';
 import './studio.css';
 import index from './generated/index.json';
-import { Scope } from '@expressive-ui/core';
-import { createThemeController, generateTheme } from '@expressive-ui/theme';
+import { Scope } from '@amiracle1024/core';
+import { createThemeController, generateTheme } from '@amiracle1024/theme';
 import {
   enhanceButton,
   enhanceSelect,
   enhanceSwitch,
   enhanceTabs,
-} from '@expressive-ui/components';
+} from '@amiracle1024/components';
 import { EditorView, keymap } from '@codemirror/view';
 import { Compartment, EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
@@ -532,7 +532,7 @@ async function navigate() {
     const summary = $('api-summary');
     summary.replaceChildren();
     for (const text of [
-      page.package === 'styles' ? 'CSS Custom Properties' : `@expressive-ui/${page.package}`,
+      page.package === 'styles' ? 'CSS Custom Properties' : `@amiracle1024/${page.package}`,
       `${page.symbols.length} 个参考项`,
       '原生 DOM · 可覆盖 CSS',
       '生成式 API',

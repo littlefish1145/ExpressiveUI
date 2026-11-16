@@ -3,8 +3,8 @@ import { overlay } from './overlay.js';
 import { preserveAttributes, rovingFocus } from './collection.js';
 import { enhanceFab } from './fab.js';
 import { interactive } from './interactive.js';
-import type { MotionScheme } from '@expressive-ui/motion';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
 export interface FabMenuOptions {
   anchor: HTMLButtonElement;
   label?: string;

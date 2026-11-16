@@ -1,4 +1,4 @@
-import type { Scope } from '@expressive-ui/core';
+import type { Scope } from '@amiracle1024/core';
 import { decoration } from './shared.js';
 import { svgElement } from './svg.js';
 export { svgElement } from './svg.js';

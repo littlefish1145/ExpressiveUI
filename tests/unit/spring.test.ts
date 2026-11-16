@@ -6,7 +6,7 @@ import {
   createSpring,
   activeAnimationCount,
   animateSpring,
-} from '@expressive-ui/motion';
+} from '@amiracle1024/motion';
 const parameters = { stiffness: 380, dampingRatio: 0.8 };
 afterEach(() => vi.unstubAllGlobals());
 describe('mass-normalized analytical spring', () => {

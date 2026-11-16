@@ -1,5 +1,5 @@
-import { Scope } from '@expressive-ui/core';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { Scope } from '@amiracle1024/core';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { mount } from './shared.js';
 import { emit, uniqueId } from './collection.js';
 import { enhanceCheckbox } from './checkbox.js';
@@ -7,7 +7,7 @@ import { enhanceRadio } from './radio.js';
 import { enhanceIconButton } from './icon-button.js';
 import { enhanceSelect } from './select.js';
 import { interactive } from './interactive.js';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
 export interface DataTableColumn<Row> {
   key: string;
   label: string;

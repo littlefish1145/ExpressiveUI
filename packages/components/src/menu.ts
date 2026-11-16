@@ -4,7 +4,7 @@ import type { OverlayOptions } from './overlay.js';
 import { rovingFocus, preserveAttributes, isDisabled, emit } from './collection.js';
 import { interactive } from './interactive.js';
 import { createChevronDown } from './svg.js';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
 export interface MenuOptions extends Omit<OverlayOptions, 'kind' | 'modal'> {
   anchor: HTMLElement;
   label?: string;

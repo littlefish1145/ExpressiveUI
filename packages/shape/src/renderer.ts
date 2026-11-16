@@ -1,4 +1,4 @@
-import { detectCapabilities } from '@expressive-ui/core';
+import { detectCapabilities } from '@amiracle1024/core';
 import { contourPath } from './geometry.js';
 import { cubicPath, sampleCubics } from './cubic.js';
 export type ShapeBackend = 'svg' | 'clip-path' | 'css-shape' | 'svg-clip' | 'svg-mask';

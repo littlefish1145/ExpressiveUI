@@ -12,7 +12,7 @@ import {
   setMotionPreference,
   observeReducedMotion,
   activeAnimationCount,
-} from '@expressive-ui/motion';
+} from '@amiracle1024/motion';
 import {
   enhanceButton,
   enhanceIconButton,
@@ -21,14 +21,14 @@ import {
   enhanceRadio,
   enhanceSwitch,
   enhanceSlider,
-} from '@expressive-ui/components';
+} from '@amiracle1024/components';
 import {
   createMorph,
   createShapeRenderer,
   roundedRectangleCubics,
   cubicControlBounds,
   shapeRotationScale,
-} from '@expressive-ui/shape';
+} from '@amiracle1024/shape';
 import { rippleFrame } from '../../packages/components/src/ripple.js';
 import { loadingFrame, loadingMorphDuration } from '../../packages/components/src/loading-model.js';
 import { elevationShadows } from '../../packages/components/src/elevation.js';

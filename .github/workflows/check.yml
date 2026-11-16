@@ -19,6 +19,7 @@ jobs:
         if: ${{ hashFiles('docs/references/sources.json') == '' }}
         run: node scripts/prepare-tokens.mjs
       - run: npm run build
+      - run: npm run release:pack
       - run: npm audit --omit=dev
       - uses: actions/upload-artifact@v4
         with:
@@ -26,3 +27,4 @@ jobs:
           path: |
             dist/playground
             docs/bundle-size.*
+            dist/npm

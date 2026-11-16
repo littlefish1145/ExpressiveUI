@@ -1,10 +1,10 @@
-import { bindPress, observeSize } from '@expressive-ui/core';
-import { sliderTokens } from '@expressive-ui/tokens';
+import { bindPress, observeSize } from '@amiracle1024/core';
+import { sliderTokens } from '@amiracle1024/tokens';
 import { mount, decoration } from './shared.js';
 import { svgElement, notifyChange } from './choice-shared.js';
 import { animateColors } from './animated-styles.js';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 export interface SliderOptions {
   showValue?: 'interaction' | 'always' | 'never';
   /** Show spaced tick marks. Defaults to true only for an explicit numeric step. */

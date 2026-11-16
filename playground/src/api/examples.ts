@@ -30,7 +30,7 @@ function component(
   notes?: string,
 ): Spec {
   return {
-    imports: `import { ${imports} } from '@expressive-ui/components';`,
+    imports: `import { ${imports} } from '@amiracle1024/components';`,
     body,
     html,
     css,
@@ -208,14 +208,14 @@ scope.listen($('open'),'click',()=>sheet.open());`,
   ),
 };
 const dedicated: Record<string, string> = {
-  button: `import {Button} from '@expressive-ui/adapter-react';\nexport default function App(){return <Button options={{variant:'filled',size:'md'}}>Save changes</Button>;}`,
-  fab: `import {Fab} from '@expressive-ui/adapter-react';\nexport default function App(){return <Fab options={{extended:true}} aria-label="Create"><span data-icon aria-hidden="true">＋</span>Create</Fab>;}`,
-  switch: `import {useState} from 'react';\nimport {Switch} from '@expressive-ui/adapter-react';\nexport default function App(){const [checked,setChecked]=useState(true);return <label className="row"><Switch checked={checked} onChange={event=>setChecked(event.currentTarget.checked)} aria-label="Notifications"/>Notifications</label>;}`,
-  'loading-indicator': `import {LoadingIndicator} from '@expressive-ui/adapter-react';\nexport default function App(){return <LoadingIndicator options={{label:'Loading workspace',contained:true}}/>;}`,
-  'icon-button': `import {IconButton} from '@expressive-ui/adapter-react';\nexport default function App(){return <IconButton options={{variant:'tonal',toggle:true}} aria-label="Favorite"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></svg></IconButton>;}`,
-  checkbox: `import {Checkbox} from '@expressive-ui/adapter-react';\nexport default function App(){return <label className="row"><Checkbox aria-label="Agree to terms"/>I agree to the terms</label>;}`,
-  radio: `import {Radio} from '@expressive-ui/adapter-react';\nexport default function App(){return <fieldset><legend>Plan</legend><label className="row"><Radio name="plan" value="free" defaultChecked/>Free</label><label className="row"><Radio name="plan" value="pro"/>Pro</label></fieldset>;}`,
-  slider: `import {Slider} from '@expressive-ui/adapter-react';\nexport default function App(){return <Slider aria-label="Volume" options={{showTicks:true}} step={10} min={0} max={100} defaultValue={40}/>;}`,
+  button: `import {Button} from '@amiracle1024/adapter-react';\nexport default function App(){return <Button options={{variant:'filled',size:'md'}}>Save changes</Button>;}`,
+  fab: `import {Fab} from '@amiracle1024/adapter-react';\nexport default function App(){return <Fab options={{extended:true}} aria-label="Create"><span data-icon aria-hidden="true">＋</span>Create</Fab>;}`,
+  switch: `import {useState} from 'react';\nimport {Switch} from '@amiracle1024/adapter-react';\nexport default function App(){const [checked,setChecked]=useState(true);return <label className="row"><Switch checked={checked} onChange={event=>setChecked(event.currentTarget.checked)} aria-label="Notifications"/>Notifications</label>;}`,
+  'loading-indicator': `import {LoadingIndicator} from '@amiracle1024/adapter-react';\nexport default function App(){return <LoadingIndicator options={{label:'Loading workspace',contained:true}}/>;}`,
+  'icon-button': `import {IconButton} from '@amiracle1024/adapter-react';\nexport default function App(){return <IconButton options={{variant:'tonal',toggle:true}} aria-label="Favorite"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9Z"/></svg></IconButton>;}`,
+  checkbox: `import {Checkbox} from '@amiracle1024/adapter-react';\nexport default function App(){return <label className="row"><Checkbox aria-label="Agree to terms"/>I agree to the terms</label>;}`,
+  radio: `import {Radio} from '@amiracle1024/adapter-react';\nexport default function App(){return <fieldset><legend>Plan</legend><label className="row"><Radio name="plan" value="free" defaultChecked/>Free</label><label className="row"><Radio name="plan" value="pro"/>Pro</label></fieldset>;}`,
+  slider: `import {Slider} from '@amiracle1024/adapter-react';\nexport default function App(){return <Slider aria-label="Volume" options={{showTicks:true}} step={10} min={0} max={100} defaultValue={40}/>;}`,
 };
 function engine(page: string): Spec {
   const group = page.split('/')[0];
@@ -229,32 +229,32 @@ function engine(page: string): Spec {
   if (group === 'core')
     return {
       html: '<pre id="output"></pre>',
-      imports: `import {createStore,detectCapabilities,observeViewport} from '@expressive-ui/core';`,
+      imports: `import {createStore,detectCapabilities,observeViewport} from '@amiracle1024/core';`,
       body: `const store=createStore(0);const off=store.subscribe(value=>{$('output').textContent=JSON.stringify({value,capabilities:detectCapabilities()},null,2);});scope.add(off);store.set(1);const view=observeViewport(root,visible=>console.log({visible}));scope.add(()=>view.destroy());`,
     };
   if (group === 'tokens')
     return {
       html: '<pre id="output"></pre>',
-      imports: `import {motionTokens,buttonTokens} from '@expressive-ui/tokens';`,
+      imports: `import {motionTokens,buttonTokens} from '@amiracle1024/tokens';`,
       body: `$('output').textContent=JSON.stringify({motion:motionTokens.expressive,button:buttonTokens.md},null,2);`,
     };
   if (group === 'theme')
     return {
       html: '<div id="palette" class="row"></div>',
-      imports: `import {generateTheme,createThemeController} from '@expressive-ui/theme';`,
+      imports: `import {generateTheme,createThemeController} from '@amiracle1024/theme';`,
       body: `const light=generateTheme({seed:'#157A6E',variant:'expressive'});const dark=generateTheme({seed:'#157A6E',variant:'expressive',dark:true});const theme=createThemeController(root,{light,dark},'light');scope.add(()=>theme.destroy());for(const role of ['primary','secondary','tertiary'] as const){const swatch=document.createElement('div');swatch.textContent=role;swatch.style.cssText='padding:24px;border-radius:20px;background:'+light.colors[role]+';color:'+light.colors[('on'+role.charAt(0).toUpperCase()+role.slice(1)) as 'onPrimary'];$('palette').append(swatch);}`,
     };
   if (group === 'shape')
     return {
       html: '<div id="shape" class="shape"></div><pre id="output"></pre>',
-      imports: `import {createMorph,createShapeRenderer,cubicPathDiscontinuity} from '@expressive-ui/shape';\nimport {createSpring,motionPreset} from '@expressive-ui/motion';`,
+      imports: `import {createMorph,createShapeRenderer,cubicPathDiscontinuity} from '@amiracle1024/shape';\nimport {createSpring,motionPreset} from '@amiracle1024/motion';`,
       body: `const pair=createMorph('circle','flower');await pair.ready;const renderer=createShapeRenderer($('shape'),'svg');scope.add(()=>renderer.destroy());const spring=createSpring(0,value=>{const path=pair.cubicsAt(value)!;renderer.drawCubics(path);$('output').textContent='C0 seam: '+cubicPathDiscontinuity(path);},motionPreset());scope.add(()=>spring.destroy());spring.setTarget(1);`,
       notes:
         '常规 Polygon→Polygon 使用官方匹配 cubic；中断重定向与混合形状的 Web 策略不等同于官方路径匹配。',
     };
   return {
     html: '<div id="ball" style="width:48px;height:48px;border-radius:50%;background:var(--md-sys-color-primary)"></div><pre id="output"></pre>',
-    imports: `import {createSpring,motionPreset,solveSpring} from '@expressive-ui/motion';`,
+    imports: `import {createSpring,motionPreset,solveSpring} from '@amiracle1024/motion';`,
     body: `const parameters=motionPreset('expressive','fast.spatial');const spring=createSpring(0,(value,velocity)=>{$('ball').style.transform='translateX('+(value*180)+'px)';$('output').textContent=JSON.stringify({value,velocity,reference:solveSpring(0,1,0,.2,parameters)},null,2);},parameters);scope.add(()=>spring.destroy());spring.setTarget(1);`,
     notes: '质量归一化为1；时间单位秒，速度是值单位/秒。Reduced Motion 始终由库策略处理。',
   };
@@ -285,7 +285,7 @@ export function exampleFor(page: string, symbol = ''): Example {
     (spec.body.includes('$')
       ? `const $=<T extends HTMLElement>(id:string)=>root.querySelector<T>('#'+id)!;\n`
       : '');
-  const ts = `import {Scope} from '@expressive-ui/core';\n${spec.imports}\n\nexport async function mount(root:HTMLElement){\nconst scope=new Scope();\n${helpers}try {\n${spec.body}\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}`;
+  const ts = `import {Scope} from '@amiracle1024/core';\n${spec.imports}\n\nexport async function mount(root:HTMLElement){\nconst scope=new Scope();\n${helpers}try {\n${spec.body}\n} catch(error) {scope.dispose();throw error;}\nreturn ()=>scope.dispose();\n}`;
   const key = page.replace('components/', '');
   const specific = dedicated[key];
   const react =

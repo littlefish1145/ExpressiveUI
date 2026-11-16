@@ -1,8 +1,8 @@
-import { bindPress, observeSize } from '@expressive-ui/core';
-import { createShapeRenderer, roundedRectangle } from '@expressive-ui/shape';
-import type { ShapeBackend } from '@expressive-ui/shape';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { bindPress, observeSize } from '@amiracle1024/core';
+import { createShapeRenderer, roundedRectangle } from '@amiracle1024/shape';
+import type { ShapeBackend } from '@amiracle1024/shape';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { mount, decoration } from './shared.js';
 import { bindRipple } from './ripple.js';
 import { animateColors } from './animated-styles.js';

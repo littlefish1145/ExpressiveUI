@@ -46,6 +46,14 @@ npm audit
 - **共享效果**：官方Ripple阶段、hover/focus状态层、双层elevation、Outlined内侧描边；随库附带OFL1.1 Roboto可变字体。
 - **Playground**：主题种子、八套配色、明暗模式、配色Variant、对比度、Motion Scheme、运动偏好与系统Reduced Motion提示、五种渲染后端、形变进度、宽高比、弹簧曲线、实时参数、暂停与重播、Capability面板。
 
+## npm 发布准备
+
+七个包使用 `@amiracle1024/*`，首个版本为 `0.1.0`。运行 `npm run release:prepare` 完成构建、测试、打包与独立安装验证；产物在 `dist/npm/`。发布顺序与登录步骤见 [npm 发布说明](docs/npm-publishing.md)。
+
+## 部署到 Vercel
+
+在 Vercel 导入此 GitHub 仓库，Root Directory 使用仓库根目录。`vercel.json` 已配置 Vite 构建和 `dist/playground` 输出，无需环境变量。页面包含 `/`、`/api.html`、`/stress.html`；完整步骤见 [Vercel 部署说明](docs/vercel-deployment.md)。
+
 ## 使用
 
 本地 workspace 已关联这些包；尚未发布到 npm，不假定同名包存在。`npm run build` 后可导入：
@@ -59,8 +67,8 @@ npm audit
 ```
 
 ```ts
-import '@expressive-ui/components/styles.css';
-import { enhanceButton, enhanceSwitch, enhanceLoadingIndicator } from '@expressive-ui/components';
+import '@amiracle1024/components/styles.css';
+import { enhanceButton, enhanceSwitch, enhanceLoadingIndicator } from '@amiracle1024/components';
 
 const button = enhanceButton(document.querySelector<HTMLButtonElement>('#save')!, {
   variant: 'filled',

@@ -1,5 +1,5 @@
 {
-  "name": "@expressive-ui/tokens",
+  "name": "@amiracle1024/tokens",
   "version": "0.1.0",
   "description": "Material 3 Expressive tokens for the Web",
   "type": "module",
@@ -23,7 +23,27 @@
     "./styles.css": "./dist/styles.css"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littlefish1145/ExpressiveUI.git",
+    "directory": "packages/tokens"
+  },
+  "homepage": "https://github.com/littlefish1145/ExpressiveUI/tree/main/packages/tokens#readme",
+  "bugs": {
+    "url": "https://github.com/littlefish1145/ExpressiveUI/issues"
+  },
+  "keywords": [
+    "material-design",
+    "material-3",
+    "expressive",
+    "typescript",
+    "tokens"
+  ],
+  "scripts": {
+    "prepack": "node ../../scripts/check-package.mjs"
+  }
 }

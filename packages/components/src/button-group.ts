@@ -1,5 +1,5 @@
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { mount } from './shared.js';
 import { preserveAttributes, rovingFocus, emit, isDisabled } from './collection.js';
 import { interactive } from './interactive.js';

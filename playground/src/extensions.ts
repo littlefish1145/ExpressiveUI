@@ -1,5 +1,5 @@
-import { Scope } from '@expressive-ui/core';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { Scope } from '@amiracle1024/core';
+import type { MotionScheme } from '@amiracle1024/motion';
 import {
   enhanceDataTable,
   enhanceBanner,
@@ -8,8 +8,8 @@ import {
   enhanceAppBar,
   enhanceIconButton,
   enhanceSelect,
-} from '@expressive-ui/components';
-import type { AppBarOptions } from '@expressive-ui/components';
+} from '@amiracle1024/components';
+import type { AppBarOptions } from '@amiracle1024/components';
 import './extensions.css';
 export function mountExtensions(parent: Scope, notify: (message: string) => void) {
   const scope = new Scope();

@@ -3,12 +3,12 @@ import {
   createShapeRenderer,
   shapeRotationScale,
   cubicControlBounds,
-} from '@expressive-ui/shape';
-import type { PolygonShape, ShapeBackend } from '@expressive-ui/shape';
-import { scheduleFrame, observeReducedMotion } from '@expressive-ui/motion';
+} from '@amiracle1024/shape';
+import type { PolygonShape, ShapeBackend } from '@amiracle1024/shape';
+import { scheduleFrame, observeReducedMotion } from '@amiracle1024/motion';
 import { loadingFrame } from './loading-model.js';
 import { mount, decoration } from './shared.js';
-import { observeViewport } from '@expressive-ui/core';
+import { observeViewport } from '@amiracle1024/core';
 const sequence: PolygonShape[] = [
   'softBurst',
   'cookie9Sided',

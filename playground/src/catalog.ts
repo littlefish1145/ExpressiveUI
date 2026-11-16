@@ -1,5 +1,5 @@
-import { Scope } from '@expressive-ui/core';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { Scope } from '@amiracle1024/core';
+import type { MotionScheme } from '@amiracle1024/motion';
 import {
   enhanceTextField,
   enhanceChip,
@@ -32,10 +32,10 @@ import {
   enhanceVerticalSlider,
   enhanceButton,
   enhanceIconButton,
-} from '@expressive-ui/components';
+} from '@amiracle1024/components';
 import './catalog.css';
 import { mountExtensions } from './extensions.js';
-import { enhanceSelect } from '@expressive-ui/components';
+import { enhanceSelect } from '@amiracle1024/components';
 
 export async function mountCatalog(parent: Scope) {
   const scope = new Scope();

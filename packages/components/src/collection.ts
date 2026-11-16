@@ -1,4 +1,4 @@
-import { Scope } from '@expressive-ui/core';
+import { Scope } from '@amiracle1024/core';
 let sequence = 0;
 export function uniqueId(prefix = 'eui') {
   return `${prefix}-${++sequence}`;

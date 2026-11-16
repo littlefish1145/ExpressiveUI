@@ -40,13 +40,13 @@ for (const [name, entry, budget] of targets) {
 }
 const probes = {
   'core capability only':
-    'import {detectCapabilities} from "@expressive-ui/core"; console.log(detectCapabilities());',
+    'import {detectCapabilities} from "@amiracle1024/core"; console.log(detectCapabilities());',
   'motion solver only':
-    'import {solveSpring} from "@expressive-ui/motion"; console.log(solveSpring(0,1,0,.1,{stiffness:380,dampingRatio:.8}));',
+    'import {solveSpring} from "@amiracle1024/motion"; console.log(solveSpring(0,1,0,.1,{stiffness:380,dampingRatio:.8}));',
   'shape numeric geometry only':
-    'import {interpolateContour} from "@expressive-ui/shape/geometry"; console.log(interpolateContour(new Float64Array(8),new Float64Array(8),.5));',
+    'import {interpolateContour} from "@amiracle1024/shape/geometry"; console.log(interpolateContour(new Float64Array(8),new Float64Array(8),.5));',
   'one button only':
-    'import {enhanceButton} from "@expressive-ui/components"; enhanceButton(document.querySelector("button"));',
+    'import {enhanceButton} from "@amiracle1024/components"; enhanceButton(document.querySelector("button"));',
 };
 const shaking = [];
 for (const [name, contents] of Object.entries(probes)) {

@@ -15,14 +15,14 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@expressive-ui/core": ["packages/core/src/index.ts"],
-      "@expressive-ui/tokens": ["packages/tokens/src/index.ts"],
-      "@expressive-ui/shape": ["packages/shape/src/index.ts"],
-      "@expressive-ui/motion": ["packages/motion/src/index.ts"],
-      "@expressive-ui/theme": ["packages/theme/src/index.ts"],
-      "@expressive-ui/theme/runtime": ["packages/theme/src/runtime.ts"],
-      "@expressive-ui/components": ["packages/components/src/index.ts"],
-      "@expressive-ui/adapter-react": ["packages/adapter-react/src/index.tsx"]
+      "@amiracle1024/core": ["packages/core/src/index.ts"],
+      "@amiracle1024/tokens": ["packages/tokens/src/index.ts"],
+      "@amiracle1024/shape": ["packages/shape/src/index.ts"],
+      "@amiracle1024/motion": ["packages/motion/src/index.ts"],
+      "@amiracle1024/theme": ["packages/theme/src/index.ts"],
+      "@amiracle1024/theme/runtime": ["packages/theme/src/runtime.ts"],
+      "@amiracle1024/components": ["packages/components/src/index.ts"],
+      "@amiracle1024/adapter-react": ["packages/adapter-react/src/index.tsx"]
     }
   },
   "include": ["packages", "playground", "tests", "*.config.ts"]

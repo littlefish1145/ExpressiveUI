@@ -5,10 +5,10 @@ import {
   enhanceRadio,
   enhanceSlider,
   sliderMetrics,
-} from '@expressive-ui/components';
-import { iconButtonTokens, sliderTokens, checkboxTokens, radioTokens } from '@expressive-ui/tokens';
-import { activeAnimationCount } from '@expressive-ui/motion';
-import { generateTheme, themePresets } from '@expressive-ui/theme';
+} from '@amiracle1024/components';
+import { iconButtonTokens, sliderTokens, checkboxTokens, radioTokens } from '@amiracle1024/tokens';
+import { activeAnimationCount } from '@amiracle1024/motion';
+import { generateTheme, themePresets } from '@amiracle1024/theme';
 import { Contrast, argbFromHex, lstarFromArgb } from '@material/material-color-utilities';
 const controllers: { destroy(): void }[] = [];
 beforeEach(() => {

@@ -1,5 +1,5 @@
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { mount } from './shared.js';
 import { choiceDecoration, observeChoice, notifyChange, svgElement } from './choice-shared.js';
 import { animateColors } from './animated-styles.js';

@@ -1,7 +1,7 @@
 import { mount } from './shared.js';
 import { overlay } from './overlay.js';
 import type { OverlayOptions } from './overlay.js';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
 export interface SheetOptions extends Omit<OverlayOptions, 'kind' | 'anchor'> {
   edge?: 'bottom' | 'start' | 'end';
   label?: string;

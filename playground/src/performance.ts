@@ -1,4 +1,4 @@
-import type { Scope } from '@expressive-ui/core';
+import type { Scope } from '@amiracle1024/core';
 /** Local diagnostics only. No network reporting and no browser automation. */
 export function observePagePerformance(scope: Scope) {
   let lcpMs = 0,

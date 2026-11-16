@@ -5,11 +5,11 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@expressive-ui/theme/runtime',
+        find: '@amiracle1024/theme/runtime',
         replacement: fileURLToPath(new URL('./packages/theme/src/runtime.ts', import.meta.url)),
       },
       ...names.map((name) => ({
-        find: `@expressive-ui/${name}`,
+        find: `@amiracle1024/${name}`,
         replacement: fileURLToPath(new URL(`./packages/${name}/src/index.ts`, import.meta.url)),
       })),
     ],

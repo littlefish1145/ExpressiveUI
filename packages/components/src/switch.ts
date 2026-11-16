@@ -1,7 +1,7 @@
-import { bindPress } from '@expressive-ui/core';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
-import { getShape, createShapeRenderer } from '@expressive-ui/shape';
+import { bindPress } from '@amiracle1024/core';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
+import { getShape, createShapeRenderer } from '@amiracle1024/shape';
 import { mount, decoration } from './shared.js';
 import { animateColors } from './animated-styles.js';
 import { bindRipple } from './ripple.js';

@@ -8,7 +8,7 @@ import {
   Radio,
   Slider,
 } from '../../packages/adapter-react/src/index.js';
-import { activeAnimationCount } from '@expressive-ui/motion';
+import { activeAnimationCount } from '@amiracle1024/motion';
 it('reconciles native content, controlled choices and slider keyboard updates under StrictMode', async () => {
   const query = new EventTarget() as MediaQueryList;
   Object.defineProperty(query, 'matches', { value: true });

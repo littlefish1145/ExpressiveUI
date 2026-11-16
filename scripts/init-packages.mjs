@@ -18,7 +18,7 @@ for (const [name, deps] of Object.entries(graph)) {
   if (name === 'shape')
     exports['./geometry'] = { types: './dist/geometry.d.ts', import: './dist/geometry.js' };
   const p = {
-    name: `@expressive-ui/${name}`,
+    name: `@amiracle1024/${name}`,
     version: '0.1.0',
     description: `Material 3 Expressive ${name} for the Web`,
     type: 'module',
@@ -29,7 +29,7 @@ for (const [name, deps] of Object.entries(graph)) {
     types: './dist/index.d.ts',
     exports,
     publishConfig: { access: 'public' },
-    dependencies: Object.fromEntries(deps.map((d) => [`@expressive-ui/${d}`, '^0.1.0'])),
+    dependencies: Object.fromEntries(deps.map((d) => [`@amiracle1024/${d}`, '^0.1.0'])),
   };
   if (name === 'theme') p.dependencies['@material/material-color-utilities'] = '0.3.0';
   if (name === 'adapter-react') p.peerDependencies = { react: '>=18' };
@@ -54,7 +54,7 @@ for (const [name, deps] of Object.entries(graph)) {
   );
   await writeFile(
     `packages/${name}/README.md`,
-    `# @expressive-ui/${name}\n\nSee the workspace README and docs/api.md. ESM, Apache-2.0.\n`,
+    `# @amiracle1024/${name}\n\nSee the workspace README and docs/api.md. ESM, Apache-2.0.\n`,
   );
 }
 console.log('Initialized 7 packages with acyclic dependencies.');

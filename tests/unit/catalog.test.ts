@@ -1,6 +1,6 @@
 import { beforeEach,afterEach,describe,it,expect,vi } from 'vitest';
-import { enhanceTextField,enhanceChip,enhanceChipSet,enhanceSegmentedButtons,enhanceDialog,enhanceSheet,enhanceMenu,enhanceTooltip,enhanceSnackbar,enhanceTabs,enhanceNavigationBar,enhanceNavigationRail,enhanceNavigationDrawer,enhanceCard,enhanceBadge,enhanceDivider,enhanceList,enhanceAppBar,enhanceToolbar,enhanceCarousel,enhanceProgress,enhanceSearch,enhanceButtonGroup,enhanceSplitButton,enhanceFabMenu,linearProgressFrame,circularProgressFrame } from '@expressive-ui/components';
-import { activeAnimationCount,setMotionPreference } from '@expressive-ui/motion';
+import { enhanceTextField,enhanceChip,enhanceChipSet,enhanceSegmentedButtons,enhanceDialog,enhanceSheet,enhanceMenu,enhanceTooltip,enhanceSnackbar,enhanceTabs,enhanceNavigationBar,enhanceNavigationRail,enhanceNavigationDrawer,enhanceCard,enhanceBadge,enhanceDivider,enhanceList,enhanceAppBar,enhanceToolbar,enhanceCarousel,enhanceProgress,enhanceSearch,enhanceButtonGroup,enhanceSplitButton,enhanceFabMenu,linearProgressFrame,circularProgressFrame } from '@amiracle1024/components';
+import { activeAnimationCount,setMotionPreference } from '@amiracle1024/motion';
 const owned:{destroy():void}[]=[];
 const own=<T extends {destroy():void}>(controller:T)=>{owned.push(controller);return controller;};
 function html(markup:string){const root=document.createElement('div');root.innerHTML=markup;document.body.append(root);return root;}

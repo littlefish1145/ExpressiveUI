@@ -18,6 +18,8 @@
     "test:visual:update": "playwright test tests/visual --update-snapshots",
     "test:performance": "playwright test tests/performance",
     "build:packages": "node scripts/build.mjs",
+    "release:prepare": "npm run build && npm run release:pack",
+    "release:pack": "node scripts/prepare-release.mjs",
     "build:code": "node scripts/prepare-tokens.mjs && node scripts/generate-theme.mjs && npm run prepare:playground && npm run typecheck && npm run build:packages && vite build --logLevel warn",
     "build": "node scripts/prepare-tokens.mjs && node scripts/generate-theme.mjs && npm run prepare:playground && npm run typecheck && npm run test && npm run build:packages && vite build --logLevel warn && npm run size",
     "preview": "vite preview --host 127.0.0.1",

@@ -1,4 +1,4 @@
-import { Scope } from '@expressive-ui/core';
+import { Scope } from '@amiracle1024/core';
 const mounted = new WeakSet<Element>();
 export function mount(element: HTMLElement, className: string, attributes: string[]) {
   if (mounted.has(element))

@@ -1,6 +1,6 @@
-import { Scope } from '@expressive-ui/core';
-import { createSpring, motionPreset } from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
+import { Scope } from '@amiracle1024/core';
+import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
 import { decoration } from './shared.js';
 const clamp = (v: number, min = 0, max = 1) => Math.max(min, Math.min(max, v));
 /** Exact Material Web key/ambient shadow level ramps, including spread and separate alpha. */

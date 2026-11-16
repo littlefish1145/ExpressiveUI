@@ -1,5 +1,5 @@
-import { observeSize } from '@expressive-ui/core';
-import { observeReducedMotion } from '@expressive-ui/motion';
+import { observeSize } from '@amiracle1024/core';
+import { observeReducedMotion } from '@amiracle1024/motion';
 import { mount } from './shared.js';
 import { preserveAttributes, emit } from './collection.js';
 export interface CarouselOptions {

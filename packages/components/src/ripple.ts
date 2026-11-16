@@ -1,5 +1,5 @@
-import { Scope } from '@expressive-ui/core';
-import { scheduleFrame, observeReducedMotion } from '@expressive-ui/motion';
+import { Scope } from '@amiracle1024/core';
+import { scheduleFrame, observeReducedMotion } from '@amiracle1024/motion';
 import { svgElement } from './svg.js';
 let rippleId = 0;
 const clamp = (v: number) => Math.max(0, Math.min(1, v));

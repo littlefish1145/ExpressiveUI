@@ -1,4 +1,4 @@
-import { mediaPreference } from '@expressive-ui/core';
+import { mediaPreference } from '@amiracle1024/core';
 export type ThemeMode = 'light' | 'dark' | 'system';
 export interface ThemeVariables {
   readonly variables: Readonly<Record<string, string>>;

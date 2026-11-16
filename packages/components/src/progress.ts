@@ -3,9 +3,9 @@ import {
   motionPreset,
   observeReducedMotion,
   scheduleFrame,
-} from '@expressive-ui/motion';
-import type { MotionScheme } from '@expressive-ui/motion';
-import { observeSize, observeViewport } from '@expressive-ui/core';
+} from '@amiracle1024/motion';
+import type { MotionScheme } from '@amiracle1024/motion';
+import { observeSize, observeViewport } from '@amiracle1024/core';
 import { mount } from './shared.js';
 import { svgElement } from './svg.js';
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
