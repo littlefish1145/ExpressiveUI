@@ -1,5 +1,5 @@
 {
-  "name": "@amiracle1024/components",
+  "name": "@epui/components",
   "version": "0.1.0",
   "description": "Material 3 Expressive components for the Web",
   "type": "module",
@@ -28,10 +28,10 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@amiracle1024/core": "^0.1.0",
-    "@amiracle1024/tokens": "^0.1.0",
-    "@amiracle1024/shape": "^0.1.0",
-    "@amiracle1024/motion": "^0.1.0"
+    "@epui/core": "^0.1.0",
+    "@epui/tokens": "^0.1.0",
+    "@epui/shape": "^0.1.0",
+    "@epui/motion": "^0.1.0"
   },
   "repository": {
     "type": "git",

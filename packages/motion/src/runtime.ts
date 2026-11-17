@@ -1,13 +1,13 @@
 import { observeReducedMotion } from './preference.js';
-import { motionTokens } from '@amiracle1024/tokens';
-import type { MotionScheme, MotionToken } from '@amiracle1024/tokens';
+import { motionTokens } from '@epui/tokens';
+import type { MotionScheme, MotionToken } from '@epui/tokens';
 import { solveSpring, springAtRest, sampleSpring, validateSpring } from './spring.js';
 import type { SpringParameters } from './spring.js';
 import { scheduleFrame } from './scheduler.js';
 export * from './spring.js';
 export * from './preference.js';
 export { activeAnimationCount, scheduleFrame } from './scheduler.js';
-export type { MotionScheme, MotionToken } from '@amiracle1024/tokens';
+export type { MotionScheme, MotionToken } from '@epui/tokens';
 export function motionPreset(
   scheme: MotionScheme = 'expressive',
   token: MotionToken = 'default.spatial',

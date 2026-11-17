@@ -18,8 +18,8 @@ const result = await build({
     {
       name: 'preview-source',
       setup(build) {
-        build.onResolve({ filter: /^@amiracle1024\// }, (args) => {
-          const match = args.path.match(/^@amiracle1024\/([^/]+)(?:\/(.*))?$/);
+        build.onResolve({ filter: /^@epui\// }, (args) => {
+          const match = args.path.match(/^@epui\/([^/]+)(?:\/(.*))?$/);
           if (!match || !packages.includes(match[1])) return;
           return {
             path: resolve(

@@ -1,4 +1,4 @@
-import { Scope } from '@amiracle1024/core';
+import { Scope } from '@epui/core';
 let sequence = 0;
 export function uniqueId(prefix = 'eui') {
   return `${prefix}-${++sequence}`;

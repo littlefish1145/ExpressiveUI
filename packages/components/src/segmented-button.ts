@@ -1,7 +1,7 @@
 import { mount } from './shared.js';
 import { interactive } from './interactive.js';
 import { preserveAttributes, emit, rovingFocus, isDisabled } from './collection.js';
-import type { MotionScheme } from '@amiracle1024/motion';
+import type { MotionScheme } from '@epui/motion';
 export interface SegmentedButtonOptions {
   multiple?: boolean;
   allowEmpty?: boolean;

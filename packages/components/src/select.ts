@@ -2,8 +2,8 @@ import { mount } from './shared.js';
 import { uniqueId, emit } from './collection.js';
 import { overlay } from './overlay.js';
 import { enhanceButton } from './button.js';
-import type { MotionScheme } from '@amiracle1024/motion';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
+import type { MotionScheme } from '@epui/motion';
+import { createSpring, motionPreset } from '@epui/motion';
 import { createChevronDown } from './svg.js';
 export interface SelectOptions {
   label?: string;

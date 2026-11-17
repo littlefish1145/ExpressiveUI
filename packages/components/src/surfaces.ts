@@ -2,7 +2,7 @@ import { mount } from './shared.js';
 import { interactive } from './interactive.js';
 import { preserveAttributes } from './collection.js';
 import { bindElevation } from './elevation.js';
-import type { MotionScheme } from '@amiracle1024/motion';
+import type { MotionScheme } from '@epui/motion';
 export interface CardOptions {
   variant?: 'filled' | 'outlined' | 'elevated';
   motionScheme?: MotionScheme;

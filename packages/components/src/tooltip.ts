@@ -1,7 +1,7 @@
 import { mount } from './shared.js';
 import { overlay } from './overlay.js';
 import { preserveAttributes } from './collection.js';
-import type { MotionScheme } from '@amiracle1024/motion';
+import type { MotionScheme } from '@epui/motion';
 export interface TooltipOptions {
   anchor: HTMLElement;
   variant?: 'plain' | 'rich';

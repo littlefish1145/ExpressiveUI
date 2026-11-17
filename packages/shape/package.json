@@ -1,5 +1,5 @@
 {
-  "name": "@amiracle1024/shape",
+  "name": "@epui/shape",
   "version": "0.1.0",
   "description": "Material 3 Expressive shape for the Web",
   "type": "module",
@@ -36,7 +36,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@amiracle1024/core": "^0.1.0"
+    "@epui/core": "^0.1.0"
   },
   "repository": {
     "type": "git",

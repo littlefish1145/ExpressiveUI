@@ -1,6 +1,6 @@
-import { bindPress } from '@amiracle1024/core';
-import type { Scope } from '@amiracle1024/core';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { bindPress } from '@epui/core';
+import type { Scope } from '@epui/core';
+import type { MotionScheme } from '@epui/motion';
 import { decoration } from './shared.js';
 import { animateStateLayer } from './state-layer.js';
 import { animateColors } from './animated-styles.js';

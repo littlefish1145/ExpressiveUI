@@ -1,7 +1,7 @@
-import { bindPress } from '@amiracle1024/core';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
-import { getShape, createShapeRenderer } from '@amiracle1024/shape';
+import { bindPress } from '@epui/core';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
+import { getShape, createShapeRenderer } from '@epui/shape';
 import { mount, decoration } from './shared.js';
 import { animateColors } from './animated-styles.js';
 import { bindRipple } from './ripple.js';

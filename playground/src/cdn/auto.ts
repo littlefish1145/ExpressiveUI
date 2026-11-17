@@ -1,4 +1,4 @@
-import * as components from '@amiracle1024/components';
+import * as components from '@epui/components';
 
 export interface CdnController {
   destroy(): void;

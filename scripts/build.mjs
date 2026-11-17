@@ -36,13 +36,13 @@ for (const name of names) {
       await copyFile(`${path}/src/${file}`, `${path}/dist/${file}`);
     }
   for (const file of ['LICENSE', 'NOTICE']) await copyFile(file, `${path}/${file}`);
-  console.log(`Built @amiracle1024/${name}`);
+  console.log(`Built @epui/${name}`);
 }
 const graph = {};
 for (const name of names) {
   const p = JSON.parse(await readFile(`packages/${name}/package.json`, 'utf8'));
   graph[name] = Object.keys(p.dependencies ?? {})
-    .filter((n) => n.startsWith('@amiracle1024/'))
+    .filter((n) => n.startsWith('@epui/'))
     .map((n) => n.split('/')[1]);
 }
 function visit(name, path = []) {

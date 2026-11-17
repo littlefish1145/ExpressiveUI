@@ -11,7 +11,7 @@
     },
     {
       "package": "shape",
-      "esmBytes": 10776321,
+      "esmBytes": 10776313,
       "bundleBytes": 114912,
       "gzipBytes": 41394,
       "lazyChunks": 1184,
@@ -20,7 +20,7 @@
     },
     {
       "package": "shape/geometry",
-      "esmBytes": 10776321,
+      "esmBytes": 10776313,
       "bundleBytes": 4089,
       "gzipBytes": 1780,
       "lazyChunks": 0,
@@ -29,7 +29,7 @@
     },
     {
       "package": "shape/renderer",
-      "esmBytes": 10776321,
+      "esmBytes": 10776313,
       "bundleBytes": 4424,
       "gzipBytes": 1732,
       "lazyChunks": 0,
@@ -38,7 +38,7 @@
     },
     {
       "package": "motion",
-      "esmBytes": 20022,
+      "esmBytes": 20006,
       "bundleBytes": 10842,
       "gzipBytes": 4519,
       "lazyChunks": 0,
@@ -47,7 +47,7 @@
     },
     {
       "package": "theme/runtime",
-      "esmBytes": 6275,
+      "esmBytes": 6267,
       "bundleBytes": 1819,
       "gzipBytes": 870,
       "lazyChunks": 0,
@@ -56,7 +56,7 @@
     },
     {
       "package": "theme/HCT",
-      "esmBytes": 6275,
+      "esmBytes": 6267,
       "bundleBytes": 55145,
       "gzipBytes": 16535,
       "lazyChunks": 0,
@@ -65,7 +65,7 @@
     },
     {
       "package": "components",
-      "esmBytes": 255635,
+      "esmBytes": 255131,
       "bundleBytes": 258513,
       "gzipBytes": 84681,
       "lazyChunks": 1184,

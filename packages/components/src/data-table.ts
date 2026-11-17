@@ -1,5 +1,5 @@
-import { Scope } from '@amiracle1024/core';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { Scope } from '@epui/core';
+import type { MotionScheme } from '@epui/motion';
 import { mount } from './shared.js';
 import { emit, uniqueId } from './collection.js';
 import { enhanceCheckbox } from './checkbox.js';
@@ -7,7 +7,7 @@ import { enhanceRadio } from './radio.js';
 import { enhanceIconButton } from './icon-button.js';
 import { enhanceSelect } from './select.js';
 import { interactive } from './interactive.js';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
+import { createSpring, motionPreset } from '@epui/motion';
 export interface DataTableColumn<Row> {
   key: string;
   label: string;

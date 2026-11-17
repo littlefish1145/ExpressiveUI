@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { writeFile, readFile } from 'node:fs/promises';
 import { Window } from 'happy-dom';
-import { generateTheme, themePresets } from '@amiracle1024/theme';
+import { generateTheme, themePresets } from '@epui/theme';
 import {
   createMorph,
   getShape,
@@ -13,8 +13,8 @@ import {
   cubicPathDiscontinuity,
   cubicBoundaryDeviation,
   sampleDistribution,
-} from '@amiracle1024/shape';
-import { solveSpring, motionPreset, createVectorState } from '@amiracle1024/motion';
+} from '@epui/shape';
+import { solveSpring, motionPreset, createVectorState } from '@epui/motion';
 const parameters = motionPreset('expressive', 'fast.spatial');
 const runs = [];
 const metrics = emptyExperimentMetrics(),

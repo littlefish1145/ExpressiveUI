@@ -4,10 +4,10 @@ import {
   enhanceFab,
   enhanceSwitch,
   enhanceLoadingIndicator,
-} from '@amiracle1024/components';
-import { Scope, detectCapabilities, bindPress, mediaPreference } from '@amiracle1024/core';
-import { activeAnimationCount } from '@amiracle1024/motion';
-import { createShapeRenderer, getShape } from '@amiracle1024/shape';
+} from '@epui/components';
+import { Scope, detectCapabilities, bindPress, mediaPreference } from '@epui/core';
+import { activeAnimationCount } from '@epui/motion';
+import { createShapeRenderer, getShape } from '@epui/shape';
 afterEach(() => {
   document.body.replaceChildren();
   vi.unstubAllGlobals();

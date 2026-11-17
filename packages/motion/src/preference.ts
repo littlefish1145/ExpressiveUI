@@ -1,4 +1,4 @@
-import { createStore, mediaPreference } from '@amiracle1024/core';
+import { createStore, mediaPreference } from '@epui/core';
 export type MotionPreference = 'system' | 'full' | 'reduced';
 const preference = createStore<MotionPreference>('system');
 /** Explicit application policy; default always follows the operating system. */

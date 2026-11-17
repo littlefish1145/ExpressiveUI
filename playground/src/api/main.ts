@@ -1,9 +1,9 @@
 import '../../../packages/components/src/styles.css';
 import './studio.css';
 import index from './generated/index.json';
-import { Scope } from '@amiracle1024/core';
-import { createThemeController, generateTheme } from '@amiracle1024/theme';
-import { enhanceButton, enhanceSelect, enhanceSwitch, enhanceTabs } from '@amiracle1024/components';
+import { Scope } from '@epui/core';
+import { createThemeController, generateTheme } from '@epui/theme';
+import { enhanceButton, enhanceSelect, enhanceSwitch, enhanceTabs } from '@epui/components';
 import { EditorView, keymap } from '@codemirror/view';
 import { Compartment, EditorState } from '@codemirror/state';
 import { javascript } from '@codemirror/lang-javascript';
@@ -23,6 +23,7 @@ import type { Example } from './examples.js';
 import type { ApiPage, ApiSymbol, Member } from './models.js';
 import { createPreview } from './preview.js';
 import { studioCdnExample } from '../cdn/studio.js';
+import { restoreDraft } from './drafts.js';
 const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
 const scope = new Scope(),
   preview = createPreview(
@@ -496,8 +497,7 @@ function renderReference(symbol: ApiSymbol, changeExample = false) {
     draft = exampleFor(page.id, symbol.name);
     try {
       const saved = JSON.parse(localStorage.getItem(storageKey()) ?? 'null');
-      if (saved && ['html', 'ts', 'react', 'css'].every((key) => typeof saved[key] === 'string'))
-        draft = { ...draft, ...saved };
+      draft = restoreDraft(draft, saved);
     } catch {}
     if (mode !== 'cdn') mode = 'react';
     showFile(modeFile());
@@ -557,7 +557,7 @@ async function navigate() {
     const summary = $('api-summary');
     summary.replaceChildren();
     for (const text of [
-      page.package === 'styles' ? 'CSS Custom Properties' : `@amiracle1024/${page.package}`,
+      page.package === 'styles' ? 'CSS Custom Properties' : `@epui/${page.package}`,
       `${page.symbols.length} 个参考项`,
       '原生 DOM · 可覆盖 CSS',
       '生成式 API',
@@ -583,8 +583,7 @@ async function navigate() {
     draft = exampleFor(page.id, selected?.name);
     try {
       const saved = JSON.parse(localStorage.getItem(storageKey()) ?? 'null');
-      if (saved && ['html', 'ts', 'react', 'css'].every((key) => typeof saved[key] === 'string'))
-        draft = { ...draft, ...saved };
+      draft = restoreDraft(draft, saved);
     } catch {
       /* Invalid or unavailable draft storage leaves the canonical example. */
     }

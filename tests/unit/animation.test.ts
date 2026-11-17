@@ -12,7 +12,7 @@ import {
   setMotionPreference,
   observeReducedMotion,
   activeAnimationCount,
-} from '@amiracle1024/motion';
+} from '@epui/motion';
 import {
   enhanceButton,
   enhanceIconButton,
@@ -21,14 +21,14 @@ import {
   enhanceRadio,
   enhanceSwitch,
   enhanceSlider,
-} from '@amiracle1024/components';
+} from '@epui/components';
 import {
   createMorph,
   createShapeRenderer,
   roundedRectangleCubics,
   cubicControlBounds,
   shapeRotationScale,
-} from '@amiracle1024/shape';
+} from '@epui/shape';
 import { rippleFrame } from '../../packages/components/src/ripple.js';
 import { loadingFrame, loadingMorphDuration } from '../../packages/components/src/loading-model.js';
 import { elevationShadows } from '../../packages/components/src/elevation.js';

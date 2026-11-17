@@ -1,8 +1,8 @@
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 import { mount } from './shared.js';
 import { rovingFocus, preserveAttributes } from './collection.js';
-import { observeSize } from '@amiracle1024/core';
+import { observeSize } from '@epui/core';
 import { animateColors } from './animated-styles.js';
 export interface AppBarOptions {
   variant?:

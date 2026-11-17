@@ -1,4 +1,4 @@
-import { mediaPreference } from '@amiracle1024/core';
+import { mediaPreference } from '@epui/core';
 export type ThemeMode = 'light' | 'dark' | 'system';
 export interface ThemeVariables {
   readonly variables: Readonly<Record<string, string>>;

@@ -1,4 +1,4 @@
-import { solveSpring } from '@amiracle1024/motion';
+import { solveSpring } from '@epui/motion';
 export const loadingMorphInterval = 0.65;
 // Official SpringEstimation.estimateUnderDamped envelope, visibilityThreshold=0.1.
 export const loadingMorphDuration =

@@ -1,6 +1,6 @@
-import { observeSize } from '@amiracle1024/core';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { observeSize } from '@epui/core';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 import { mount, decoration } from './shared.js';
 import { preserveAttributes } from './collection.js';
 import { svgElement } from './svg.js';

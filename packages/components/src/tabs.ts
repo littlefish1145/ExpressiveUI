@@ -1,6 +1,6 @@
-import { observeSize } from '@amiracle1024/core';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { observeSize } from '@epui/core';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 import { mount } from './shared.js';
 import { preserveAttributes, rovingFocus, uniqueId, emit, isDisabled } from './collection.js';
 import { interactive } from './interactive.js';

@@ -80,7 +80,7 @@ for (const pkg of packages) {
     }
   }
 }
-imports.push(`const { createMorph } = await import('@amiracle1024/shape');
+imports.push(`const { createMorph } = await import('@epui/shape');
 const morph = createMorph('heart', 'circle'); await morph.ready;
 if (!morph.exact || !morph.cubicsAt(0.5)?.every(Number.isFinite)) throw Error('Lazy morph data failed');`);
 await writeFile(

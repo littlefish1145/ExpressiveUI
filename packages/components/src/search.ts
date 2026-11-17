@@ -1,7 +1,7 @@
 import { mount } from './shared.js';
 import { preserveAttributes, uniqueId, emit } from './collection.js';
 import { overlay } from './overlay.js';
-import type { MotionScheme } from '@amiracle1024/motion';
+import type { MotionScheme } from '@epui/motion';
 import { controlIcon } from './svg.js';
 import { enhanceIconButton } from './icon-button.js';
 export interface SearchResult {

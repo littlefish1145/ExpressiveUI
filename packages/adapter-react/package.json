@@ -1,5 +1,5 @@
 {
-  "name": "@amiracle1024/adapter-react",
+  "name": "@epui/adapter-react",
   "version": "0.1.0",
   "description": "Material 3 Expressive adapter-react for the Web",
   "type": "module",
@@ -24,7 +24,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "dependencies": {
-    "@amiracle1024/components": "^0.1.0"
+    "@epui/components": "^0.1.0"
   },
   "peerDependencies": {
     "react": ">=18"

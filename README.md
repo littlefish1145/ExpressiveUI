@@ -50,7 +50,7 @@ npm audit
 
 ## npm 包
 
-七个包已发布为 `@amiracle1024/*@0.1.0`，可运行 `npm install @amiracle1024/components @amiracle1024/theme` 安装。运行 `npm run release:prepare` 完成构建、测试、打包与独立安装验证；产物在 `dist/npm/`。发布顺序与登录步骤见 [npm 发布说明](docs/npm-publishing.md)。
+七个包已发布为 `@epui/*@0.1.0`，可运行 `npm install @epui/components @epui/theme` 安装。运行 `npm run release:prepare` 完成构建、测试、打包与独立安装验证；产物在 `dist/npm/`。发布顺序与登录步骤见 [npm 发布说明](docs/npm-publishing.md)。
 
 ## 部署到 Vercel
 
@@ -71,8 +71,8 @@ npm audit
 ```
 
 ```ts
-import '@amiracle1024/components/styles.css';
-import { enhanceButton, enhanceSwitch, enhanceLoadingIndicator } from '@amiracle1024/components';
+import '@epui/components/styles.css';
+import { enhanceButton, enhanceSwitch, enhanceLoadingIndicator } from '@epui/components';
 
 const button = enhanceButton(document.querySelector<HTMLButtonElement>('#save')!, {
   variant: 'filled',

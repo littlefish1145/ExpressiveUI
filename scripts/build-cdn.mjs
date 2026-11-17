@@ -51,8 +51,8 @@ Object.assign(imports, {
 const sourcePlugin = {
   name: 'cdn-package-source',
   setup(builder) {
-    builder.onResolve({ filter: /^@amiracle1024\// }, ({ path }) => {
-      const key = path.slice('@amiracle1024/'.length);
+    builder.onResolve({ filter: /^@epui\// }, ({ path }) => {
+      const key = path.slice('@epui/'.length);
       if (entries[key]) return { path: resolve(entries[key]) };
     });
   },
@@ -158,7 +158,7 @@ for (const page of index) {
     if (!html) {
       script = transform(example.ts, { transforms: ['typescript'], filePath: 'example.ts' })
         .code.replace(
-          /import\s*\{([^}]+)\}\s*from\s*['"]@amiracle1024\/([^'"]+)['"];?/g,
+          /import\s*\{([^}]+)\}\s*from\s*['"]@epui\/([^'"]+)['"];?/g,
           (_, specifiers, name) =>
             `const {${specifiers.replace(/\bas\b/g, ':')}} = ExpressiveUI.${name};`,
         )

@@ -8,7 +8,7 @@ import {
 } from '../../playground/src/cdn/auto.js';
 import { declarative, cdnDocument } from '../../playground/src/cdn/examples.js';
 import { studioCdnExample } from '../../playground/src/cdn/studio.js';
-import { activeAnimationCount } from '@amiracle1024/motion';
+import { activeAnimationCount } from '@epui/motion';
 
 beforeEach(() => {
   const query = new EventTarget() as MediaQueryList;

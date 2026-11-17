@@ -1,5 +1,5 @@
-import { Scope } from '@amiracle1024/core';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { Scope } from '@epui/core';
+import type { MotionScheme } from '@epui/motion';
 import {
   enhanceTextField,
   enhanceChip,
@@ -32,10 +32,10 @@ import {
   enhanceVerticalSlider,
   enhanceButton,
   enhanceIconButton,
-} from '@amiracle1024/components';
+} from '@epui/components';
 import './catalog.css';
 import { mountExtensions } from './extensions.js';
-import { enhanceSelect } from '@amiracle1024/components';
+import { enhanceSelect } from '@epui/components';
 
 export async function mountCatalog(parent: Scope) {
   const scope = new Scope();

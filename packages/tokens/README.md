@@ -1,4 +1,4 @@
-# @amiracle1024/tokens
+# @epui/tokens
 
 Material 3 Expressive 的设计 Token 快照，包含运动、尺寸、形状及 CSS 变量。
 
@@ -7,14 +7,14 @@ Material 3 Expressive 的设计 Token 快照，包含运动、尺寸、形状及
 首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
-npm install @amiracle1024/tokens
+npm install @epui/tokens
 ```
 
 ## 使用
 
 ```ts
-import { motionTokens } from '@amiracle1024/tokens';
-import '@amiracle1024/tokens/styles.css';
+import { motionTokens } from '@epui/tokens';
+import '@epui/tokens/styles.css';
 
 console.log(motionTokens.expressive['fast.spatial']);
 ```

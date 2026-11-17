@@ -1,4 +1,4 @@
-# @amiracle1024/shape
+# @epui/shape
 
 Polygon、Rounded 几何、SVG 渲染和按需加载的形变数据。
 
@@ -7,13 +7,13 @@ Polygon、Rounded 几何、SVG 渲染和按需加载的形变数据。
 首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
-npm install @amiracle1024/shape
+npm install @epui/shape
 ```
 
 ## 使用
 
 ```ts
-import { createMorph } from '@amiracle1024/shape';
+import { createMorph } from '@epui/shape';
 
 const morph = createMorph('heart', 'circle');
 await morph.ready;
@@ -21,7 +21,7 @@ const points = morph.at(0.5);
 console.log(points);
 ```
 
-只需数值几何时可导入 `@amiracle1024/shape/geometry`；其他公开子入口为 `/renderer`、`/library`。形变使用前须等待 `morph.ready`。
+只需数值几何时可导入 `@epui/shape/geometry`；其他公开子入口为 `/renderer`、`/library`。形变使用前须等待 `morph.ready`。
 
 ESM，附带 TypeScript 类型声明。
 

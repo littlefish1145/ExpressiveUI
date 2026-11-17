@@ -1,6 +1,6 @@
-import { Scope, observeSize } from '@amiracle1024/core';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { Scope, observeSize } from '@epui/core';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 import { focusableChildren, emit, preserveAttributes, uniqueId } from './collection.js';
 interface Entry {
   surface: HTMLElement;

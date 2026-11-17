@@ -5,10 +5,10 @@ import {
   enhanceRadio,
   enhanceSlider,
   sliderMetrics,
-} from '@amiracle1024/components';
-import { iconButtonTokens, sliderTokens, checkboxTokens, radioTokens } from '@amiracle1024/tokens';
-import { activeAnimationCount } from '@amiracle1024/motion';
-import { generateTheme, themePresets } from '@amiracle1024/theme';
+} from '@epui/components';
+import { iconButtonTokens, sliderTokens, checkboxTokens, radioTokens } from '@epui/tokens';
+import { activeAnimationCount } from '@epui/motion';
+import { generateTheme, themePresets } from '@epui/theme';
 import { Contrast, argbFromHex, lstarFromArgb } from '@material/material-color-utilities';
 const controllers: { destroy(): void }[] = [];
 beforeEach(() => {

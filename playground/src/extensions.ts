@@ -1,5 +1,5 @@
-import { Scope } from '@amiracle1024/core';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { Scope } from '@epui/core';
+import type { MotionScheme } from '@epui/motion';
 import {
   enhanceDataTable,
   enhanceBanner,
@@ -8,8 +8,8 @@ import {
   enhanceAppBar,
   enhanceIconButton,
   enhanceSelect,
-} from '@amiracle1024/components';
-import type { AppBarOptions } from '@amiracle1024/components';
+} from '@epui/components';
+import type { AppBarOptions } from '@epui/components';
 import './extensions.css';
 export function mountExtensions(parent: Scope, notify: (message: string) => void) {
   const scope = new Scope();

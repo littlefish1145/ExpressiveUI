@@ -3,7 +3,7 @@ import {
   enhanceRangeSlider,
   enhanceSlider,
   enhanceVerticalSlider,
-} from '@amiracle1024/components';
+} from '@epui/components';
 
 const controllers: { destroy(): void }[] = [];
 afterEach(() => {

@@ -1,7 +1,7 @@
 import { mount } from './shared.js';
-import { Scope } from '@amiracle1024/core';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { Scope } from '@epui/core';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 export interface SnackbarMessage {
   message: string;
   action?: string;

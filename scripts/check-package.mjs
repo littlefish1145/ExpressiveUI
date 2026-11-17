@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 export async function checkPackage(directory) {
   const pkg = JSON.parse(await readFile(resolve(directory, 'package.json'), 'utf8'));
-  if (!pkg.name.startsWith('@amiracle1024/') || pkg.private)
+  if (!pkg.name.startsWith('@epui/') || pkg.private)
     throw Error(`Unexpected publish target: ${pkg.name}`);
   if (
     pkg.publishConfig?.access !== 'public' ||
@@ -22,7 +22,7 @@ export async function checkPackage(directory) {
   }
   for (const file of ['README.md', 'LICENSE', 'NOTICE']) await access(resolve(directory, file));
   for (const [name, version] of Object.entries(pkg.dependencies ?? {})) {
-    if (name.startsWith('@amiracle1024/') && version !== `^${pkg.version}`)
+    if (name.startsWith('@epui/') && version !== `^${pkg.version}`)
       throw Error(`Internal dependency version mismatch: ${pkg.name} -> ${name}@${version}`);
   }
   return pkg;

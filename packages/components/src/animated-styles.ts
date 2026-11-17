@@ -1,6 +1,6 @@
-import { Scope } from '@amiracle1024/core';
-import { parseColor, createColorSpring, colorCSS, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme, MotionToken } from '@amiracle1024/motion';
+import { Scope } from '@epui/core';
+import { parseColor, createColorSpring, colorCSS, motionPreset } from '@epui/motion';
+import type { MotionScheme, MotionToken } from '@epui/motion';
 export interface ColorBinding {
   element: HTMLElement | SVGElement;
   property: string;

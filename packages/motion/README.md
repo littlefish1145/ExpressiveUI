@@ -1,4 +1,4 @@
-# @amiracle1024/motion
+# @epui/motion
 
 支持中断、速度连续和减少动态效果偏好的弹簧与颜色动画。
 
@@ -7,13 +7,13 @@
 首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
-npm install @amiracle1024/motion
+npm install @epui/motion
 ```
 
 ## 使用
 
 ```ts
-import { createSpring } from '@amiracle1024/motion';
+import { createSpring } from '@epui/motion';
 
 const spring = createSpring(0, (value) => console.log(value));
 spring.setTarget(1);

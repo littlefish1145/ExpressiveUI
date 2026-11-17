@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, afterEach } from 'vitest';
-import { generateTheme, themeToCSS, colorRoles } from '@amiracle1024/theme';
-import { createThemeController } from '@amiracle1024/theme/runtime';
+import { generateTheme, themeToCSS, colorRoles } from '@epui/theme';
+import { createThemeController } from '@epui/theme/runtime';
 import { argbFromHex, Contrast, lstarFromArgb } from '@material/material-color-utilities';
 afterEach(() => vi.unstubAllGlobals());
 describe('official HCT dynamic colors', () => {

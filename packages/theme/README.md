@@ -1,4 +1,4 @@
-# @amiracle1024/theme
+# @epui/theme
 
 使用 Material Color Utilities 生成 HCT 主题，并提供轻量主题运行时。
 
@@ -7,13 +7,13 @@
 首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
-npm install @amiracle1024/theme
+npm install @epui/theme
 ```
 
 ## 使用
 
 ```ts
-import { generateTheme, createThemeController } from '@amiracle1024/theme';
+import { generateTheme, createThemeController } from '@epui/theme';
 
 const themes = {
   light: generateTheme({ seed: '#6750a4' }),
@@ -23,7 +23,7 @@ const controller = createThemeController(document.documentElement, themes, 'syst
 // 在所属组件卸载时调用 controller.destroy()。
 ```
 
-只应用预生成主题时可使用 `@amiracle1024/theme/runtime`，避免引入 HCT 计算依赖。
+只应用预生成主题时可使用 `@epui/theme/runtime`，避免引入 HCT 计算依赖。
 
 ESM，附带 TypeScript 类型声明。浏览器交互需要现代浏览器环境。
 

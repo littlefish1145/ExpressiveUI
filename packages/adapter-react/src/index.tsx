@@ -9,7 +9,7 @@ import {
   enhanceCheckbox,
   enhanceRadio,
   enhanceSlider,
-} from '@amiracle1024/components';
+} from '@epui/components';
 import type {
   ButtonOptions,
   FabOptions,
@@ -19,7 +19,7 @@ import type {
   CheckboxOptions,
   RadioOptions,
   SliderOptions,
-} from '@amiracle1024/components';
+} from '@epui/components';
 type ButtonController = ReturnType<typeof enhanceButton>;
 type FabController = ReturnType<typeof enhanceFab>;
 type SwitchController = ReturnType<typeof enhanceSwitch>;

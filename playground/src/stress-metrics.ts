@@ -1,6 +1,6 @@
-import type { Scope } from '@amiracle1024/core';
-import { sampleDistribution } from '@amiracle1024/shape';
-import type { ExperimentMetrics } from '@amiracle1024/shape';
+import type { Scope } from '@epui/core';
+import { sampleDistribution } from '@epui/shape';
+import type { ExperimentMetrics } from '@epui/shape';
 
 /** Idle cadence calibration and foreground rAF statistics. This is an estimate of dropped frames. */
 export async function measureFrames(owner: Scope, metrics: ExperimentMetrics['performance']) {

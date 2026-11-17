@@ -3,12 +3,12 @@ import {
   createShapeRenderer,
   shapeRotationScale,
   cubicControlBounds,
-} from '@amiracle1024/shape';
-import type { PolygonShape, ShapeBackend } from '@amiracle1024/shape';
-import { scheduleFrame, observeReducedMotion } from '@amiracle1024/motion';
+} from '@epui/shape';
+import type { PolygonShape, ShapeBackend } from '@epui/shape';
+import { scheduleFrame, observeReducedMotion } from '@epui/motion';
 import { loadingFrame } from './loading-model.js';
 import { mount, decoration } from './shared.js';
-import { observeViewport } from '@amiracle1024/core';
+import { observeViewport } from '@epui/core';
 const sequence: PolygonShape[] = [
   'softBurst',
   'cookie9Sided',

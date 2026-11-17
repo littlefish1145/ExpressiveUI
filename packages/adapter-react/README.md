@@ -1,4 +1,4 @@
-# @amiracle1024/adapter-react
+# @epui/adapter-react
 
 可选的 React 18+ 适配器，包含 Button、FAB、Switch、LoadingIndicator、IconButton、Checkbox、Radio、Slider。
 
@@ -7,14 +7,14 @@
 首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
-npm install @amiracle1024/adapter-react @amiracle1024/components react react-dom
+npm install @epui/adapter-react @epui/components react react-dom
 ```
 
 ## 使用
 
 ```tsx
-import '@amiracle1024/components/styles.css';
-import { Button } from '@amiracle1024/adapter-react';
+import '@epui/components/styles.css';
+import { Button } from '@epui/adapter-react';
 
 export default function App() {
   return <Button options={{ variant: 'filled' }}>保存</Button>;

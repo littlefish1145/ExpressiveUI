@@ -5,13 +5,13 @@
 | Package | ESM source¹ | Minified bundle² | Gzip | Budget |
 |---|---:|---:|---:|---|
 | core | 8027 B | 4097 B | 1858 B | PASS / 6144 B |
-| shape | 10776321 B | 114912 B | 41394 B | OVER / 8192 B |
-| shape/geometry | 10776321 B | 4089 B | 1780 B | PASS / 8192 B |
-| shape/renderer | 10776321 B | 4424 B | 1732 B | PASS / 8192 B |
-| motion | 20022 B | 10842 B | 4519 B | PASS / 5120 B |
-| theme/runtime | 6275 B | 1819 B | 870 B | PASS / 4096 B |
-| theme/HCT | 6275 B | 55145 B | 16535 B | — |
-| components | 255635 B | 258513 B | 84681 B | — |
+| shape | 10776313 B | 114912 B | 41394 B | OVER / 8192 B |
+| shape/geometry | 10776313 B | 4089 B | 1780 B | PASS / 8192 B |
+| shape/renderer | 10776313 B | 4424 B | 1732 B | PASS / 8192 B |
+| motion | 20006 B | 10842 B | 4519 B | PASS / 5120 B |
+| theme/runtime | 6267 B | 1819 B | 870 B | PASS / 4096 B |
+| theme/HCT | 6267 B | 55145 B | 16535 B | — |
+| components | 255131 B | 258513 B | 84681 B | — |
 
 ¹ 包内 .js 总和（不含 map、类型和 CSS）。² 浏览器打包并 minify，含传递依赖；不可将重叠包简单相加。
 

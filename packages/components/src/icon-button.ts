@@ -1,14 +1,14 @@
-import { bindPress, observeSize } from '@amiracle1024/core';
-import { iconButtonTokens } from '@amiracle1024/tokens';
-import type { ButtonSize } from '@amiracle1024/tokens';
+import { bindPress, observeSize } from '@epui/core';
+import { iconButtonTokens } from '@epui/tokens';
+import type { ButtonSize } from '@epui/tokens';
 import {
   roundedRectangle,
   alignContours,
   interpolateContour,
   createShapeRenderer,
-} from '@amiracle1024/shape';
-import { createSpring, motionPreset } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+} from '@epui/shape';
+import { createSpring, motionPreset } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 import { mount, decoration } from './shared.js';
 import { bindRipple } from './ripple.js';
 import { animateColors } from './animated-styles.js';

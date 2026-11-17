@@ -1,9 +1,9 @@
 import { mount } from './shared.js';
 import { interactive } from './interactive.js';
 import { emit, rovingFocus, isDisabled } from './collection.js';
-import type { MotionScheme } from '@amiracle1024/motion';
-import { observeSize } from '@amiracle1024/core';
-import { roundedRectangle } from '@amiracle1024/shape';
+import type { MotionScheme } from '@epui/motion';
+import { observeSize } from '@epui/core';
+import { roundedRectangle } from '@epui/shape';
 import { bindElevation } from './elevation.js';
 export interface ChipOptions {
   variant?: 'assist' | 'filter' | 'input' | 'suggestion';

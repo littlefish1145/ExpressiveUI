@@ -1,17 +1,17 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import * as jsxRuntime from 'react/jsx-runtime';
-import * as core from '@amiracle1024/core';
-import * as tokens from '@amiracle1024/tokens';
-import * as shape from '@amiracle1024/shape';
-import * as motion from '@amiracle1024/motion';
-import * as theme from '@amiracle1024/theme';
-import * as themeRuntime from '@amiracle1024/theme/runtime';
+import * as core from '@epui/core';
+import * as tokens from '@epui/tokens';
+import * as shape from '@epui/shape';
+import * as motion from '@epui/motion';
+import * as theme from '@epui/theme';
+import * as themeRuntime from '@epui/theme/runtime';
 import * as shapeGeometry from '../../../packages/shape/src/geometry.js';
 import * as shapeRenderer from '../../../packages/shape/src/renderer.js';
 import * as shapeLibrary from '../../../packages/shape/src/library.js';
-import * as components from '@amiracle1024/components';
-import * as adapter from '@amiracle1024/adapter-react';
+import * as components from '@epui/components';
+import * as adapter from '@epui/adapter-react';
 declare global {
   var __euiSession: { token: string; parentOrigin: string };
   var __euiLoadMorph: (key: string) => Promise<readonly [readonly number[], readonly number[]]>;
@@ -60,19 +60,19 @@ const modules: Record<string, unknown> = {
   react: React,
   'react-dom/client': ReactDOM,
   'react/jsx-runtime': jsxRuntime,
-  '@amiracle1024/core': core,
-  '@amiracle1024/tokens': tokens,
-  '@amiracle1024/shape': shape,
-  '@amiracle1024/motion': motion,
-  '@amiracle1024/theme': theme,
-  '@amiracle1024/theme/runtime': themeRuntime,
-  '@amiracle1024/shape/geometry': shapeGeometry,
-  '@amiracle1024/shape/renderer': shapeRenderer,
-  '@amiracle1024/shape/library': shapeLibrary,
-  '@amiracle1024/components/styles.css': {},
-  '@amiracle1024/components/fonts.css': {},
-  '@amiracle1024/components': components,
-  '@amiracle1024/adapter-react': adapter,
+  '@epui/core': core,
+  '@epui/tokens': tokens,
+  '@epui/shape': shape,
+  '@epui/motion': motion,
+  '@epui/theme': theme,
+  '@epui/theme/runtime': themeRuntime,
+  '@epui/shape/geometry': shapeGeometry,
+  '@epui/shape/renderer': shapeRenderer,
+  '@epui/shape/library': shapeLibrary,
+  '@epui/components/styles.css': {},
+  '@epui/components/fonts.css': {},
+  '@epui/components': components,
+  '@epui/adapter-react': adapter,
 };
 for (const [key, value] of Object.entries(modules))
   modules[key] = Object.assign({ default: value }, value);

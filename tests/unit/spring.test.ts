@@ -6,7 +6,7 @@ import {
   createSpring,
   activeAnimationCount,
   animateSpring,
-} from '@amiracle1024/motion';
+} from '@epui/motion';
 const parameters = { stiffness: 380, dampingRatio: 0.8 };
 afterEach(() => vi.unstubAllGlobals());
 describe('mass-normalized analytical spring', () => {

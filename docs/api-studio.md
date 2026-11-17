@@ -12,7 +12,7 @@
 - Web Worker通过Sucrase转译TS/TSX。在线转译不等于完整TypeScript语义检查；项目命令会严格编译所有规范示例。
 - 预览采用只允许脚本的sandbox iframe，没有allow-same-origin。脚本/样式不能改文档DOM；可交互组件的DOM、Dialog、焦点和表单保留在iframe。重跑/换页卸载旧React根与控制器，再移除旧iframe上下文。编译错误、运行错误与最近100条Console显示在预览面板。
 - 本地预编译经典脚本内置本库、React/React DOM，不依赖CDN或在线转译服务。字体以内嵌数据加载；1190组官方形变通过受限postMessage请求由文档父页按需提供，未把全部形变塞进运行时。
-- 可导入七个本库包、`@amiracle1024/theme/runtime`、Shape的geometry/renderer/library子入口、React、react-dom/client与react/jsx-runtime。styles.css/fonts.css导入由已加载的预览CSS满足。当前不支持编辑器内任意npm包安装、相对多文件模块或外部网络资源。预览sandbox是DOM/能力隔离，不宣称能阻止用户自己写出的死循环占用CPU。
+- 可导入七个本库包、`@epui/theme/runtime`、Shape的geometry/renderer/library子入口、React、react-dom/client与react/jsx-runtime。styles.css/fonts.css导入由已加载的预览CSS满足。当前不支持编辑器内任意npm包安装、相对多文件模块或外部网络资源。预览sandbox是DOM/能力隔离，不宣称能阻止用户自己写出的死循环占用CPU。
 
 ## 构建与更新
 

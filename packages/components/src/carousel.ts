@@ -1,5 +1,5 @@
-import { observeSize } from '@amiracle1024/core';
-import { observeReducedMotion } from '@amiracle1024/motion';
+import { observeSize } from '@epui/core';
+import { observeReducedMotion } from '@epui/motion';
 import { mount } from './shared.js';
 import { preserveAttributes, emit } from './collection.js';
 export interface CarouselOptions {

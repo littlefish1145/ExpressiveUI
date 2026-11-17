@@ -1,4 +1,4 @@
-# @amiracle1024/core
+# @epui/core
 
 资源作用域、事件监听、状态与浏览器能力工具。
 
@@ -7,13 +7,13 @@
 首个版本 `0.1.0` 已发布到 npm。
 
 ```sh
-npm install @amiracle1024/core
+npm install @epui/core
 ```
 
 ## 使用
 
 ```ts
-import { Scope } from '@amiracle1024/core';
+import { Scope } from '@epui/core';
 
 const scope = new Scope();
 scope.listen(document, 'click', () => console.log('clicked'));

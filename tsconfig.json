@@ -16,14 +16,14 @@
     "jsx": "react-jsx",
     "baseUrl": ".",
     "paths": {
-      "@amiracle1024/core": ["packages/core/src/index.ts"],
-      "@amiracle1024/tokens": ["packages/tokens/src/index.ts"],
-      "@amiracle1024/shape": ["packages/shape/src/index.ts"],
-      "@amiracle1024/motion": ["packages/motion/src/index.ts"],
-      "@amiracle1024/theme": ["packages/theme/src/index.ts"],
-      "@amiracle1024/theme/runtime": ["packages/theme/src/runtime.ts"],
-      "@amiracle1024/components": ["packages/components/src/index.ts"],
-      "@amiracle1024/adapter-react": ["packages/adapter-react/src/index.tsx"]
+      "@epui/core": ["packages/core/src/index.ts"],
+      "@epui/tokens": ["packages/tokens/src/index.ts"],
+      "@epui/shape": ["packages/shape/src/index.ts"],
+      "@epui/motion": ["packages/motion/src/index.ts"],
+      "@epui/theme": ["packages/theme/src/index.ts"],
+      "@epui/theme/runtime": ["packages/theme/src/runtime.ts"],
+      "@epui/components": ["packages/components/src/index.ts"],
+      "@epui/adapter-react": ["packages/adapter-react/src/index.tsx"]
     }
   },
   "include": ["packages", "playground", "tests", "*.config.ts"]

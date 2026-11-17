@@ -1,5 +1,5 @@
-import { createSpring, motionPreset, observeReducedMotion } from '@amiracle1024/motion';
-import type { MotionScheme } from '@amiracle1024/motion';
+import { createSpring, motionPreset, observeReducedMotion } from '@epui/motion';
+import type { MotionScheme } from '@epui/motion';
 import { mount } from './shared.js';
 import { choiceDecoration, observeChoice, notifyChange, svgElement } from './choice-shared.js';
 import { animateColors } from './animated-styles.js';

@@ -40,13 +40,13 @@ for (const [name, entry, budget] of targets) {
 }
 const probes = {
   'core capability only':
-    'import {detectCapabilities} from "@amiracle1024/core"; console.log(detectCapabilities());',
+    'import {detectCapabilities} from "@epui/core"; console.log(detectCapabilities());',
   'motion solver only':
-    'import {solveSpring} from "@amiracle1024/motion"; console.log(solveSpring(0,1,0,.1,{stiffness:380,dampingRatio:.8}));',
+    'import {solveSpring} from "@epui/motion"; console.log(solveSpring(0,1,0,.1,{stiffness:380,dampingRatio:.8}));',
   'shape numeric geometry only':
-    'import {interpolateContour} from "@amiracle1024/shape/geometry"; console.log(interpolateContour(new Float64Array(8),new Float64Array(8),.5));',
+    'import {interpolateContour} from "@epui/shape/geometry"; console.log(interpolateContour(new Float64Array(8),new Float64Array(8),.5));',
   'one button only':
-    'import {enhanceButton} from "@amiracle1024/components"; enhanceButton(document.querySelector("button"));',
+    'import {enhanceButton} from "@epui/components"; enhanceButton(document.querySelector("button"));',
 };
 const shaking = [];
 for (const [name, contents] of Object.entries(probes)) {

@@ -42,11 +42,11 @@ export default defineConfig({
   resolve: {
     alias: [
       {
-        find: '@amiracle1024/theme/runtime',
+        find: '@epui/theme/runtime',
         replacement: fileURLToPath(new URL('./packages/theme/src/runtime.ts', import.meta.url)),
       },
       ...names.map((name) => ({
-        find: `@amiracle1024/${name}`,
+        find: `@epui/${name}`,
         replacement: fileURLToPath(
           new URL(
             `./packages/${name}/src/index.${name === 'adapter-react' ? 'tsx' : 'ts'}`,

@@ -1,5 +1,5 @@
-import { Scope } from '@amiracle1024/core';
-import { scheduleFrame, observeReducedMotion } from '@amiracle1024/motion';
+import { Scope } from '@epui/core';
+import { scheduleFrame, observeReducedMotion } from '@epui/motion';
 import { svgElement } from './svg.js';
 let rippleId = 0;
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
